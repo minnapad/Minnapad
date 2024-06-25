@@ -362,6 +362,50 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiKeijiInafuneKeijiInafune extends Schema.CollectionType {
+  collectionName: 'keiji_inafunes';
+  info: {
+    singularName: 'keiji-inafune';
+    pluralName: 'keiji-inafunes';
+    displayName: 'keiji inafune';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    legendTitle: Attribute.String & Attribute.Required & Attribute.Unique;
+    legendTopSubTitle: Attribute.String;
+    legendBottomSubTitle: Attribute.String;
+    lengendDiscription: Attribute.Blocks;
+    legendMemerShipTitle: Attribute.Blocks;
+    coinName: Attribute.String;
+    coinInfo: Attribute.String;
+    praposalRule1: Attribute.Blocks;
+    legendProposalCountText: Attribute.String;
+    legendMemberShipGuidlinePoints1: Attribute.Blocks;
+    legendMemberShipGuidlinePoints2: Attribute.Blocks;
+    legendMemberShipGuidlinePoints3: Attribute.Blocks;
+    praposalRule2: Attribute.Blocks;
+    praposalRule3: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::keiji-inafune.keiji-inafune',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::keiji-inafune.keiji-inafune',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -798,6 +842,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::keiji-inafune.keiji-inafune': ApiKeijiInafuneKeijiInafune;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
