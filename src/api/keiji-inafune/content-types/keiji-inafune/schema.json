@@ -24,7 +24,7 @@
       "type": "string"
     },
     "lengendDiscription": {
-      "type": "blocks"
+      "type": "richtext"
     },
     "legendMemerShipTitle": {
       "type": "blocks"

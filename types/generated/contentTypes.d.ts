@@ -362,50 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiKeijiInafuneKeijiInafune extends Schema.CollectionType {
-  collectionName: 'keiji_inafunes';
-  info: {
-    singularName: 'keiji-inafune';
-    pluralName: 'keiji-inafunes';
-    displayName: 'keiji inafune';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    legendTitle: Attribute.String & Attribute.Required & Attribute.Unique;
-    legendTopSubTitle: Attribute.String;
-    legendBottomSubTitle: Attribute.String;
-    lengendDiscription: Attribute.Blocks;
-    legendMemerShipTitle: Attribute.Blocks;
-    coinName: Attribute.String;
-    coinInfo: Attribute.String;
-    praposalRule1: Attribute.Blocks;
-    legendProposalCountText: Attribute.String;
-    legendMemberShipGuidlinePoints1: Attribute.Blocks;
-    legendMemberShipGuidlinePoints2: Attribute.Blocks;
-    legendMemberShipGuidlinePoints3: Attribute.Blocks;
-    praposalRule2: Attribute.Blocks;
-    praposalRule3: Attribute.Blocks;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::keiji-inafune.keiji-inafune',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::keiji-inafune.keiji-inafune',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -832,6 +788,125 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiKeijiKeiji extends Schema.SingleType {
+  collectionName: 'keijis';
+  info: {
+    singularName: 'keiji';
+    pluralName: 'keijis';
+    displayName: 'Keiji';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    legendTitle: Attribute.String;
+    legendTopSubTitle: Attribute.String;
+    legendBottomSubTitle: Attribute.String;
+    lengendDiscription: Attribute.RichText;
+    legendMemerShipTitle: Attribute.RichText;
+    legendMemberShipGuidlinePoints1: Attribute.RichText;
+    legendMemberShipGuidlinePoints2: Attribute.RichText;
+    legendMemberShipGuidlinePoints3: Attribute.RichText;
+    coinName: Attribute.String;
+    coinInfo: Attribute.String;
+    praposalRule1: Attribute.RichText;
+    praposalRule2: Attribute.RichText;
+    praposalRule3: Attribute.RichText;
+    imageText: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::keiji.keiji',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::keiji.keiji',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiKeijiInafuneKeijiInafune extends Schema.CollectionType {
+  collectionName: 'keiji_inafunes';
+  info: {
+    singularName: 'keiji-inafune';
+    pluralName: 'keiji-inafunes';
+    displayName: 'keiji inafune';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    legendTitle: Attribute.String & Attribute.Required & Attribute.Unique;
+    legendTopSubTitle: Attribute.String;
+    legendBottomSubTitle: Attribute.String;
+    lengendDiscription: Attribute.RichText;
+    legendMemerShipTitle: Attribute.Blocks;
+    coinName: Attribute.String;
+    coinInfo: Attribute.String;
+    praposalRule1: Attribute.Blocks;
+    legendProposalCountText: Attribute.String;
+    legendMemberShipGuidlinePoints1: Attribute.Blocks;
+    legendMemberShipGuidlinePoints2: Attribute.Blocks;
+    legendMemberShipGuidlinePoints3: Attribute.Blocks;
+    praposalRule2: Attribute.Blocks;
+    praposalRule3: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::keiji-inafune.keiji-inafune',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::keiji-inafune.keiji-inafune',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSeichiInafuneSeichiInafune extends Schema.CollectionType {
+  collectionName: 'seichi_inafunes';
+  info: {
+    singularName: 'seichi-inafune';
+    pluralName: 'seichi-inafunes';
+    displayName: 'seichi inafune';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    legendName: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::seichi-inafune.seichi-inafune',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::seichi-inafune.seichi-inafune',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -842,7 +917,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::keiji-inafune.keiji-inafune': ApiKeijiInafuneKeijiInafune;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -851,6 +925,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::keiji.keiji': ApiKeijiKeiji;
+      'api::keiji-inafune.keiji-inafune': ApiKeijiInafuneKeijiInafune;
+      'api::seichi-inafune.seichi-inafune': ApiSeichiInafuneSeichiInafune;
     }
   }
 }
