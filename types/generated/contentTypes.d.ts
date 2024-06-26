@@ -816,6 +816,8 @@ export interface ApiKeijiKeiji extends Schema.SingleType {
     imageText: Attribute.RichText;
     benifits: Attribute.String;
     imageContent: Attribute.String;
+    buyNowText: Attribute.String;
+    buyOnMarketPlaceText: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -834,73 +836,47 @@ export interface ApiKeijiKeiji extends Schema.SingleType {
   };
 }
 
-export interface ApiKeijiInafuneKeijiInafune extends Schema.CollectionType {
-  collectionName: 'keiji_inafunes';
+export interface ApiSeichiSeichi extends Schema.SingleType {
+  collectionName: 'seichis';
   info: {
-    singularName: 'keiji-inafune';
-    pluralName: 'keiji-inafunes';
-    displayName: 'keiji inafune';
+    singularName: 'seichi';
+    pluralName: 'seichis';
+    displayName: 'Seichi';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    legendTitle: Attribute.String & Attribute.Required & Attribute.Unique;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    legendTitle: Attribute.String;
     legendTopSubTitle: Attribute.String;
     legendBottomSubTitle: Attribute.String;
     lengendDiscription: Attribute.RichText;
-    legendMemerShipTitle: Attribute.Blocks;
+    legendMemberShipGuidlinePoints1: Attribute.RichText;
+    legendMemberShipGuidlinePoints2: Attribute.RichText;
+    legendMemberShipGuidlinePoints3: Attribute.RichText;
     coinName: Attribute.String;
     coinInfo: Attribute.String;
-    praposalRule1: Attribute.Blocks;
-    legendProposalCountText: Attribute.String;
-    legendMemberShipGuidlinePoints1: Attribute.Blocks;
-    legendMemberShipGuidlinePoints2: Attribute.Blocks;
-    legendMemberShipGuidlinePoints3: Attribute.Blocks;
-    praposalRule2: Attribute.Blocks;
-    praposalRule3: Attribute.Blocks;
+    praposalRule1: Attribute.RichText;
+    praposalRule2: Attribute.RichText;
+    praposalRule3: Attribute.RichText;
+    imageText: Attribute.RichText;
+    benifits: Attribute.String;
+    imageContent: Attribute.String;
+    buyNowText: Attribute.String;
+    buyOnMarketPlaceText: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::keiji-inafune.keiji-inafune',
+      'api::seichi.seichi',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::keiji-inafune.keiji-inafune',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiSeichiInafuneSeichiInafune extends Schema.CollectionType {
-  collectionName: 'seichi_inafunes';
-  info: {
-    singularName: 'seichi-inafune';
-    pluralName: 'seichi-inafunes';
-    displayName: 'seichi inafune';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    legendName: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::seichi-inafune.seichi-inafune',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::seichi-inafune.seichi-inafune',
+      'api::seichi.seichi',
       'oneToOne',
       'admin::user'
     > &
@@ -927,8 +903,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::keiji.keiji': ApiKeijiKeiji;
-      'api::keiji-inafune.keiji-inafune': ApiKeijiInafuneKeijiInafune;
-      'api::seichi-inafune.seichi-inafune': ApiSeichiInafuneSeichiInafune;
+      'api::seichi.seichi': ApiSeichiSeichi;
     }
   }
 }

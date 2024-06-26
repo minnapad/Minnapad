@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "keijis",
+  "collectionName": "seichis",
   "info": {
-    "singularName": "keiji",
-    "pluralName": "keijis",
-    "displayName": "Keiji",
+    "singularName": "seichi",
+    "pluralName": "seichis",
+    "displayName": "Seichi",
     "description": ""
   },
   "options": {
