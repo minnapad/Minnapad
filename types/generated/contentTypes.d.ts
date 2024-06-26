@@ -805,7 +805,6 @@ export interface ApiKeijiKeiji extends Schema.SingleType {
     legendTopSubTitle: Attribute.String;
     legendBottomSubTitle: Attribute.String;
     lengendDiscription: Attribute.RichText;
-    legendMemerShipTitle: Attribute.RichText;
     legendMemberShipGuidlinePoints1: Attribute.RichText;
     legendMemberShipGuidlinePoints2: Attribute.RichText;
     legendMemberShipGuidlinePoints3: Attribute.RichText;
@@ -815,6 +814,8 @@ export interface ApiKeijiKeiji extends Schema.SingleType {
     praposalRule2: Attribute.RichText;
     praposalRule3: Attribute.RichText;
     imageText: Attribute.RichText;
+    benifits: Attribute.String;
+    imageContent: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

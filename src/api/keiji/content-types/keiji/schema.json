@@ -35,9 +35,6 @@
     "lengendDiscription": {
       "type": "richtext"
     },
-    "legendMemerShipTitle": {
-      "type": "richtext"
-    },
     "legendMemberShipGuidlinePoints1": {
       "type": "richtext"
     },
@@ -64,6 +61,12 @@
     },
     "imageText": {
       "type": "richtext"
+    },
+    "benifits": {
+      "type": "string"
+    },
+    "imageContent": {
+      "type": "string"
     }
   }
 }
