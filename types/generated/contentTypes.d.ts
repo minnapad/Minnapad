@@ -362,102 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiKeijiKeiji extends Schema.SingleType {
-  collectionName: 'keijis';
-  info: {
-    singularName: 'keiji';
-    pluralName: 'keijis';
-    displayName: 'Keiji';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    legendTitle: Attribute.String;
-    legendTopSubTitle: Attribute.String;
-    legendBottomSubTitle: Attribute.String;
-    lengendDiscription: Attribute.RichText;
-    legendMemberShipGuidlinePoints1: Attribute.RichText;
-    legendMemberShipGuidlinePoints2: Attribute.RichText;
-    legendMemberShipGuidlinePoints3: Attribute.RichText;
-    coinName: Attribute.String;
-    coinInfo: Attribute.String;
-    praposalRule1: Attribute.RichText;
-    praposalRule2: Attribute.RichText;
-    praposalRule3: Attribute.RichText;
-    imageText: Attribute.RichText;
-    benifits: Attribute.String;
-    imageContent: Attribute.String;
-    buyNowText: Attribute.String;
-    buyOnMarketPlaceText: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::keiji.keiji',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::keiji.keiji',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiSeichiSeichi extends Schema.SingleType {
-  collectionName: 'seichis';
-  info: {
-    singularName: 'seichi';
-    pluralName: 'seichis';
-    displayName: 'Seiichi';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    legendTitle: Attribute.String;
-    legendTopSubTitle: Attribute.String;
-    legendBottomSubTitle: Attribute.String;
-    lengendDiscription: Attribute.RichText;
-    legendMemberShipGuidlinePoints1: Attribute.RichText;
-    legendMemberShipGuidlinePoints2: Attribute.RichText;
-    legendMemberShipGuidlinePoints3: Attribute.RichText;
-    coinName: Attribute.String;
-    coinInfo: Attribute.String;
-    praposalRule1: Attribute.RichText;
-    praposalRule2: Attribute.RichText;
-    praposalRule3: Attribute.RichText;
-    imageText: Attribute.RichText;
-    benifits: Attribute.String;
-    imageContent: Attribute.String;
-    buyNowText: Attribute.String;
-    buyOnMarketPlaceText: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::seichi.seichi',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::seichi.seichi',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -884,6 +788,154 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiKeijiKeiji extends Schema.SingleType {
+  collectionName: 'keijis';
+  info: {
+    singularName: 'keiji';
+    pluralName: 'keijis';
+    displayName: 'Keiji';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    legendTitle: Attribute.String;
+    legendTopSubTitle: Attribute.String;
+    legendBottomSubTitle: Attribute.String;
+    lengendDiscription: Attribute.RichText;
+    legendMemberShipGuidlinePoints1: Attribute.RichText;
+    legendMemberShipGuidlinePoints2: Attribute.RichText;
+    legendMemberShipGuidlinePoints3: Attribute.RichText;
+    coinName: Attribute.String;
+    coinInfo: Attribute.String;
+    praposalRule1: Attribute.RichText;
+    praposalRule2: Attribute.RichText;
+    praposalRule3: Attribute.RichText;
+    imageText: Attribute.RichText;
+    benifits: Attribute.String;
+    imageContent: Attribute.String;
+    buyNowText: Attribute.String;
+    buyOnMarketPlaceText: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::keiji.keiji',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::keiji.keiji',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProjectProject extends Schema.CollectionType {
+  collectionName: 'projects';
+  info: {
+    singularName: 'project';
+    pluralName: 'projects';
+    displayName: 'Project';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    projectLogo: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    projectBanner: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    projectName: Attribute.String;
+    projectSubTitle: Attribute.String;
+    projectDiscription: Attribute.String;
+    ProjectCategory: Attribute.Component<
+      'project-category.project-category',
+      true
+    >;
+    PrjoectSocialLinks: Attribute.Component<
+      'project-social-links.project-social-links',
+      true
+    >;
+    ProjectBenifits: Attribute.Component<
+      'project-benifits.project-benifits',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSeichiSeichi extends Schema.SingleType {
+  collectionName: 'seichis';
+  info: {
+    singularName: 'seichi';
+    pluralName: 'seichis';
+    displayName: 'Seiichi';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    legendTitle: Attribute.String;
+    legendTopSubTitle: Attribute.String;
+    legendBottomSubTitle: Attribute.String;
+    lengendDiscription: Attribute.RichText;
+    legendMemberShipGuidlinePoints1: Attribute.RichText;
+    legendMemberShipGuidlinePoints2: Attribute.RichText;
+    legendMemberShipGuidlinePoints3: Attribute.RichText;
+    coinName: Attribute.String;
+    coinInfo: Attribute.String;
+    praposalRule1: Attribute.RichText;
+    praposalRule2: Attribute.RichText;
+    praposalRule3: Attribute.RichText;
+    imageText: Attribute.RichText;
+    benifits: Attribute.String;
+    imageContent: Attribute.String;
+    buyNowText: Attribute.String;
+    buyOnMarketPlaceText: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::seichi.seichi',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::seichi.seichi',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -894,8 +946,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::keiji.keiji': ApiKeijiKeiji;
-      'api::seichi.seichi': ApiSeichiSeichi;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -904,6 +954,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::keiji.keiji': ApiKeijiKeiji;
+      'api::project.project': ApiProjectProject;
+      'api::seichi.seichi': ApiSeichiSeichi;
     }
   }
 }
