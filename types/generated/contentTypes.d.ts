@@ -788,6 +788,40 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiConceptConcept extends Schema.SingleType {
+  collectionName: 'concepts';
+  info: {
+    singularName: 'concept';
+    pluralName: 'concepts';
+    displayName: 'Concept';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    subTitle: Attribute.String;
+    mainTitle: Attribute.String;
+    Discription: Attribute.Component<'concepts.concepts', true>;
+    link: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::concept.concept',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::concept.concept',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiKeijiKeiji extends Schema.SingleType {
   collectionName: 'keijis';
   info: {
@@ -954,6 +988,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::concept.concept': ApiConceptConcept;
       'api::keiji.keiji': ApiKeijiKeiji;
       'api::project.project': ApiProjectProject;
       'api::seichi.seichi': ApiSeichiSeichi;

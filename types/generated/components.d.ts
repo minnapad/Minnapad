@@ -1,5 +1,15 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ConceptsConcepts extends Schema.Component {
+  collectionName: 'components_concepts_concepts';
+  info: {
+    displayName: 'Concepts';
+  };
+  attributes: {
+    Discription: Attribute.RichText;
+  };
+}
+
 export interface ProjectBenifitsProjectBenifits extends Schema.Component {
   collectionName: 'components_project_benifits_project_benifits';
   info: {
@@ -42,6 +52,7 @@ export interface ProjectSocialLinksProjectSocialLinks extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'concepts.concepts': ConceptsConcepts;
       'project-benifits.project-benifits': ProjectBenifitsProjectBenifits;
       'project-category.project-category': ProjectCategoryProjectCategory;
       'project-social-links.project-social-links': ProjectSocialLinksProjectSocialLinks;
