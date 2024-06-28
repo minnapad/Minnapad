@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_head_quarters_quarter_details",
+  "info": {
+    "displayName": "branch",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    }
+  }
+}

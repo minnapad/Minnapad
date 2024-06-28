@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_mission_card_misson_cards",
+  "info": {
+    "displayName": "missonCard",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "cardTitle": {
+      "type": "string"
+    },
+    "cardLogo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "cardDescription": {
+      "type": "text"
+    }
+  }
+}

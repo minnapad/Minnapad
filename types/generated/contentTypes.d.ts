@@ -788,6 +788,41 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutUsAboutUs extends Schema.SingleType {
+  collectionName: 'about_uses';
+  info: {
+    singularName: 'about-us';
+    pluralName: 'about-uses';
+    displayName: 'aboutUs';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero: Attribute.Component<'about-us-hero.hero-section'>;
+    awards: Attribute.Component<'about-us-awards.awards', true>;
+    missions: Attribute.Component<'about-us-mission.missions'>;
+    crew: Attribute.Component<'about-us-crew.crew'>;
+    getInTouch: Attribute.Component<'get-in-touch.get-in-touch'>;
+    headQuarters: Attribute.Component<'head-quarters.head-quarters'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-us.about-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-us.about-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiConceptConcept extends Schema.SingleType {
   collectionName: 'concepts';
   info: {
@@ -988,6 +1023,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::concept.concept': ApiConceptConcept;
       'api::keiji.keiji': ApiKeijiKeiji;
       'api::project.project': ApiProjectProject;

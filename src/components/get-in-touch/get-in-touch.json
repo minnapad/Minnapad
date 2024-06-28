@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_get_in_touch_get_in_touches",
+  "info": {
+    "displayName": "getInTouch",
+    "icon": "arrowRight",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "supports": {
+      "type": "component",
+      "repeatable": true,
+      "component": "get-in-touch.support"
+    }
+  }
+}
