@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_about_us_awards_awards",
+  "info": {
+    "displayName": "awards",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "awardBy": {
+      "type": "string"
+    },
+    "awardName": {
+      "type": "text"
+    }
+  }
+}

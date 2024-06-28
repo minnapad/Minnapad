@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_about_us_mission_missions",
+  "info": {
+    "displayName": "missions",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "missionCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us-mission.misson-card"
+    }
+  }
+}
