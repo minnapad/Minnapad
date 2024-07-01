@@ -130,6 +130,7 @@ export interface HeadQuartersHeadQuarters extends Schema.Component {
   attributes: {
     title: Attribute.String;
     branches: Attribute.Component<'head-quarters.quarter-details', true>;
+    mapImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 

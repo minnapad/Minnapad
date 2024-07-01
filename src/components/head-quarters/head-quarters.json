@@ -14,6 +14,17 @@
       "type": "component",
       "repeatable": true,
       "component": "head-quarters.quarter-details"
+    },
+    "mapImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
