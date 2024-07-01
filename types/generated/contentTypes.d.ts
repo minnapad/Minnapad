@@ -794,6 +794,7 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
     singularName: 'about-us';
     pluralName: 'about-uses';
     displayName: 'aboutUs';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -805,6 +806,7 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
     crew: Attribute.Component<'about-us-crew.crew'>;
     getInTouch: Attribute.Component<'get-in-touch.get-in-touch'>;
     headQuarters: Attribute.Component<'head-quarters.head-quarters'>;
+    backgroundImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

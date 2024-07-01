@@ -4,7 +4,8 @@
   "info": {
     "singularName": "about-us",
     "pluralName": "about-uses",
-    "displayName": "aboutUs"
+    "displayName": "aboutUs",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -40,6 +41,16 @@
       "type": "component",
       "repeatable": false,
       "component": "head-quarters.head-quarters"
+    },
+    "backgroundImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
