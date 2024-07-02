@@ -915,6 +915,36 @@ export interface ApiKeijiInafuneKeijiInafune extends Schema.CollectionType {
   };
 }
 
+export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
+  collectionName: 'privacy_policies';
+  info: {
+    singularName: 'privacy-policy';
+    pluralName: 'privacy-policies';
+    displayName: 'PrivacyPolicy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    privacypolicy: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSeichiInafuneSeichiInafune extends Schema.CollectionType {
   collectionName: 'seichi_inafunes';
   info: {
@@ -945,6 +975,37 @@ export interface ApiSeichiInafuneSeichiInafune extends Schema.CollectionType {
   };
 }
 
+export interface ApiTermsAndConditionsTermsAndConditions
+  extends Schema.SingleType {
+  collectionName: 'termsandconditions';
+  info: {
+    singularName: 'terms-and-conditions';
+    pluralName: 'termsandconditions';
+    displayName: 'TermsAndConditions';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    TermsAndConditions: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::terms-and-conditions.terms-and-conditions',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::terms-and-conditions.terms-and-conditions',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -966,7 +1027,9 @@ declare module '@strapi/types' {
       'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::keiji.keiji': ApiKeijiKeiji;
       'api::keiji-inafune.keiji-inafune': ApiKeijiInafuneKeijiInafune;
+      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::seichi-inafune.seichi-inafune': ApiSeichiInafuneSeichiInafune;
+      'api::terms-and-conditions.terms-and-conditions': ApiTermsAndConditionsTermsAndConditions;
     }
   }
 }
