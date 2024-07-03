@@ -1083,40 +1083,6 @@ export interface ApiSeichiSeichi extends Schema.SingleType {
   };
 }
 
-export interface ApiStartGuideStartGuide extends Schema.SingleType {
-  collectionName: 'start_guides';
-  info: {
-    singularName: 'start-guide';
-    pluralName: 'start-guides';
-    displayName: 'startGuide';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    guide: Attribute.Component<
-      'style-guide-component.style-guide-component',
-      true
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::start-guide.start-guide',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::start-guide.start-guide',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiSupportSupport extends Schema.CollectionType {
   collectionName: 'supports';
   info: {
@@ -1207,7 +1173,6 @@ declare module '@strapi/types' {
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::project.project': ApiProjectProject;
       'api::seichi.seichi': ApiSeichiSeichi;
-      'api::start-guide.start-guide': ApiStartGuideStartGuide;
       'api::support.support': ApiSupportSupport;
       'api::terms-and-conditions.terms-and-conditions': ApiTermsAndConditionsTermsAndConditions;
     }
