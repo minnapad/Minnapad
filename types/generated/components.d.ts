@@ -83,6 +83,31 @@ export interface AboutUsMissionMissonCard extends Schema.Component {
   };
 }
 
+export interface CareerBenifitsCareerBenifits extends Schema.Component {
+  collectionName: 'components_career_benifits_career_benifits';
+  info: {
+    displayName: 'careerBenifits';
+  };
+  attributes: {
+    title: Attribute.String;
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    description: Attribute.RichText;
+  };
+}
+
+export interface CareerJobOpeningsJobOpenings extends Schema.Component {
+  collectionName: 'components_job_openings_job_openings';
+  info: {
+    displayName: 'careerJobOpenings';
+    description: '';
+  };
+  attributes: {
+    department: Attribute.String;
+    role: Attribute.String;
+    location: Attribute.String;
+  };
+}
+
 export interface ConceptsConcepts extends Schema.Component {
   collectionName: 'components_concepts_concepts';
   info: {
@@ -195,6 +220,8 @@ declare module '@strapi/types' {
       'about-us-hero.hero-section': AboutUsHeroHeroSection;
       'about-us-mission.missions': AboutUsMissionMissions;
       'about-us-mission.misson-card': AboutUsMissionMissonCard;
+      'career-benifits.career-benifits': CareerBenifitsCareerBenifits;
+      'career-job-openings.job-openings': CareerJobOpeningsJobOpenings;
       'concepts.concepts': ConceptsConcepts;
       'get-in-touch.get-in-touch': GetInTouchGetInTouch;
       'get-in-touch.support': GetInTouchSupport;

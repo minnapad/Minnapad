@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_job_openings_job_openings",
+  "info": {
+    "displayName": "careerJobOpenings",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "department": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    }
+  }
+}
