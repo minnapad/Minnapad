@@ -48,12 +48,6 @@
       "repeatable": false,
       "component": "home-join-the-community.community-benefits"
     },
-    "collaborations": {
-      "displayName": "Collaborate with the legends",
-      "type": "component",
-      "repeatable": false,
-      "component": "home-join-the-community.collaborate-with-the-legends"
-    },
     "teaser": {
       "displayName": "Teaser",
       "type": "component",
@@ -84,6 +78,11 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "collaborations": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-join-the-community.collaborate-with-the-legends"
     }
   }
 }
