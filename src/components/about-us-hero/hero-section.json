@@ -13,9 +13,6 @@
     "description": {
       "type": "text"
     },
-    "subTitle": {
-      "type": "text"
-    },
     "banner": {
       "type": "media",
       "multiple": false,
@@ -26,6 +23,9 @@
         "videos",
         "audios"
       ]
+    },
+    "subTitle": {
+      "type": "richtext"
     }
   }
 }

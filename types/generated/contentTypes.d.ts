@@ -945,6 +945,36 @@ export interface ApiKeijiKeiji extends Schema.SingleType {
   };
 }
 
+export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
+  collectionName: 'privacy_policies';
+  info: {
+    singularName: 'privacy-policy';
+    pluralName: 'privacy-policies';
+    displayName: 'PrivacyPolicy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    privacypolicy: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProjectProject extends Schema.CollectionType {
   collectionName: 'projects';
   info: {
@@ -1045,6 +1075,71 @@ export interface ApiSeichiSeichi extends Schema.SingleType {
   };
 }
 
+export interface ApiSupportSupport extends Schema.CollectionType {
+  collectionName: 'supports';
+  info: {
+    singularName: 'support';
+    pluralName: 'supports';
+    displayName: 'Support';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    leftMenuHeader: Attribute.String;
+    leftMenuHeaderDescription: Attribute.String;
+    contactSuportBtnDescription: Attribute.String;
+    FAQ: Attribute.Component<'faq.faq', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::support.support',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::support.support',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTermsAndConditionsTermsAndConditions
+  extends Schema.SingleType {
+  collectionName: 'termsandconditions';
+  info: {
+    singularName: 'terms-and-conditions';
+    pluralName: 'termsandconditions';
+    displayName: 'TermsAndConditions';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    TermsAndConditions: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::terms-and-conditions.terms-and-conditions',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::terms-and-conditions.terms-and-conditions',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1067,8 +1162,11 @@ declare module '@strapi/types' {
       'api::career.career': ApiCareerCareer;
       'api::concept.concept': ApiConceptConcept;
       'api::keiji.keiji': ApiKeijiKeiji;
+      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::project.project': ApiProjectProject;
       'api::seichi.seichi': ApiSeichiSeichi;
+      'api::support.support': ApiSupportSupport;
+      'api::terms-and-conditions.terms-and-conditions': ApiTermsAndConditionsTermsAndConditions;
     }
   }
 }

@@ -52,8 +52,8 @@ export interface AboutUsHeroHeroSection extends Schema.Component {
   attributes: {
     title: Attribute.String;
     description: Attribute.Text;
-    subTitle: Attribute.Text;
     banner: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    subTitle: Attribute.RichText;
   };
 }
 
@@ -115,6 +115,14 @@ export interface ConceptsConcepts extends Schema.Component {
   };
   attributes: {
     Discription: Attribute.RichText;
+export interface FaqFaq extends Schema.Component {
+  collectionName: 'components_faq_faqs';
+  info: {
+    displayName: 'FAQ';
+  };
+  attributes: {
+    Question: Attribute.Text;
+    Answer: Attribute.RichText;
   };
 }
 
@@ -223,6 +231,7 @@ declare module '@strapi/types' {
       'career-benifits.career-benifits': CareerBenifitsCareerBenifits;
       'career-job-openings.job-openings': CareerJobOpeningsJobOpenings;
       'concepts.concepts': ConceptsConcepts;
+      'faq.faq': FaqFaq;
       'get-in-touch.get-in-touch': GetInTouchGetInTouch;
       'get-in-touch.support': GetInTouchSupport;
       'head-quarters.head-quarters': HeadQuartersHeadQuarters;
