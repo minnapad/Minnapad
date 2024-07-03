@@ -95,6 +95,28 @@ export interface CareerBenifitsCareerBenifits extends Schema.Component {
   };
 }
 
+export interface CareerOpeningsCareerOpenings extends Schema.Component {
+  collectionName: 'components_career_openings_career_openings';
+  info: {
+    displayName: 'careerOpenings';
+  };
+  attributes: {
+    role: Attribute.String;
+    location: Attribute.String;
+  };
+}
+
+export interface CareerOpertunitiesCareerOpertunities extends Schema.Component {
+  collectionName: 'components_career_opertunities_career_opertunities';
+  info: {
+    displayName: 'careerOpertunities';
+  };
+  attributes: {
+    department: Attribute.String;
+    opertunities: Attribute.Component<'career-openings.career-openings', true>;
+  };
+}
+
 export interface ConceptsConcepts extends Schema.Component {
   collectionName: 'components_concepts_concepts';
   info: {
@@ -219,6 +241,8 @@ declare module '@strapi/types' {
       'about-us-mission.missions': AboutUsMissionMissions;
       'about-us-mission.misson-card': AboutUsMissionMissonCard;
       'career-benifits.career-benifits': CareerBenifitsCareerBenifits;
+      'career-openings.career-openings': CareerOpeningsCareerOpenings;
+      'career-opertunities.career-opertunities': CareerOpertunitiesCareerOpertunities;
       'concepts.concepts': ConceptsConcepts;
       'faq.faq': FaqFaq;
       'get-in-touch.get-in-touch': GetInTouchGetInTouch;
