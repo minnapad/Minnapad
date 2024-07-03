@@ -843,12 +843,12 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
     partners: Attribute.Component<'partners.partners'>;
     featured: Attribute.Component<'home-featured.featured'>;
     communityBenefits: Attribute.Component<'home-join-the-community.community-benefits'>;
-    collaborations: Attribute.Component<'home-join-the-community.collaborate-with-the-legends'>;
     teaser: Attribute.Component<'home-teaser.teaser'>;
     joinLegends: Attribute.Component<'home-join-legends.join-legends'>;
     oneMembership: Attribute.Component<'membership-benefits.one-membership-benefits'>;
     twoOrMoreMembershipBenefits: Attribute.Component<'home-two-or-more-memberships.two-or-more-membership-benefits'>;
     background: Attribute.Media<'images'>;
+    collaborations: Attribute.Component<'home-join-the-community.collaborate-with-the-legends'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
