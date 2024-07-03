@@ -6,9 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "department": {
-      "type": "string"
-    },
     "role": {
       "type": "string"
     },

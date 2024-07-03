@@ -4,7 +4,8 @@
   "info": {
     "singularName": "career",
     "pluralName": "careers",
-    "displayName": "career"
+    "displayName": "career",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -28,10 +29,10 @@
     "jobOpeningTitle": {
       "type": "string"
     },
-    "jobOpenings": {
+    "opeings": {
       "type": "component",
       "repeatable": true,
-      "component": "career-job-openings.job-openings"
+      "component": "career-job-opertunities.career-job-opertunities"
     }
   }
 }

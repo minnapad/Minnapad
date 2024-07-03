@@ -831,6 +831,7 @@ export interface ApiCareerCareer extends Schema.SingleType {
     singularName: 'career';
     pluralName: 'careers';
     displayName: 'career';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -844,7 +845,10 @@ export interface ApiCareerCareer extends Schema.SingleType {
       true
     >;
     jobOpeningTitle: Attribute.String;
-    jobOpenings: Attribute.Component<'career-job-openings.job-openings', true>;
+    opeings: Attribute.Component<
+      'career-job-opertunities.career-job-opertunities',
+      true
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

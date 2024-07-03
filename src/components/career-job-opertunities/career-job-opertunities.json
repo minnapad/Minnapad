@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_career_job_opertunities_career_job_opertunities",
+  "info": {
+    "displayName": "careerJobOpertunities",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "department": {
+      "type": "string"
+    },
+    "openings": {
+      "type": "component",
+      "repeatable": true,
+      "component": "career-job-openings.job-openings"
+    }
+  }
+}
