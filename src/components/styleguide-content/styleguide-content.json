@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_styleguide_content_styleguide_contents",
+  "info": {
+    "displayName": "styleguideContent"
+  },
+  "options": {},
+  "attributes": {
+    "rules": {
+      "type": "richtext"
+    }
+  }
+}

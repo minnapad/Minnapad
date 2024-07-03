@@ -231,6 +231,30 @@ export interface ProjectSocialLinksProjectSocialLinks extends Schema.Component {
   };
 }
 
+export interface StyleGuideStyleGuide extends Schema.Component {
+  collectionName: 'components_style_guide_style_guides';
+  info: {
+    displayName: 'styleGuide';
+  };
+  attributes: {
+    tile: Attribute.String;
+    guideLines: Attribute.Component<
+      'styleguide-content.styleguide-content',
+      true
+    >;
+  };
+}
+
+export interface StyleguideContentStyleguideContent extends Schema.Component {
+  collectionName: 'components_styleguide_content_styleguide_contents';
+  info: {
+    displayName: 'styleguideContent';
+  };
+  attributes: {
+    rules: Attribute.RichText;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -252,6 +276,8 @@ declare module '@strapi/types' {
       'project-benifits.project-benifits': ProjectBenifitsProjectBenifits;
       'project-category.project-category': ProjectCategoryProjectCategory;
       'project-social-links.project-social-links': ProjectSocialLinksProjectSocialLinks;
+      'style-guide.style-guide': StyleGuideStyleGuide;
+      'styleguide-content.styleguide-content': StyleguideContentStyleguideContent;
     }
   }
 }

@@ -1083,6 +1083,36 @@ export interface ApiSeichiSeichi extends Schema.SingleType {
   };
 }
 
+export interface ApiStyleGuideLineStyleGuideLine extends Schema.SingleType {
+  collectionName: 'style_guide_lines';
+  info: {
+    singularName: 'style-guide-line';
+    pluralName: 'style-guide-lines';
+    displayName: 'styleGuideLine';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    guide: Attribute.Component<'style-guide.style-guide', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::style-guide-line.style-guide-line',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::style-guide-line.style-guide-line',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSupportSupport extends Schema.CollectionType {
   collectionName: 'supports';
   info: {
@@ -1173,6 +1203,7 @@ declare module '@strapi/types' {
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::project.project': ApiProjectProject;
       'api::seichi.seichi': ApiSeichiSeichi;
+      'api::style-guide-line.style-guide-line': ApiStyleGuideLineStyleGuideLine;
       'api::support.support': ApiSupportSupport;
       'api::terms-and-conditions.terms-and-conditions': ApiTermsAndConditionsTermsAndConditions;
     }
