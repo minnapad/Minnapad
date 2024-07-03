@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_legends_legends",
+  "info": {
+    "displayName": "Legends",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "projects": {
+      "type": "text"
+    },
+    "role": {
+      "type": "string"
+    },
+    "profilePicture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "bio": {
+      "type": "text"
+    },
+    "knownFor": {
+      "type": "string"
+    }
+  }
+}

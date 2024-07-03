@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_home_join_the_community_ip_ownership_and_name_credits",
+  "info": {
+    "displayName": "IP Ownership and name credit"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

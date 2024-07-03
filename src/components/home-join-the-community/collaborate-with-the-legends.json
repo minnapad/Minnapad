@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_home_join_the_community_collaborate_with_the_legends",
+  "info": {
+    "displayName": "Collaborate with the legends"
+  },
+  "options": {},
+  "attributes": {
+    "legend": {
+      "displayName": "Legends",
+      "type": "component",
+      "repeatable": true,
+      "component": "legends.legends"
+    }
+  }
+}
