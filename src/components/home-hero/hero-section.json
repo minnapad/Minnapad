@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_home_hero_hero_sections",
+  "info": {
+    "displayName": "heroSection",
+    "icon": "house"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "richtext"
+    },
+    "subTitle": {
+      "type": "text"
+    },
+    "ctaContent": {
+      "type": "string"
+    },
+    "heroBackground": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

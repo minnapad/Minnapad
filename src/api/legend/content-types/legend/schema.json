@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "legends",
+  "info": {
+    "singularName": "legend",
+    "pluralName": "legends",
+    "displayName": "Legends",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Legend": {
+      "type": "component",
+      "repeatable": true,
+      "component": "legends.legends"
+    }
+  }
+}

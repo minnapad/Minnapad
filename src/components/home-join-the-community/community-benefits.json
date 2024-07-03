@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_home_join_the_community_community_benefits",
+  "info": {
+    "displayName": "communityBenefits"
+  },
+  "options": {},
+  "attributes": {
+    "ipOwnerShip": {
+      "displayName": "IP Ownership and name credit",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-join-the-community.ip-ownership-and-name-credit"
+    },
+    "discounts": {
+      "displayName": "Discounts and rewards",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-join-the-community.discounts-and-rewards"
+    },
+    "newConnections": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-join-the-community.new-connections"
+    },
+    "membership": {
+      "displayName": "Mentorship and paid job opportunities",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-join-the-community.mentorship-and-paid-job-opportunities"
+    }
+  }
+}

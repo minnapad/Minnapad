@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_membership_benefits_membership_benefits",
+  "info": {
+    "displayName": "Membership benefits"
+  },
+  "options": {},
+  "attributes": {
+    "benefit": {
+      "displayName": "benefit",
+      "type": "component",
+      "repeatable": true,
+      "component": "membership-benefits.benefit"
+    }
+  }
+}

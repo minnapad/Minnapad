@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_home_join_the_community_mentorship_and_paid_job_opportunities",
+  "info": {
+    "displayName": "Mentorship and paid job opportunities"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

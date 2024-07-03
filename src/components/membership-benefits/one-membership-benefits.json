@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_membership_benefits_one_membership_benefits",
+  "info": {
+    "displayName": "One Membership Benefits",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "benefit": {
+      "type": "component",
+      "repeatable": true,
+      "component": "membership-benefits.benefit"
+    },
+    "ctaContent": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
