@@ -88,10 +88,11 @@ export interface DetailsDetails extends Schema.Component {
   info: {
     displayName: 'details';
     icon: 'information';
+    description: '';
   };
   attributes: {
     name: Attribute.String;
-    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    logo: Attribute.Media<'images'>;
   };
 }
 
@@ -345,10 +346,12 @@ export interface HomeTeaserTeaser extends Schema.Component {
   collectionName: 'components_home_teaser_teasers';
   info: {
     displayName: 'Teaser';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
     video: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    ctaContent: Attribute.String;
   };
 }
 
@@ -364,7 +367,6 @@ export interface HomeTwoOrMoreMembershipsTwoOrMoreMembershipBenefits
     ctaContent: Attribute.String;
     title: Attribute.String;
     description: Attribute.Text;
-    logo: Attribute.Media<'images'>;
   };
 }
 
@@ -389,10 +391,11 @@ export interface LinkLink extends Schema.Component {
   info: {
     displayName: 'Link';
     icon: 'link';
+    description: '';
   };
   attributes: {
     url: Attribute.String;
-    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    icon: Attribute.String;
   };
 }
 
@@ -431,7 +434,6 @@ export interface MembershipBenefitsOneMembershipBenefits
     ctaContent: Attribute.String;
     title: Attribute.String;
     description: Attribute.Text;
-    logo: Attribute.Media<'images'>;
   };
 }
 

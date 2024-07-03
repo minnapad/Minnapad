@@ -78,11 +78,12 @@
       "component": "home-two-or-more-memberships.two-or-more-membership-benefits"
     },
     "background": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
