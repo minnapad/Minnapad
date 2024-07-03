@@ -83,6 +83,50 @@ export interface AboutUsMissionMissonCard extends Schema.Component {
   };
 }
 
+export interface CareerBenifitsCareerBenifits extends Schema.Component {
+  collectionName: 'components_career_benifits_career_benifits';
+  info: {
+    displayName: 'careerBenifits';
+  };
+  attributes: {
+    title: Attribute.String;
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    description: Attribute.RichText;
+  };
+}
+
+export interface CareerOpeningsCareerOpenings extends Schema.Component {
+  collectionName: 'components_career_openings_career_openings';
+  info: {
+    displayName: 'careerOpenings';
+  };
+  attributes: {
+    role: Attribute.String;
+    location: Attribute.String;
+  };
+}
+
+export interface CareerOpertunitiesCareerOpertunities extends Schema.Component {
+  collectionName: 'components_career_opertunities_career_opertunities';
+  info: {
+    displayName: 'careerOpertunities';
+  };
+  attributes: {
+    department: Attribute.String;
+    opertunities: Attribute.Component<'career-openings.career-openings', true>;
+  };
+}
+
+export interface ConceptsConcepts extends Schema.Component {
+  collectionName: 'components_concepts_concepts';
+  info: {
+    displayName: 'Concepts';
+  };
+  attributes: {
+    Discription: Attribute.RichText;
+  };
+}
+
 export interface DetailsDetails extends Schema.Component {
   collectionName: 'components_details_details';
   info: {
@@ -461,6 +505,71 @@ export interface ProfileProfile extends Schema.Component {
   };
 }
 
+export interface ProjectBenifitsProjectBenifits extends Schema.Component {
+  collectionName: 'components_project_benifits_project_benifits';
+  info: {
+    displayName: 'ProjectBenifits';
+  };
+  attributes: {
+    benifitIcon: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    benifits: Attribute.RichText;
+  };
+}
+
+export interface ProjectCategoryProjectCategory extends Schema.Component {
+  collectionName: 'components_project_category_project_categories';
+  info: {
+    displayName: 'projectCategory';
+    description: '';
+  };
+  attributes: {
+    categoryIcon: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    categoryName: Attribute.String;
+  };
+}
+
+export interface ProjectSocialLinksProjectSocialLinks extends Schema.Component {
+  collectionName: 'components_project_social_links_project_social_links';
+  info: {
+    displayName: 'ProjectSocialLinks';
+  };
+  attributes: {
+    Name: Attribute.RichText;
+  };
+}
+
+export interface StyleGuideStyleGuide extends Schema.Component {
+  collectionName: 'components_style_guide_style_guides';
+  info: {
+    displayName: 'styleGuide';
+  };
+  attributes: {
+    tile: Attribute.String;
+    guideLines: Attribute.Component<
+      'styleguide-content.styleguide-content',
+      true
+    >;
+  };
+}
+
+export interface StyleguideContentStyleguideContent extends Schema.Component {
+  collectionName: 'components_styleguide_content_styleguide_contents';
+  info: {
+    displayName: 'styleguideContent';
+    description: '';
+  };
+  attributes: {
+    rules: Attribute.RichText;
+    rulesImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -480,11 +589,6 @@ declare module '@strapi/types' {
       'get-in-touch.support': GetInTouchSupport;
       'head-quarters.head-quarters': HeadQuartersHeadQuarters;
       'head-quarters.quarter-details': HeadQuartersQuarterDetails;
-      'project-benifits.project-benifits': ProjectBenifitsProjectBenifits;
-      'project-category.project-category': ProjectCategoryProjectCategory;
-      'project-social-links.project-social-links': ProjectSocialLinksProjectSocialLinks;
-      'style-guide.style-guide': StyleGuideStyleGuide;
-      'styleguide-content.styleguide-content': StyleguideContentStyleguideContent;
       'home-featured.featured': HomeFeaturedFeatured;
       'home-hero.hero-section': HomeHeroHeroSection;
       'home-join-legends.join-legends': HomeJoinLegendsJoinLegends;
@@ -509,6 +613,11 @@ declare module '@strapi/types' {
       'membership-benefits.one-membership-benefits': MembershipBenefitsOneMembershipBenefits;
       'partners.partners': PartnersPartners;
       'profile.profile': ProfileProfile;
+      'project-benifits.project-benifits': ProjectBenifitsProjectBenifits;
+      'project-category.project-category': ProjectCategoryProjectCategory;
+      'project-social-links.project-social-links': ProjectSocialLinksProjectSocialLinks;
+      'style-guide.style-guide': StyleGuideStyleGuide;
+      'styleguide-content.styleguide-content': StyleguideContentStyleguideContent;
     }
   }
 }
