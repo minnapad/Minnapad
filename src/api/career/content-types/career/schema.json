@@ -28,6 +28,11 @@
     },
     "jobOpeningTitle": {
       "type": "string"
+    },
+    "opertunities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "career-opertunities.career-opertunities"
     }
   }
 }

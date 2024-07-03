@@ -845,6 +845,10 @@ export interface ApiCareerCareer extends Schema.SingleType {
       true
     >;
     jobOpeningTitle: Attribute.String;
+    opertunities: Attribute.Component<
+      'career-opertunities.career-opertunities',
+      true
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
