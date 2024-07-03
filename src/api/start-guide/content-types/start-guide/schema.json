@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "start_guides",
+  "info": {
+    "singularName": "start-guide",
+    "pluralName": "start-guides",
+    "displayName": "startGuide",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "guide": {
+      "type": "component",
+      "repeatable": true,
+      "component": "style-guide-component.style-guide-component"
+    }
+  }
+}

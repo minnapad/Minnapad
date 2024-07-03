@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_style_guide_component_style_guide_components",
+  "info": {
+    "displayName": "styleGuideComponent"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "styleGuidePoints": {
+      "type": "component",
+      "repeatable": true,
+      "component": "style-guide-content.style-guide-content"
+    }
+  }
+}
