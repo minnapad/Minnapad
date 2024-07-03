@@ -249,9 +249,11 @@ export interface StyleguideContentStyleguideContent extends Schema.Component {
   collectionName: 'components_styleguide_content_styleguide_contents';
   info: {
     displayName: 'styleguideContent';
+    description: '';
   };
   attributes: {
     rules: Attribute.RichText;
+    rulesImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
   };
 }
 
