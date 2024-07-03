@@ -975,6 +975,40 @@ export interface ApiSeichiInafuneSeichiInafune extends Schema.CollectionType {
   };
 }
 
+export interface ApiSupportSupport extends Schema.CollectionType {
+  collectionName: 'supports';
+  info: {
+    singularName: 'support';
+    pluralName: 'supports';
+    displayName: 'Support';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    leftMenuHeader: Attribute.String;
+    leftMenuHeaderDescription: Attribute.String;
+    contactSuportBtnDescription: Attribute.String;
+    FAQ: Attribute.Component<'faq.faq', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::support.support',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::support.support',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTermsAndConditionsTermsAndConditions
   extends Schema.SingleType {
   collectionName: 'termsandconditions';
@@ -1029,6 +1063,7 @@ declare module '@strapi/types' {
       'api::keiji-inafune.keiji-inafune': ApiKeijiInafuneKeijiInafune;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::seichi-inafune.seichi-inafune': ApiSeichiInafuneSeichiInafune;
+      'api::support.support': ApiSupportSupport;
       'api::terms-and-conditions.terms-and-conditions': ApiTermsAndConditionsTermsAndConditions;
     }
   }
