@@ -177,12 +177,13 @@ export interface HomeHeroHeroSection extends Schema.Component {
   info: {
     displayName: 'heroSection';
     icon: 'house';
+    description: '';
   };
   attributes: {
     title: Attribute.RichText;
     subTitle: Attribute.Text;
     ctaContent: Attribute.String;
-    heroBackground: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    heroBgImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
