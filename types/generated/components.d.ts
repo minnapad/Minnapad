@@ -161,6 +161,103 @@ export interface HeadQuartersQuarterDetails extends Schema.Component {
   };
 }
 
+export interface HomeCollabWithLegendsHomeCollab extends Schema.Component {
+  collectionName: 'components_home_collab_with_legends_home_collabs';
+  info: {
+    displayName: 'homeCollab';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    homeCollabLegends: Attribute.Component<'legends.legends', true>;
+  };
+}
+
+export interface HomeDiscountsAndRewardsHomeDiscountsAndRewards
+  extends Schema.Component {
+  collectionName: 'components_home_discounts_and_rewards_home_discounts_and_rewards';
+  info: {
+    displayName: 'homeDiscountsAndRewards';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
+export interface HomeFeaturedHomeFeatured extends Schema.Component {
+  collectionName: 'components_home_featured_home_featureds';
+  info: {
+    displayName: 'homeFeatured';
+    icon: 'feather';
+  };
+  attributes: {
+    details: Attribute.Component<'details.details', true>;
+  };
+}
+
+export interface HomeHeroHomeHero extends Schema.Component {
+  collectionName: 'components_home_hero_home_heroes';
+  info: {
+    displayName: 'homeHero';
+    icon: 'information';
+  };
+  attributes: {
+    titleText: Attribute.String;
+    titleSubText: Attribute.String;
+    promoDescription: Attribute.String;
+    heroBanner: Attribute.Media<'images'>;
+    heroSeichiImage: Attribute.Media<'images'>;
+    heroKeijiImage: Attribute.Media<'images'>;
+    heroLegendsCtaContent: Attribute.String;
+    heroLearnMoreCtaContent: Attribute.String;
+  };
+}
+
+export interface HomeHowToJoinProjectsHomeHowToJoin extends Schema.Component {
+  collectionName: 'components_home_how_to_join_projects_home_how_to_joins';
+  info: {
+    displayName: 'homeHowToJoin';
+  };
+  attributes: {
+    title: Attribute.String;
+    step1: Attribute.Component<'home-join-legends.step-1'>;
+    step2: Attribute.Component<'home-join-legends.step-2'>;
+    step3: Attribute.Component<'home-join-legends.step-3'>;
+  };
+}
+
+export interface HomeIpOwnershipAndNameCreditIpOwnershipAndNameCredit
+  extends Schema.Component {
+  collectionName: 'components_home_ip_ownership_and_name_credit_ip_ownership_and_name_credits';
+  info: {
+    displayName: 'IPOwnershipAndNameCredit';
+    icon: 'plus';
+  };
+  attributes: {
+    title: Attribute.String;
+    infoImage: Attribute.Media<'images'>;
+    description: Attribute.Text;
+  };
+}
+
+export interface HomeJoinCommunitySectionHomeJoinTheCommunity
+  extends Schema.Component {
+  collectionName: 'components_home_join_community_section_home_join_the_communities';
+  info: {
+    displayName: 'homeJoinTheCommunity';
+    icon: 'plus';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    ownerShipBenefits: Attribute.Component<'home-ip-ownership-and-name-credit.ip-ownership-and-name-credit'>;
+    discountsAndRewards: Attribute.Component<'home-discounts-and-rewards.home-discounts-and-rewards'>;
+    newConnections: Attribute.Component<'home-new-connections.new-connections'>;
+    mentorshipAndJobs: Attribute.Component<'home-mentorship-and-jobs.home-mentorship-and-jobs'>;
+  };
+}
+
 export interface HomeJoinLegendsStep1 extends Schema.Component {
   collectionName: 'components_home_join_legends_step_1s';
   info: {
@@ -200,14 +297,28 @@ export interface HomeJoinLegendsStep3 extends Schema.Component {
   };
 }
 
-export interface HomeSocialLinksSocialLinks extends Schema.Component {
-  collectionName: 'components_home_social_links_social_links';
+export interface HomeMentorshipAndJobsHomeMentorshipAndJobs
+  extends Schema.Component {
+  collectionName: 'components_home_mentorship_and_jobs_home_mentorship_and_jobs';
   info: {
-    displayName: 'socialLinks';
-    icon: 'link';
+    displayName: 'homeMentorshipAndJobs';
+    icon: 'earth';
   };
   attributes: {
-    link: Attribute.Component<'link.link', true>;
+    title: Attribute.String;
+    infoImage: Attribute.Media<'images'>;
+    description: Attribute.Text;
+  };
+}
+
+export interface HomeNewConnectionsNewConnections extends Schema.Component {
+  collectionName: 'components_home_new_connections_new_connections';
+  info: {
+    displayName: 'newConnections';
+    icon: 'oneWay';
+  };
+  attributes: {
+    title: Attribute.String;
   };
 }
 
@@ -237,6 +348,8 @@ export interface LegendsLegends extends Schema.Component {
     profilePicture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     bio: Attribute.Text;
     knownFor: Attribute.String;
+    isUpcoming: Attribute.Boolean;
+    upcomingDate: Attribute.String;
   };
 }
 
@@ -250,6 +363,7 @@ export interface LinkLink extends Schema.Component {
   attributes: {
     url: Attribute.String;
     icon: Attribute.String;
+    name: Attribute.String;
   };
 }
 
@@ -263,6 +377,21 @@ export interface MembershipBenefitsBenefit extends Schema.Component {
     description: Attribute.Text;
     isEligible: Attribute.Boolean;
     Importance: Attribute.Enumeration<['low', 'medium', 'high', 'neutral']>;
+    logo: Attribute.String;
+  };
+}
+
+export interface MembershipDetailsMembershipDetails extends Schema.Component {
+  collectionName: 'components_membership_details_membership_details';
+  info: {
+    displayName: 'membershipDetails';
+    icon: 'information';
+  };
+  attributes: {
+    benefit: Attribute.Component<'membership-benefits.benefit', true>;
+    logo: Attribute.String;
+    title: Attribute.String;
+    ctaContent: Attribute.String;
   };
 }
 
@@ -289,6 +418,16 @@ export interface ProfileProfile extends Schema.Component {
   };
 }
 
+export interface SocialLinksSocialLinks extends Schema.Component {
+  collectionName: 'components_social_links_social_links';
+  info: {
+    displayName: 'socialLinks';
+  };
+  attributes: {
+    link: Attribute.Component<'link.link', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -304,16 +443,26 @@ declare module '@strapi/types' {
       'get-in-touch.support': GetInTouchSupport;
       'head-quarters.head-quarters': HeadQuartersHeadQuarters;
       'head-quarters.quarter-details': HeadQuartersQuarterDetails;
+      'home-collab-with-legends.home-collab': HomeCollabWithLegendsHomeCollab;
+      'home-discounts-and-rewards.home-discounts-and-rewards': HomeDiscountsAndRewardsHomeDiscountsAndRewards;
+      'home-featured.home-featured': HomeFeaturedHomeFeatured;
+      'home-hero.home-hero': HomeHeroHomeHero;
+      'home-how-to-join-projects.home-how-to-join': HomeHowToJoinProjectsHomeHowToJoin;
+      'home-ip-ownership-and-name-credit.ip-ownership-and-name-credit': HomeIpOwnershipAndNameCreditIpOwnershipAndNameCredit;
+      'home-join-community-section.home-join-the-community': HomeJoinCommunitySectionHomeJoinTheCommunity;
       'home-join-legends.step-1': HomeJoinLegendsStep1;
       'home-join-legends.step-2': HomeJoinLegendsStep2;
       'home-join-legends.step-3': HomeJoinLegendsStep3;
-      'home-social-links.social-links': HomeSocialLinksSocialLinks;
+      'home-mentorship-and-jobs.home-mentorship-and-jobs': HomeMentorshipAndJobsHomeMentorshipAndJobs;
+      'home-new-connections.new-connections': HomeNewConnectionsNewConnections;
       'home-teaser.teaser': HomeTeaserTeaser;
       'legends.legends': LegendsLegends;
       'link.link': LinkLink;
       'membership-benefits.benefit': MembershipBenefitsBenefit;
+      'membership-details.membership-details': MembershipDetailsMembershipDetails;
       'partners.partners': PartnersPartners;
       'profile.profile': ProfileProfile;
+      'social-links.social-links': SocialLinksSocialLinks;
     }
   }
 }

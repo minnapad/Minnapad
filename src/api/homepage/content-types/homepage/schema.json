@@ -1,0 +1,56 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-hero.home-hero"
+    },
+    "homeSocialLinks": {
+      "type": "component",
+      "repeatable": false,
+      "component": "social-links.social-links"
+    },
+    "partners": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partners.partners"
+    },
+    "featured": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-featured.home-featured"
+    },
+    "joinTheCommunity": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-join-community-section.home-join-the-community"
+    },
+    "memberships": {
+      "type": "component",
+      "repeatable": true,
+      "component": "membership-details.membership-details"
+    },
+    "legends": {
+      "type": "component",
+      "repeatable": true,
+      "component": "legends.legends"
+    },
+    "howToJoinProjects": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-how-to-join-projects.home-how-to-join"
+    }
+  }
+}

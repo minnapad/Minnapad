@@ -31,6 +31,12 @@
     },
     "knownFor": {
       "type": "string"
+    },
+    "isUpcoming": {
+      "type": "boolean"
+    },
+    "upcomingDate": {
+      "type": "string"
     }
   }
 }

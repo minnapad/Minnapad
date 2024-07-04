@@ -20,6 +20,9 @@
         "high",
         "neutral"
       ]
+    },
+    "logo": {
+      "type": "string"
     }
   }
 }

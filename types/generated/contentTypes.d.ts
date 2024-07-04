@@ -825,6 +825,47 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
   };
 }
 
+export interface ApiHomepageHomepage extends Schema.SingleType {
+  collectionName: 'homepages';
+  info: {
+    singularName: 'homepage';
+    pluralName: 'homepages';
+    displayName: 'Homepage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    heroSection: Attribute.Component<'home-hero.home-hero'>;
+    homeSocialLinks: Attribute.Component<'social-links.social-links'>;
+    partners: Attribute.Component<'partners.partners'>;
+    featured: Attribute.Component<'home-featured.home-featured'>;
+    joinTheCommunity: Attribute.Component<'home-join-community-section.home-join-the-community'>;
+    memberships: Attribute.Component<
+      'membership-details.membership-details',
+      true
+    >;
+    legends: Attribute.Component<'legends.legends', true>;
+    howToJoinProjects: Attribute.Component<'home-how-to-join-projects.home-how-to-join'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiKeijiKeiji extends Schema.SingleType {
   collectionName: 'keijis';
   info: {
@@ -1090,6 +1131,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::about-us.about-us': ApiAboutUsAboutUs;
+      'api::homepage.homepage': ApiHomepageHomepage;
       'api::keiji.keiji': ApiKeijiKeiji;
       'api::keiji-inafune.keiji-inafune': ApiKeijiInafuneKeijiInafune;
       'api::legend.legend': ApiLegendLegend;
