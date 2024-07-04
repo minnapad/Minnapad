@@ -312,6 +312,16 @@ export interface JoinProjectsStep3 extends Schema.Component {
   };
 }
 
+export interface LatestNewsLatestNews extends Schema.Component {
+  collectionName: 'components_latest_news_latest_news';
+  info: {
+    displayName: 'latestNews';
+  };
+  attributes: {
+    title: Attribute.String;
+  };
+}
+
 export interface LegendsProjectsLegendsProjects extends Schema.Component {
   collectionName: 'components_legends_projects_legends_projects';
   info: {
@@ -583,6 +593,7 @@ declare module '@strapi/types' {
       'join-projects.step1': JoinProjectsStep1;
       'join-projects.step2': JoinProjectsStep2;
       'join-projects.step3': JoinProjectsStep3;
+      'latest-news.latest-news': LatestNewsLatestNews;
       'legends-projects.legends-projects': LegendsProjectsLegendsProjects;
       'legends.legends': LegendsLegends;
       'link.link': LinkLink;

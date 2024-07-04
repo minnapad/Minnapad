@@ -57,6 +57,12 @@
       "type": "component",
       "repeatable": false,
       "component": "legends-projects.legends-projects"
+    },
+    "latestNews": {
+      "displayName": "latestNews",
+      "type": "component",
+      "repeatable": false,
+      "component": "latest-news.latest-news"
     }
   }
 }
