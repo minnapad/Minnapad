@@ -262,7 +262,8 @@ export interface HomeHeroHomeHero extends Schema.Component {
 export interface HomeHowToJoinProjectsHomeHowToJoin extends Schema.Component {
   collectionName: 'components_home_how_to_join_projects_home_how_to_joins';
   info: {
-    displayName: 'homeHowToJoin';
+    displayName: 'homeJoinProjectsSection';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
