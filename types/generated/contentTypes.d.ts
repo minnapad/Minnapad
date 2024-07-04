@@ -877,6 +877,7 @@ export interface ApiConceptConcept extends Schema.SingleType {
     singularName: 'concept';
     pluralName: 'concepts';
     displayName: 'Concept';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -885,8 +886,9 @@ export interface ApiConceptConcept extends Schema.SingleType {
     Title: Attribute.String;
     subTitle: Attribute.String;
     mainTitle: Attribute.String;
-    Discription: Attribute.Component<'concepts.concepts', true>;
+    Discription1: Attribute.Component<'concepts.concepts', true>;
     link: Attribute.RichText;
+    description2: Attribute.Component<'concepts.concepts', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

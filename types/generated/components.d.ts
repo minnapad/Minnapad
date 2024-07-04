@@ -513,6 +513,16 @@ export interface ProjectSocialLinksProjectSocialLinks extends Schema.Component {
   };
 }
 
+export interface SocialLinksSocialLinks extends Schema.Component {
+  collectionName: 'components_social_links_social_links';
+  info: {
+    displayName: 'socialLinks';
+  };
+  attributes: {
+    link: Attribute.Component<'link.link', true>;
+  };
+}
+
 export interface StyleGuideStyleGuide extends Schema.Component {
   collectionName: 'components_style_guide_style_guides';
   info: {
@@ -535,14 +545,7 @@ export interface StyleguideContentStyleguideContent extends Schema.Component {
   };
   attributes: {
     rules: Attribute.RichText;
-    rulesImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;}}
-export interface SocialLinksSocialLinks extends Schema.Component {
-  collectionName: 'components_social_links_social_links';
-  info: {
-    displayName: 'socialLinks';
-  };
-  attributes: {
-    link: Attribute.Component<'link.link', true>;
+    rulesImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
   };
 }
 
@@ -588,9 +591,9 @@ declare module '@strapi/types' {
       'project-benifits.project-benifits': ProjectBenifitsProjectBenifits;
       'project-category.project-category': ProjectCategoryProjectCategory;
       'project-social-links.project-social-links': ProjectSocialLinksProjectSocialLinks;
+      'social-links.social-links': SocialLinksSocialLinks;
       'style-guide.style-guide': StyleGuideStyleGuide;
       'styleguide-content.styleguide-content': StyleguideContentStyleguideContent;
-      'social-links.social-links': SocialLinksSocialLinks;
     }
   }
 }
