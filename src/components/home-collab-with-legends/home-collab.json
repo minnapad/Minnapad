@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_home_collab_with_legends_home_collabs",
+  "info": {
+    "displayName": "homeCollab",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "homeCollabLegends": {
+      "type": "component",
+      "repeatable": true,
+      "component": "legends.legends"
+    }
+  }
+}

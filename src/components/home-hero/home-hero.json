@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_home_hero_home_heroes",
+  "info": {
+    "displayName": "homeHero",
+    "icon": "information"
+  },
+  "options": {},
+  "attributes": {
+    "titleText": {
+      "type": "string"
+    },
+    "titleSubText": {
+      "type": "string"
+    },
+    "promoDescription": {
+      "type": "string"
+    },
+    "heroBanner": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "heroSeichiImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "heroKeijiImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "heroLegendsCtaContent": {
+      "type": "string"
+    },
+    "heroLearnMoreCtaContent": {
+      "type": "string"
+    }
+  }
+}
