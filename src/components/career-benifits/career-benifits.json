@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_career_benifits_career_benifits",
+  "info": {
+    "displayName": "careerBenifits"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

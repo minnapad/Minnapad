@@ -825,6 +825,88 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
   };
 }
 
+export interface ApiCareerCareer extends Schema.SingleType {
+  collectionName: 'careers';
+  info: {
+    singularName: 'career';
+    pluralName: 'careers';
+    displayName: 'career';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    subTitle: Attribute.String;
+    description: Attribute.RichText;
+    careerBenifits: Attribute.Component<
+      'career-benifits.career-benifits',
+      true
+    >;
+    jobOpeningTitle: Attribute.String;
+    opertunities: Attribute.Component<
+      'career-opertunities.career-opertunities',
+      true
+    >;
+    carrerImage: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::career.career',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::career.career',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiConceptConcept extends Schema.SingleType {
+  collectionName: 'concepts';
+  info: {
+    singularName: 'concept';
+    pluralName: 'concepts';
+    displayName: 'Concept';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    subTitle: Attribute.String;
+    mainTitle: Attribute.String;
+    Discription1: Attribute.Component<'concepts.concepts', true>;
+    link: Attribute.RichText;
+    description2: Attribute.Component<'concepts.concepts', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::concept.concept',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::concept.concept',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomepageHomepage extends Schema.SingleType {
   collectionName: 'homepages';
   info: {
@@ -883,7 +965,6 @@ export interface ApiKeijiKeiji extends Schema.SingleType {
     legendTopSubTitle: Attribute.String;
     legendBottomSubTitle: Attribute.String;
     lengendDiscription: Attribute.RichText;
-    legendMemerShipTitle: Attribute.RichText;
     legendMemberShipGuidlinePoints1: Attribute.RichText;
     legendMemberShipGuidlinePoints2: Attribute.RichText;
     legendMemberShipGuidlinePoints3: Attribute.RichText;
@@ -893,6 +974,10 @@ export interface ApiKeijiKeiji extends Schema.SingleType {
     praposalRule2: Attribute.RichText;
     praposalRule3: Attribute.RichText;
     imageText: Attribute.RichText;
+    benifits: Attribute.String;
+    imageContent: Attribute.String;
+    buyNowText: Attribute.String;
+    buyOnMarketPlaceText: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -904,51 +989,6 @@ export interface ApiKeijiKeiji extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::keiji.keiji',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiKeijiInafuneKeijiInafune extends Schema.CollectionType {
-  collectionName: 'keiji_inafunes';
-  info: {
-    singularName: 'keiji-inafune';
-    pluralName: 'keiji-inafunes';
-    displayName: 'keiji inafune';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    legendTitle: Attribute.String & Attribute.Required & Attribute.Unique;
-    legendTopSubTitle: Attribute.String;
-    legendBottomSubTitle: Attribute.String;
-    lengendDiscription: Attribute.RichText;
-    legendMemerShipTitle: Attribute.Blocks;
-    coinName: Attribute.String;
-    coinInfo: Attribute.String;
-    praposalRule1: Attribute.Blocks;
-    legendProposalCountText: Attribute.String;
-    legendMemberShipGuidlinePoints1: Attribute.Blocks;
-    legendMemberShipGuidlinePoints2: Attribute.Blocks;
-    legendMemberShipGuidlinePoints3: Attribute.Blocks;
-    praposalRule2: Attribute.Blocks;
-    praposalRule3: Attribute.Blocks;
-    missions: Attribute.JSON;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::keiji-inafune.keiji-inafune',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::keiji-inafune.keiji-inafune',
       'oneToOne',
       'admin::user'
     > &
@@ -1071,26 +1111,81 @@ export interface ApiProjectProject extends Schema.CollectionType {
 export interface ApiSeichiInafuneSeichiInafune extends Schema.CollectionType {
   collectionName: 'seichi_inafunes';
   info: {
-    singularName: 'seichi-inafune';
-    pluralName: 'seichi-inafunes';
-    displayName: 'seichi inafune';
+    singularName: 'seichi';
+    pluralName: 'seichis';
+    displayName: 'Seiichi';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    legendName: Attribute.String;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    legendTitle: Attribute.String;
+    legendTopSubTitle: Attribute.String;
+    legendBottomSubTitle: Attribute.String;
+    lengendDiscription: Attribute.RichText;
+    legendMemberShipGuidlinePoints1: Attribute.RichText;
+    legendMemberShipGuidlinePoints2: Attribute.RichText;
+    legendMemberShipGuidlinePoints3: Attribute.RichText;
+    coinName: Attribute.String;
+    coinInfo: Attribute.String;
+    praposalRule1: Attribute.RichText;
+    praposalRule2: Attribute.RichText;
+    praposalRule3: Attribute.RichText;
+    imageText: Attribute.RichText;
+    benifits: Attribute.String;
+    imageContent: Attribute.String;
+    buyNowText: Attribute.String;
+    buyOnMarketPlaceText: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::seichi-inafune.seichi-inafune',
+      'api::seichi.seichi',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::seichi-inafune.seichi-inafune',
+      'api::seichi.seichi',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiStyleGuideLineStyleGuideLine extends Schema.SingleType {
+  collectionName: 'style_guide_lines';
+  info: {
+    singularName: 'style-guide-line';
+    pluralName: 'style-guide-lines';
+    displayName: 'styleGuideLine';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    guide: Attribute.Component<'style-guide.style-guide', true>;
+    startGuideTitle: Attribute.RichText;
+    startGuideImage: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    buyMemberShipButton: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::style-guide-line.style-guide-line',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::style-guide-line.style-guide-line',
       'oneToOne',
       'admin::user'
     > &
@@ -1182,9 +1277,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::about-us.about-us': ApiAboutUsAboutUs;
+      'api::career.career': ApiCareerCareer;
+      'api::concept.concept': ApiConceptConcept;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::keiji.keiji': ApiKeijiKeiji;
-      'api::keiji-inafune.keiji-inafune': ApiKeijiInafuneKeijiInafune;
       'api::legend.legend': ApiLegendLegend;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::project.project': ApiProjectProject;

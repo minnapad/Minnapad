@@ -4,41 +4,56 @@
   "info": {
     "singularName": "project",
     "pluralName": "projects",
-    "displayName": "projects",
-    "description": ""
+    "displayName": "Project"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "projectLogo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "projectBanner": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "projectName": {
       "type": "string"
     },
-    "banner": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+    "projectSubTitle": {
+      "type": "string"
     },
-    "logo": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+    "projectDiscription": {
+      "type": "string"
     },
-    "legends": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::legend.legend",
-      "mappedBy": "projects"
+    "ProjectCategory": {
+      "type": "component",
+      "repeatable": true,
+      "component": "project-category.project-category"
     },
-    "description": {
-      "type": "richtext"
+    "PrjoectSocialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "project-social-links.project-social-links"
+    },
+    "ProjectBenifits": {
+      "type": "component",
+      "repeatable": true,
+      "component": "project-benifits.project-benifits"
     }
   }
 }

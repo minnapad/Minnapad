@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_project_benifits_project_benifits",
+  "info": {
+    "displayName": "ProjectBenifits"
+  },
+  "options": {},
+  "attributes": {
+    "benifitIcon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "benifits": {
+      "type": "richtext"
+    }
+  }
+}
