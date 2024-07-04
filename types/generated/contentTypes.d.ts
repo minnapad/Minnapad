@@ -952,12 +952,14 @@ export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
     singularName: 'privacy-policy';
     pluralName: 'privacy-policies';
     displayName: 'PrivacyPolicy';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     privacypolicy: Attribute.RichText;
+    privacypolicyHeader: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1047,12 +1049,14 @@ export interface ApiTermsAndConditionsTermsAndConditions
     singularName: 'terms-and-conditions';
     pluralName: 'termsandconditions';
     displayName: 'TermsAndConditions';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     TermsAndConditions: Attribute.RichText;
+    TermsAndConditionsHeader: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
