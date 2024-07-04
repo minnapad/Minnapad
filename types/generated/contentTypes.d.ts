@@ -825,47 +825,6 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
   };
 }
 
-export interface ApiHomepageHomepage extends Schema.SingleType {
-  collectionName: 'homepages';
-  info: {
-    singularName: 'homepage';
-    pluralName: 'homepages';
-    displayName: 'Homepage';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    heroSection: Attribute.Component<'home-hero.hero-section'>;
-    socialLinks: Attribute.Component<'home-social-links.social-links'>;
-    profile: Attribute.Component<'profile.profile', true>;
-    partners: Attribute.Component<'partners.partners'>;
-    featured: Attribute.Component<'home-featured.featured'>;
-    communityBenefits: Attribute.Component<'home-join-the-community.community-benefits'>;
-    teaser: Attribute.Component<'home-teaser.teaser'>;
-    joinLegends: Attribute.Component<'home-join-legends.join-legends'>;
-    oneMembership: Attribute.Component<'membership-benefits.one-membership-benefits'>;
-    twoOrMoreMembershipBenefits: Attribute.Component<'home-two-or-more-memberships.two-or-more-membership-benefits'>;
-    background: Attribute.Media<'images'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::homepage.homepage',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::homepage.homepage',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiKeijiKeiji extends Schema.SingleType {
   collectionName: 'keijis';
   info: {
@@ -1131,7 +1090,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::about-us.about-us': ApiAboutUsAboutUs;
-      'api::homepage.homepage': ApiHomepageHomepage;
       'api::keiji.keiji': ApiKeijiKeiji;
       'api::keiji-inafune.keiji-inafune': ApiKeijiInafuneKeijiInafune;
       'api::legend.legend': ApiLegendLegend;
