@@ -2,7 +2,8 @@
   "collectionName": "components_membership_details_membership_details",
   "info": {
     "displayName": "membershipDetails",
-    "icon": "information"
+    "icon": "information",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -19,6 +20,9 @@
     },
     "ctaContent": {
       "type": "string"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

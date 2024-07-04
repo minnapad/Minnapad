@@ -927,10 +927,10 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
       'membership-details.membership-details',
       true
     >;
-    legends: Attribute.Component<'legends.legends', true>;
     joinProjectSteps: Attribute.Component<'join-projects.join-projects'>;
     joinCommunity: Attribute.Component<'our-community.join-community'>;
     teaser: Attribute.Component<'home-teaser.teaser'>;
+    legendsProjects: Attribute.Component<'legends-projects.legends-projects'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
