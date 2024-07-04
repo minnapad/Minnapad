@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_home_join_legends_step_2s",
+  "info": {
+    "displayName": "Step 2"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "connectWallet": {
+      "type": "string"
+    }
+  }
+}

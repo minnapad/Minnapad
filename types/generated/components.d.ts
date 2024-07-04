@@ -84,6 +84,19 @@ export interface AboutUsMissionMissonCard extends Schema.Component {
   };
 }
 
+export interface DetailsDetails extends Schema.Component {
+  collectionName: 'components_details_details';
+  info: {
+    displayName: 'details';
+    icon: 'information';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    logo: Attribute.Media<'images'>;
+  };
+}
+
 export interface FaqFaq extends Schema.Component {
   collectionName: 'components_faq_faqs';
   info: {
@@ -149,6 +162,134 @@ export interface HeadQuartersQuarterDetails extends Schema.Component {
   };
 }
 
+export interface HomeJoinLegendsStep1 extends Schema.Component {
+  collectionName: 'components_home_join_legends_step_1s';
+  info: {
+    displayName: 'Step 1';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.Text;
+    description: Attribute.Text;
+    ctaContent: Attribute.String;
+    step1Image: Attribute.Media<'images'>;
+  };
+}
+
+export interface HomeJoinLegendsStep2 extends Schema.Component {
+  collectionName: 'components_home_join_legends_step_2s';
+  info: {
+    displayName: 'Step 2';
+  };
+  attributes: {
+    title: Attribute.Text;
+    description: Attribute.Text;
+    connectWallet: Attribute.String;
+  };
+}
+
+export interface HomeJoinLegendsStep3 extends Schema.Component {
+  collectionName: 'components_home_join_legends_step_3s';
+  info: {
+    displayName: 'Step 3';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.Text;
+    description: Attribute.RichText;
+    step3Image: Attribute.Media<'images'>;
+  };
+}
+
+export interface HomeSocialLinksSocialLinks extends Schema.Component {
+  collectionName: 'components_home_social_links_social_links';
+  info: {
+    displayName: 'socialLinks';
+    icon: 'link';
+  };
+  attributes: {
+    link: Attribute.Component<'link.link', true>;
+  };
+}
+
+export interface HomeTeaserTeaser extends Schema.Component {
+  collectionName: 'components_home_teaser_teasers';
+  info: {
+    displayName: 'Teaser';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    video: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    ctaContent: Attribute.String;
+  };
+}
+
+export interface LegendsLegends extends Schema.Component {
+  collectionName: 'components_legends_legends';
+  info: {
+    displayName: 'Legends';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    projects: Attribute.Text;
+    role: Attribute.String;
+    profilePicture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    bio: Attribute.Text;
+    knownFor: Attribute.String;
+  };
+}
+
+export interface LinkLink extends Schema.Component {
+  collectionName: 'components_link_links';
+  info: {
+    displayName: 'Link';
+    icon: 'link';
+    description: '';
+  };
+  attributes: {
+    url: Attribute.String;
+    icon: Attribute.String;
+  };
+}
+
+export interface MembershipBenefitsBenefit extends Schema.Component {
+  collectionName: 'components_membership_benefits_benefits';
+  info: {
+    displayName: 'benefit';
+    description: '';
+  };
+  attributes: {
+    description: Attribute.Text;
+    isEligible: Attribute.Boolean;
+    Importance: Attribute.Enumeration<['low', 'medium', 'high', 'neutral']>;
+  };
+}
+
+export interface PartnersPartners extends Schema.Component {
+  collectionName: 'components_partners_partners';
+  info: {
+    displayName: 'partners';
+    icon: 'information';
+  };
+  attributes: {
+    details: Attribute.Component<'details.details', true>;
+  };
+}
+
+export interface ProfileProfile extends Schema.Component {
+  collectionName: 'components_profile_profiles';
+  info: {
+    displayName: 'Profile';
+    icon: 'information';
+  };
+  attributes: {
+    profilePicture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Attribute.RichText;
+  };
+}
+
 export interface LocationsLocations extends Schema.Component {
   collectionName: 'components_locations_locations';
   info: {
@@ -169,11 +310,22 @@ declare module '@strapi/types' {
       'about-us-hero.hero-section': AboutUsHeroHeroSection;
       'about-us-mission.missions': AboutUsMissionMissions;
       'about-us-mission.misson-card': AboutUsMissionMissonCard;
+      'details.details': DetailsDetails;
       'faq.faq': FaqFaq;
       'get-in-touch.get-in-touch': GetInTouchGetInTouch;
       'get-in-touch.support': GetInTouchSupport;
       'head-quarters.head-quarters': HeadQuartersHeadQuarters;
       'head-quarters.quarter-details': HeadQuartersQuarterDetails;
+      'home-join-legends.step-1': HomeJoinLegendsStep1;
+      'home-join-legends.step-2': HomeJoinLegendsStep2;
+      'home-join-legends.step-3': HomeJoinLegendsStep3;
+      'home-social-links.social-links': HomeSocialLinksSocialLinks;
+      'home-teaser.teaser': HomeTeaserTeaser;
+      'legends.legends': LegendsLegends;
+      'link.link': LinkLink;
+      'membership-benefits.benefit': MembershipBenefitsBenefit;
+      'partners.partners': PartnersPartners;
+      'profile.profile': ProfileProfile;
       'locations.locations': LocationsLocations;
     }
   }

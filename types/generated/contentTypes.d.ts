@@ -915,6 +915,37 @@ export interface ApiKeijiInafuneKeijiInafune extends Schema.CollectionType {
   };
 }
 
+export interface ApiLegendLegend extends Schema.CollectionType {
+  collectionName: 'legends';
+  info: {
+    singularName: 'legend';
+    pluralName: 'legends';
+    displayName: 'Legends';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Legend: Attribute.Component<'legends.legends', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::legend.legend',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::legend.legend',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
   collectionName: 'privacy_policies';
   info: {
@@ -1061,6 +1092,7 @@ declare module '@strapi/types' {
       'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::keiji.keiji': ApiKeijiKeiji;
       'api::keiji-inafune.keiji-inafune': ApiKeijiInafuneKeijiInafune;
+      'api::legend.legend': ApiLegendLegend;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::seichi-inafune.seichi-inafune': ApiSeichiInafuneSeichiInafune;
       'api::support.support': ApiSupportSupport;
