@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_home_discounts_and_rewards_home_discounts_and_rewards",
+  "info": {
+    "displayName": "homeDiscountsAndRewards"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_project_social_links_project_social_links",
+  "info": {
+    "displayName": "ProjectSocialLinks"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "richtext"
+    }
+  }
+}

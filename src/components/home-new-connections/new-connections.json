@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_home_new_connections_new_connections",
+  "info": {
+    "displayName": "newConnections",
+    "icon": "oneWay"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

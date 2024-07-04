@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_home_featured_home_featureds",
+  "info": {
+    "displayName": "homeFeatured",
+    "icon": "feather"
+  },
+  "options": {},
+  "attributes": {
+    "details": {
+      "type": "component",
+      "repeatable": true,
+      "component": "details.details"
+    }
+  }
+}

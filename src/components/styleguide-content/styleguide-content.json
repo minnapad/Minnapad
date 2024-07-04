@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_styleguide_content_styleguide_contents",
+  "info": {
+    "displayName": "styleguideContent",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "rules": {
+      "type": "richtext"
+    },
+    "rulesImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

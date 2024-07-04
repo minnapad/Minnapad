@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_home_how_to_join_projects_home_how_to_joins",
+  "info": {
+    "displayName": "joinProjects",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "step1": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-join-legends.step-1"
+    },
+    "step2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-join-legends.step-2"
+    },
+    "step3": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-join-legends.step-3"
+    }
+  }
+}

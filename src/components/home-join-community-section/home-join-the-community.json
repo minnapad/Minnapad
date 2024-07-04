@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_home_join_community_section_home_join_the_communities",
+  "info": {
+    "displayName": "homeJoinTheCommunity",
+    "icon": "plus",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "ownerShipBenefits": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-ip-ownership-and-name-credit.ip-ownership-and-name-credit"
+    },
+    "discountsAndRewards": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-discounts-and-rewards.home-discounts-and-rewards"
+    },
+    "newConnections": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-new-connections.new-connections"
+    },
+    "mentorshipAndJobs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-mentorship-and-jobs.home-mentorship-and-jobs"
+    }
+  }
+}

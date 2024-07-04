@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_membership_details_membership_details",
+  "info": {
+    "displayName": "membershipDetails",
+    "icon": "information"
+  },
+  "options": {},
+  "attributes": {
+    "benefit": {
+      "type": "component",
+      "repeatable": true,
+      "component": "membership-benefits.benefit"
+    },
+    "logo": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "ctaContent": {
+      "type": "string"
+    }
+  }
+}

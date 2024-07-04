@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_concepts_concepts",
+  "info": {
+    "displayName": "Concepts"
+  },
+  "options": {},
+  "attributes": {
+    "Discription": {
+      "type": "richtext"
+    }
+  }
+}
