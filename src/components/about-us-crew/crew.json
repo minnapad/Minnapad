@@ -17,6 +17,12 @@
       "type": "component",
       "repeatable": true,
       "component": "about-us-crew.crew-card"
+    },
+    "locations": {
+      "displayName": "locations",
+      "type": "component",
+      "repeatable": true,
+      "component": "locations.locations"
     }
   }
 }

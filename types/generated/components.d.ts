@@ -39,6 +39,7 @@ export interface AboutUsCrewCrew extends Schema.Component {
     title: Attribute.String;
     subTitle: Attribute.Text;
     members: Attribute.Component<'about-us-crew.crew-card', true>;
+    locations: Attribute.Component<'locations.locations', true>;
   };
 }
 
@@ -148,6 +149,17 @@ export interface HeadQuartersQuarterDetails extends Schema.Component {
   };
 }
 
+export interface LocationsLocations extends Schema.Component {
+  collectionName: 'components_locations_locations';
+  info: {
+    displayName: 'locations';
+  };
+  attributes: {
+    locationIcon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locationName: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -162,6 +174,7 @@ declare module '@strapi/types' {
       'get-in-touch.support': GetInTouchSupport;
       'head-quarters.head-quarters': HeadQuartersHeadQuarters;
       'head-quarters.quarter-details': HeadQuartersQuarterDetails;
+      'locations.locations': LocationsLocations;
     }
   }
 }
