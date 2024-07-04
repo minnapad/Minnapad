@@ -25,6 +25,11 @@
         "videos",
         "audios"
       ]
+    },
+    "locations": {
+      "type": "component",
+      "repeatable": true,
+      "component": "locations.locations"
     }
   }
 }

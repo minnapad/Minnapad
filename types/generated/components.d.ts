@@ -39,7 +39,6 @@ export interface AboutUsCrewCrew extends Schema.Component {
     title: Attribute.String;
     subTitle: Attribute.Text;
     members: Attribute.Component<'about-us-crew.crew-card', true>;
-    locations: Attribute.Component<'locations.locations', true>;
   };
 }
 
@@ -146,6 +145,7 @@ export interface HeadQuartersHeadQuarters extends Schema.Component {
     title: Attribute.String;
     branches: Attribute.Component<'head-quarters.quarter-details', true>;
     mapImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locations: Attribute.Component<'locations.locations', true>;
   };
 }
 
@@ -254,6 +254,17 @@ export interface LinkLink extends Schema.Component {
   };
 }
 
+export interface LocationsLocations extends Schema.Component {
+  collectionName: 'components_locations_locations';
+  info: {
+    displayName: 'locations';
+  };
+  attributes: {
+    locationIcon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locationName: Attribute.String;
+  };
+}
+
 export interface MembershipBenefitsBenefit extends Schema.Component {
   collectionName: 'components_membership_benefits_benefits';
   info: {
@@ -290,17 +301,6 @@ export interface ProfileProfile extends Schema.Component {
   };
 }
 
-export interface LocationsLocations extends Schema.Component {
-  collectionName: 'components_locations_locations';
-  info: {
-    displayName: 'locations';
-  };
-  attributes: {
-    locationIcon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    locationName: Attribute.String;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -323,10 +323,10 @@ declare module '@strapi/types' {
       'home-teaser.teaser': HomeTeaserTeaser;
       'legends.legends': LegendsLegends;
       'link.link': LinkLink;
+      'locations.locations': LocationsLocations;
       'membership-benefits.benefit': MembershipBenefitsBenefit;
       'partners.partners': PartnersPartners;
       'profile.profile': ProfileProfile;
-      'locations.locations': LocationsLocations;
     }
   }
 }
