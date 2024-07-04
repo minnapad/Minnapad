@@ -973,9 +973,9 @@ export interface ApiKeijiKeiji extends Schema.SingleType {
     praposalRule3: Attribute.RichText;
     imageText: Attribute.RichText;
     benifits: Attribute.String;
-    imageContent: Attribute.String;
     buyNowText: Attribute.String;
     buyOnMarketPlaceText: Attribute.String;
+    imageContent: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
