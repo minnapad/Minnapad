@@ -1,7 +1,7 @@
 {
   "collectionName": "components_home_join_our_community_home_join_our_communities",
   "info": {
-    "displayName": "joinCommunityHome",
+    "displayName": "joinCommunityBenefits",
     "description": ""
   },
   "options": {},
@@ -9,25 +9,25 @@
     "title": {
       "type": "string"
     },
-    "ownerShipBenefits": {
+    "communityIpOwnerShips": {
       "type": "component",
       "repeatable": false,
-      "component": "home-ip-ownership-and-name-credit.ip-ownership-and-name-credit"
+      "component": "home-ip-ownership.ip-ownership-and-name-credit"
     },
-    "discountsAndRewards": {
+    "communityDiscounts": {
       "type": "component",
       "repeatable": false,
-      "component": "home-discounts-and-rewards.home-discounts-and-rewards"
+      "component": "home-community-discounts.home-discounts-and-rewards"
     },
     "newConnections": {
       "type": "component",
       "repeatable": false,
-      "component": "home-new-connections.new-connections"
+      "component": "home-community-connections.new-connections"
     },
-    "membershipsAndJobs": {
+    "communityJobsAndMentorships": {
       "type": "component",
       "repeatable": false,
-      "component": "home-mentorship-and-jobs.home-mentorship-and-jobs"
+      "component": "home-community-jobs.home-mentorship-and-jobs"
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "collectionName": "components_home_join_legends_step_1s",
   "info": {
-    "displayName": "Step 1",
+    "displayName": "joinLegendsStep1",
     "description": ""
   },
   "options": {},
@@ -16,11 +16,12 @@
       "type": "string"
     },
     "step1Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

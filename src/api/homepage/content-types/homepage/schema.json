@@ -42,15 +42,15 @@
       "repeatable": true,
       "component": "legends.legends"
     },
-    "joinCommunityHome": {
-      "type": "component",
-      "repeatable": false,
-      "component": "join-community-home.home-join-our-community"
-    },
     "joinProjectStepDetails": {
       "type": "component",
       "repeatable": false,
       "component": "join-project-step-details-home.home-join-project-steps"
+    },
+    "benefits": {
+      "type": "component",
+      "repeatable": false,
+      "component": "join-community-benefits.home-join-our-community"
     }
   }
 }

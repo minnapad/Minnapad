@@ -1,8 +1,9 @@
 {
   "collectionName": "components_home_mentorship_and_jobs_home_mentorship_and_jobs",
   "info": {
-    "displayName": "homeMentorshipAndJobs",
-    "icon": "earth"
+    "displayName": "homeCommunityJobs",
+    "icon": "earth",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,11 +11,12 @@
       "type": "string"
     },
     "infoImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "description": {
       "type": "text"

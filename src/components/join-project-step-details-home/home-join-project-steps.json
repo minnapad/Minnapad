@@ -9,20 +9,20 @@
     "title": {
       "type": "string"
     },
-    "step1": {
+    "joinStep1": {
       "type": "component",
       "repeatable": false,
-      "component": "home-join-legends.step-1"
+      "component": "home-join-legend-steps.step-1"
     },
-    "step2": {
+    "joinStep2": {
       "type": "component",
       "repeatable": false,
-      "component": "home-join-legends.step-2"
+      "component": "home-join-legend-steps.step-2"
     },
-    "step3": {
+    "joinStep3": {
       "type": "component",
       "repeatable": false,
-      "component": "home-join-legends.step-3"
+      "component": "home-join-legend-steps.step-3"
     }
   }
 }
