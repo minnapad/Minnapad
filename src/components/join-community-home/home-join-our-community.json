@@ -1,7 +1,8 @@
 {
   "collectionName": "components_home_join_our_community_home_join_our_communities",
   "info": {
-    "displayName": "homeJoinOurCommunity"
+    "displayName": "joinCommunityHome",
+    "description": ""
   },
   "options": {},
   "attributes": {
