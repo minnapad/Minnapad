@@ -189,7 +189,6 @@ export interface HeadQuartersHeadQuarters extends Schema.Component {
     title: Attribute.String;
     branches: Attribute.Component<'head-quarters.quarter-details', true>;
     mapImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    locations: Attribute.Component<'locations.locations', true>;
   };
 }
 
@@ -262,8 +261,7 @@ export interface HomeHeroHomeHero extends Schema.Component {
 export interface HomeHowToJoinProjectsHomeHowToJoin extends Schema.Component {
   collectionName: 'components_home_how_to_join_projects_home_how_to_joins';
   info: {
-    displayName: 'homeJoinProjectsSection';
-    description: '';
+    displayName: 'homeHowToJoin';
   };
   attributes: {
     title: Attribute.String;
@@ -410,17 +408,6 @@ export interface LinkLink extends Schema.Component {
     url: Attribute.String;
     icon: Attribute.String;
     name: Attribute.String;
-  };
-}
-
-export interface LocationsLocations extends Schema.Component {
-  collectionName: 'components_locations_locations';
-  info: {
-    displayName: 'locations';
-  };
-  attributes: {
-    locationIcon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    locationName: Attribute.String;
   };
 }
 
@@ -584,7 +571,6 @@ declare module '@strapi/types' {
       'home-teaser.teaser': HomeTeaserTeaser;
       'legends.legends': LegendsLegends;
       'link.link': LinkLink;
-      'locations.locations': LocationsLocations;
       'membership-benefits.benefit': MembershipBenefitsBenefit;
       'membership-details.membership-details': MembershipDetailsMembershipDetails;
       'partners.partners': PartnersPartners;
