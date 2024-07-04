@@ -825,127 +825,6 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
   };
 }
 
-export interface ApiCareerCareer extends Schema.SingleType {
-  collectionName: 'careers';
-  info: {
-    singularName: 'career';
-    pluralName: 'careers';
-    displayName: 'career';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    subTitle: Attribute.String;
-    description: Attribute.RichText;
-    careerBenifits: Attribute.Component<
-      'career-benifits.career-benifits',
-      true
-    >;
-    jobOpeningTitle: Attribute.String;
-    opertunities: Attribute.Component<
-      'career-opertunities.career-opertunities',
-      true
-    >;
-    carrerImage: Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::career.career',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::career.career',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiConceptConcept extends Schema.SingleType {
-  collectionName: 'concepts';
-  info: {
-    singularName: 'concept';
-    pluralName: 'concepts';
-    displayName: 'Concept';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    subTitle: Attribute.String;
-    mainTitle: Attribute.String;
-    Discription: Attribute.Component<'concepts.concepts', true>;
-    link: Attribute.RichText;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::concept.concept',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::concept.concept',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiHomepageHomepage extends Schema.SingleType {
-  collectionName: 'homepages';
-  info: {
-    singularName: 'homepage';
-    pluralName: 'homepages';
-    displayName: 'Homepage';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    heroSection: Attribute.Component<'home-hero.hero-section'>;
-    socialLinks: Attribute.Component<'home-social-links.social-links'>;
-    profile: Attribute.Component<'profile.profile', true>;
-    partners: Attribute.Component<'partners.partners'>;
-    featured: Attribute.Component<'home-featured.featured'>;
-    communityBenefits: Attribute.Component<'home-join-the-community.community-benefits'>;
-    teaser: Attribute.Component<'home-teaser.teaser'>;
-    joinLegends: Attribute.Component<'home-join-legends.join-legends'>;
-    oneMembership: Attribute.Component<'membership-benefits.one-membership-benefits'>;
-    twoOrMoreMembershipBenefits: Attribute.Component<'home-two-or-more-memberships.two-or-more-membership-benefits'>;
-    background: Attribute.Media<'images'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::homepage.homepage',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::homepage.homepage',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiKeijiKeiji extends Schema.SingleType {
   collectionName: 'keijis';
   info: {
@@ -1269,9 +1148,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::about-us.about-us': ApiAboutUsAboutUs;
-      'api::career.career': ApiCareerCareer;
-      'api::concept.concept': ApiConceptConcept;
-      'api::homepage.homepage': ApiHomepageHomepage;
       'api::keiji.keiji': ApiKeijiKeiji;
       'api::legend.legend': ApiLegendLegend;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
