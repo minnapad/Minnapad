@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_join_projects_step3s",
+  "info": {
+    "displayName": "step3",
+    "icon": "arrowDown"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "richtext"
+    },
+    "description": {
+      "type": "text"
+    },
+    "infoImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

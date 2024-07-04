@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_join_projects_join_projects",
+  "info": {
+    "displayName": "joinProjects"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "step1": {
+      "displayName": "step1",
+      "type": "component",
+      "repeatable": false,
+      "component": "join-projects.step1"
+    },
+    "step2": {
+      "displayName": "step2",
+      "type": "component",
+      "repeatable": false,
+      "component": "join-projects.step2"
+    },
+    "step3": {
+      "displayName": "step3",
+      "type": "component",
+      "repeatable": false,
+      "component": "join-projects.step3"
+    }
+  }
+}
