@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_join_projects_step1s",
+  "info": {
+    "displayName": "step1",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ctaContent": {
+      "type": "string"
+    },
+    "title": {
+      "type": "richtext"
+    },
+    "infoImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

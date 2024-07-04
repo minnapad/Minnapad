@@ -117,6 +117,17 @@ export interface CareerOpertunitiesCareerOpertunities extends Schema.Component {
   };
 }
 
+export interface CommunityCollabsCollabs extends Schema.Component {
+  collectionName: 'components_community_collabs_collabs';
+  info: {
+    displayName: 'collabs';
+  };
+  attributes: {
+    tite: Attribute.String;
+    legends: Attribute.Component<'legends.legends', true>;
+  };
+}
+
 export interface ConceptsConcepts extends Schema.Component {
   collectionName: 'components_concepts_concepts';
   info: {
@@ -206,59 +217,6 @@ export interface HeadQuartersQuarterDetails extends Schema.Component {
   };
 }
 
-export interface HomeCollabWithLegendsHomeCollab extends Schema.Component {
-  collectionName: 'components_home_collab_with_legends_home_collabs';
-  info: {
-    displayName: 'homeCollab';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    homeCollabLegends: Attribute.Component<'legends.legends', true>;
-  };
-}
-
-export interface HomeCommunityConnectionsNewConnections
-  extends Schema.Component {
-  collectionName: 'components_home_new_connections_new_connections';
-  info: {
-    displayName: 'communityConnections';
-    icon: 'oneWay';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-  };
-}
-
-export interface HomeCommunityDiscountsHomeDiscountsAndRewards
-  extends Schema.Component {
-  collectionName: 'components_home_discounts_and_rewards_home_discounts_and_rewards';
-  info: {
-    displayName: 'homeCommunityDiscounts';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
-export interface HomeCommunityJobsHomeMentorshipAndJobs
-  extends Schema.Component {
-  collectionName: 'components_home_mentorship_and_jobs_home_mentorship_and_jobs';
-  info: {
-    displayName: 'homeCommunityJobs';
-    icon: 'earth';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    infoImage: Attribute.Media<'images'>;
-    description: Attribute.Text;
-  };
-}
-
 export interface HomeFeaturedHomeFeatured extends Schema.Component {
   collectionName: 'components_home_featured_home_featureds';
   info: {
@@ -288,21 +246,6 @@ export interface HomeHeroHomeHero extends Schema.Component {
   };
 }
 
-export interface HomeIpOwnershipIpOwnershipAndNameCredit
-  extends Schema.Component {
-  collectionName: 'components_home_ip_ownership_and_name_credit_ip_ownership_and_name_credits';
-  info: {
-    displayName: 'IpOwnership';
-    icon: 'plus';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    infoImage: Attribute.Media<'images'>;
-    description: Attribute.Text;
-  };
-}
-
 export interface HomeTeaserTeaser extends Schema.Component {
   collectionName: 'components_home_teaser_teasers';
   info: {
@@ -313,6 +256,80 @@ export interface HomeTeaserTeaser extends Schema.Component {
     title: Attribute.String;
     video: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     ctaContent: Attribute.String;
+  };
+}
+
+export interface JoinProjectsJoinProjects extends Schema.Component {
+  collectionName: 'components_join_projects_join_projects';
+  info: {
+    displayName: 'joinProjects';
+  };
+  attributes: {
+    title: Attribute.String;
+    step1: Attribute.Component<'join-projects.step1'>;
+    step2: Attribute.Component<'join-projects.step2'>;
+    step3: Attribute.Component<'join-projects.step3'>;
+  };
+}
+
+export interface JoinProjectsStep1 extends Schema.Component {
+  collectionName: 'components_join_projects_step1s';
+  info: {
+    displayName: 'step1';
+    description: '';
+  };
+  attributes: {
+    ctaContent: Attribute.String;
+    title: Attribute.RichText;
+    infoImage: Attribute.Media<'images'>;
+  };
+}
+
+export interface JoinProjectsStep2 extends Schema.Component {
+  collectionName: 'components_join_projects_step2s';
+  info: {
+    displayName: 'step2';
+    description: '';
+  };
+  attributes: {
+    howToConnect: Attribute.String;
+    title: Attribute.RichText;
+    description: Attribute.RichText;
+  };
+}
+
+export interface JoinProjectsStep3 extends Schema.Component {
+  collectionName: 'components_join_projects_step3s';
+  info: {
+    displayName: 'step3';
+    icon: 'arrowDown';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.RichText;
+    infoImage: Attribute.Media<'images'>;
+    description: Attribute.RichText;
+  };
+}
+
+export interface LatestNewsLatestNews extends Schema.Component {
+  collectionName: 'components_latest_news_latest_news';
+  info: {
+    displayName: 'latestNews';
+  };
+  attributes: {
+    title: Attribute.String;
+  };
+}
+
+export interface LegendsProjectsLegendsProjects extends Schema.Component {
+  collectionName: 'components_legends_projects_legends_projects';
+  info: {
+    displayName: 'legendsProjects';
+  };
+  attributes: {
+    title: Attribute.String;
+    legends: Attribute.Component<'legends.legends', true>;
   };
 }
 
@@ -327,10 +344,12 @@ export interface LegendsLegends extends Schema.Component {
     projects: Attribute.Text;
     role: Attribute.String;
     profilePicture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    bio: Attribute.Text;
     knownFor: Attribute.String;
     isUpcoming: Attribute.Boolean;
     upcomingDate: Attribute.String;
+    bio: Attribute.RichText;
+    portfolioBanner: Attribute.Media<'images'>;
+    ctaContent: Attribute.String;
   };
 }
 
@@ -368,7 +387,7 @@ export interface MembershipBenefitsBenefit extends Schema.Component {
   attributes: {
     description: Attribute.Text;
     isEligible: Attribute.Boolean;
-    Importance: Attribute.Enumeration<['low', 'medium', 'high', 'neutral']>;
+    Importance: Attribute.Enumeration<['low', 'neutral', 'high']>;
     logo: Attribute.String;
   };
 }
@@ -378,12 +397,74 @@ export interface MembershipDetailsMembershipDetails extends Schema.Component {
   info: {
     displayName: 'membershipDetails';
     icon: 'information';
+    description: '';
   };
   attributes: {
     benefit: Attribute.Component<'membership-benefits.benefit', true>;
     logo: Attribute.String;
     title: Attribute.String;
     ctaContent: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
+export interface OurCommunityConnections extends Schema.Component {
+  collectionName: 'components_our_community_connections';
+  info: {
+    displayName: 'connections';
+  };
+  attributes: {
+    title: Attribute.String;
+  };
+}
+
+export interface OurCommunityDiscounts extends Schema.Component {
+  collectionName: 'components_our_community_discounts';
+  info: {
+    displayName: 'discounts';
+  };
+  attributes: {
+    title: Attribute.String;
+  };
+}
+
+export interface OurCommunityIpOwnerships extends Schema.Component {
+  collectionName: 'components_our_community_ip_ownerships';
+  info: {
+    displayName: 'ipOwnerships';
+  };
+  attributes: {
+    title: Attribute.String;
+    infoImage: Attribute.Media<'images'>;
+    description: Attribute.Text;
+  };
+}
+
+export interface OurCommunityJoinCommunity extends Schema.Component {
+  collectionName: 'components_our_community_join_communities';
+  info: {
+    displayName: 'joinCommunity';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    ownerShipBenefits: Attribute.Component<'our-community.ip-ownerships'>;
+    discountsRewards: Attribute.Component<'our-community.discounts'>;
+    newConnections: Attribute.Component<'our-community.connections'>;
+    jobs: Attribute.Component<'our-community.mentorship-jobs'>;
+    collabs: Attribute.Component<'community-collabs.collabs'>;
+  };
+}
+
+export interface OurCommunityMentorshipJobs extends Schema.Component {
+  collectionName: 'components_our_community_mentorship_jobs';
+  info: {
+    displayName: 'mentorshipJobs';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    infoImage: Attribute.Media<'images'>;
   };
 }
 
@@ -497,6 +578,7 @@ declare module '@strapi/types' {
       'career-benifits.career-benifits': CareerBenifitsCareerBenifits;
       'career-openings.career-openings': CareerOpeningsCareerOpenings;
       'career-opertunities.career-opertunities': CareerOpertunitiesCareerOpertunities;
+      'community-collabs.collabs': CommunityCollabsCollabs;
       'concepts.concepts': ConceptsConcepts;
       'details.details': DetailsDetails;
       'faq.faq': FaqFaq;
@@ -504,19 +586,25 @@ declare module '@strapi/types' {
       'get-in-touch.support': GetInTouchSupport;
       'head-quarters.head-quarters': HeadQuartersHeadQuarters;
       'head-quarters.quarter-details': HeadQuartersQuarterDetails;
-      'home-collab-with-legends.home-collab': HomeCollabWithLegendsHomeCollab;
-      'home-community-connections.new-connections': HomeCommunityConnectionsNewConnections;
-      'home-community-discounts.home-discounts-and-rewards': HomeCommunityDiscountsHomeDiscountsAndRewards;
-      'home-community-jobs.home-mentorship-and-jobs': HomeCommunityJobsHomeMentorshipAndJobs;
       'home-featured.home-featured': HomeFeaturedHomeFeatured;
       'home-hero.home-hero': HomeHeroHomeHero;
-      'home-ip-ownership.ip-ownership-and-name-credit': HomeIpOwnershipIpOwnershipAndNameCredit;
       'home-teaser.teaser': HomeTeaserTeaser;
+      'join-projects.join-projects': JoinProjectsJoinProjects;
+      'join-projects.step1': JoinProjectsStep1;
+      'join-projects.step2': JoinProjectsStep2;
+      'join-projects.step3': JoinProjectsStep3;
+      'latest-news.latest-news': LatestNewsLatestNews;
+      'legends-projects.legends-projects': LegendsProjectsLegendsProjects;
       'legends.legends': LegendsLegends;
       'link.link': LinkLink;
       'locations.locations': LocationsLocations;
       'membership-benefits.benefit': MembershipBenefitsBenefit;
       'membership-details.membership-details': MembershipDetailsMembershipDetails;
+      'our-community.connections': OurCommunityConnections;
+      'our-community.discounts': OurCommunityDiscounts;
+      'our-community.ip-ownerships': OurCommunityIpOwnerships;
+      'our-community.join-community': OurCommunityJoinCommunity;
+      'our-community.mentorship-jobs': OurCommunityMentorshipJobs;
       'partners.partners': PartnersPartners;
       'profile.profile': ProfileProfile;
       'project-benifits.project-benifits': ProjectBenifitsProjectBenifits;

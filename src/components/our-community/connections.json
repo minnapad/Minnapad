@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_our_community_connections",
+  "info": {
+    "displayName": "connections"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

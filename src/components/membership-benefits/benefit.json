@@ -16,9 +16,8 @@
       "type": "enumeration",
       "enum": [
         "low",
-        "medium",
-        "high",
-        "neutral"
+        "neutral",
+        "high"
       ]
     },
     "logo": {

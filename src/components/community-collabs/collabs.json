@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_community_collabs_collabs",
+  "info": {
+    "displayName": "collabs"
+  },
+  "options": {},
+  "attributes": {
+    "tite": {
+      "type": "string"
+    },
+    "legends": {
+      "type": "component",
+      "repeatable": true,
+      "component": "legends.legends"
+    }
+  }
+}

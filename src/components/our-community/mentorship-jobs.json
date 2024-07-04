@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_our_community_mentorship_jobs",
+  "info": {
+    "displayName": "mentorshipJobs"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "infoImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

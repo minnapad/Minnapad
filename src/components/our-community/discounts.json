@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_our_community_discounts",
+  "info": {
+    "displayName": "discounts"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

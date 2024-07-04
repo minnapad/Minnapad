@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_our_community_ip_ownerships",
+  "info": {
+    "displayName": "ipOwnerships"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "infoImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

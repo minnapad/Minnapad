@@ -26,9 +26,6 @@
         "audios"
       ]
     },
-    "bio": {
-      "type": "text"
-    },
     "knownFor": {
       "type": "string"
     },
@@ -36,6 +33,19 @@
       "type": "boolean"
     },
     "upcomingDate": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "portfolioBanner": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "ctaContent": {
       "type": "string"
     }
   }

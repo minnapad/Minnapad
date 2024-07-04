@@ -1,14 +1,14 @@
 {
-  "collectionName": "components_home_mentorship_and_jobs_home_mentorship_and_jobs",
+  "collectionName": "components_join_projects_step3s",
   "info": {
-    "displayName": "homeCommunityJobs",
-    "icon": "earth",
+    "displayName": "step3",
+    "icon": "arrowDown",
     "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "richtext"
     },
     "infoImage": {
       "type": "media",
@@ -19,7 +19,7 @@
       ]
     },
     "description": {
-      "type": "text"
+      "type": "richtext"
     }
   }
 }
