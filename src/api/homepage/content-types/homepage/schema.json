@@ -47,10 +47,10 @@
       "repeatable": true,
       "component": "legends.legends"
     },
-    "howToJoinProjects": {
+    "joinProjectSteps": {
       "type": "component",
       "repeatable": false,
-      "component": "home-how-to-join-projects.home-how-to-join"
+      "component": "home-join-project-steps.home-join-project-steps"
     }
   }
 }

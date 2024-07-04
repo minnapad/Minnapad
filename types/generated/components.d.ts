@@ -259,20 +259,6 @@ export interface HomeHeroHomeHero extends Schema.Component {
   };
 }
 
-export interface HomeHowToJoinProjectsHomeHowToJoin extends Schema.Component {
-  collectionName: 'components_home_how_to_join_projects_home_how_to_joins';
-  info: {
-    displayName: 'joinProjects';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    step1: Attribute.Component<'home-join-legends.step-1'>;
-    step2: Attribute.Component<'home-join-legends.step-2'>;
-    step3: Attribute.Component<'home-join-legends.step-3'>;
-  };
-}
-
 export interface HomeIpOwnershipAndNameCreditIpOwnershipAndNameCredit
   extends Schema.Component {
   collectionName: 'components_home_ip_ownership_and_name_credit_ip_ownership_and_name_credits';
@@ -340,6 +326,20 @@ export interface HomeJoinLegendsStep3 extends Schema.Component {
     title: Attribute.Text;
     description: Attribute.RichText;
     step3Image: Attribute.Media<'images'>;
+  };
+}
+
+export interface HomeJoinProjectStepsHomeJoinProjectSteps
+  extends Schema.Component {
+  collectionName: 'components_home_join_project_steps_home_join_project_steps';
+  info: {
+    displayName: 'homeJoinProjectSteps';
+  };
+  attributes: {
+    title: Attribute.String;
+    step1: Attribute.Component<'home-join-legends.step-1'>;
+    step2: Attribute.Component<'home-join-legends.step-2'>;
+    step3: Attribute.Component<'home-join-legends.step-3'>;
   };
 }
 
@@ -573,12 +573,12 @@ declare module '@strapi/types' {
       'home-discounts-and-rewards.home-discounts-and-rewards': HomeDiscountsAndRewardsHomeDiscountsAndRewards;
       'home-featured.home-featured': HomeFeaturedHomeFeatured;
       'home-hero.home-hero': HomeHeroHomeHero;
-      'home-how-to-join-projects.home-how-to-join': HomeHowToJoinProjectsHomeHowToJoin;
       'home-ip-ownership-and-name-credit.ip-ownership-and-name-credit': HomeIpOwnershipAndNameCreditIpOwnershipAndNameCredit;
       'home-join-community-section.home-join-the-community': HomeJoinCommunitySectionHomeJoinTheCommunity;
       'home-join-legends.step-1': HomeJoinLegendsStep1;
       'home-join-legends.step-2': HomeJoinLegendsStep2;
       'home-join-legends.step-3': HomeJoinLegendsStep3;
+      'home-join-project-steps.home-join-project-steps': HomeJoinProjectStepsHomeJoinProjectSteps;
       'home-mentorship-and-jobs.home-mentorship-and-jobs': HomeMentorshipAndJobsHomeMentorshipAndJobs;
       'home-new-connections.new-connections': HomeNewConnectionsNewConnections;
       'home-teaser.teaser': HomeTeaserTeaser;
