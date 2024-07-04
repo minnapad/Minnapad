@@ -273,23 +273,6 @@ export interface HomeIpOwnershipAndNameCreditIpOwnershipAndNameCredit
   };
 }
 
-export interface HomeJoinCommunitySectionHomeJoinTheCommunity
-  extends Schema.Component {
-  collectionName: 'components_home_join_community_section_home_join_the_communities';
-  info: {
-    displayName: 'homeJoinTheCommunity';
-    icon: 'plus';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    ownerShipBenefits: Attribute.Component<'home-ip-ownership-and-name-credit.ip-ownership-and-name-credit'>;
-    discountsAndRewards: Attribute.Component<'home-discounts-and-rewards.home-discounts-and-rewards'>;
-    newConnections: Attribute.Component<'home-new-connections.new-connections'>;
-    mentorshipAndJobs: Attribute.Component<'home-mentorship-and-jobs.home-mentorship-and-jobs'>;
-  };
-}
-
 export interface HomeJoinLegendsStep1 extends Schema.Component {
   collectionName: 'components_home_join_legends_step_1s';
   info: {
@@ -326,6 +309,21 @@ export interface HomeJoinLegendsStep3 extends Schema.Component {
     title: Attribute.Text;
     description: Attribute.RichText;
     step3Image: Attribute.Media<'images'>;
+  };
+}
+
+export interface HomeJoinOurCommunityHomeJoinOurCommunity
+  extends Schema.Component {
+  collectionName: 'components_home_join_our_community_home_join_our_communities';
+  info: {
+    displayName: 'homeJoinOurCommunity';
+  };
+  attributes: {
+    title: Attribute.String;
+    ownerShipBenefits: Attribute.Component<'home-ip-ownership-and-name-credit.ip-ownership-and-name-credit'>;
+    discountsAndRewards: Attribute.Component<'home-discounts-and-rewards.home-discounts-and-rewards'>;
+    newConnections: Attribute.Component<'home-new-connections.new-connections'>;
+    membershipsAndJobs: Attribute.Component<'home-mentorship-and-jobs.home-mentorship-and-jobs'>;
   };
 }
 
@@ -574,10 +572,10 @@ declare module '@strapi/types' {
       'home-featured.home-featured': HomeFeaturedHomeFeatured;
       'home-hero.home-hero': HomeHeroHomeHero;
       'home-ip-ownership-and-name-credit.ip-ownership-and-name-credit': HomeIpOwnershipAndNameCreditIpOwnershipAndNameCredit;
-      'home-join-community-section.home-join-the-community': HomeJoinCommunitySectionHomeJoinTheCommunity;
       'home-join-legends.step-1': HomeJoinLegendsStep1;
       'home-join-legends.step-2': HomeJoinLegendsStep2;
       'home-join-legends.step-3': HomeJoinLegendsStep3;
+      'home-join-our-community.home-join-our-community': HomeJoinOurCommunityHomeJoinOurCommunity;
       'home-join-project-steps.home-join-project-steps': HomeJoinProjectStepsHomeJoinProjectSteps;
       'home-mentorship-and-jobs.home-mentorship-and-jobs': HomeMentorshipAndJobsHomeMentorshipAndJobs;
       'home-new-connections.new-connections': HomeNewConnectionsNewConnections;

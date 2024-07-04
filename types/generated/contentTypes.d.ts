@@ -923,13 +923,13 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
     homeSocialLinks: Attribute.Component<'social-links.social-links'>;
     partners: Attribute.Component<'partners.partners'>;
     featured: Attribute.Component<'home-featured.home-featured'>;
-    joinTheCommunity: Attribute.Component<'home-join-community-section.home-join-the-community'>;
     memberships: Attribute.Component<
       'membership-details.membership-details',
       true
     >;
     legends: Attribute.Component<'legends.legends', true>;
     joinProjectSteps: Attribute.Component<'home-join-project-steps.home-join-project-steps'>;
+    joinOurCommunity: Attribute.Component<'home-join-our-community.home-join-our-community'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

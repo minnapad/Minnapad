@@ -1,9 +1,7 @@
 {
-  "collectionName": "components_home_join_community_section_home_join_the_communities",
+  "collectionName": "components_home_join_our_community_home_join_our_communities",
   "info": {
-    "displayName": "homeJoinTheCommunity",
-    "icon": "plus",
-    "description": ""
+    "displayName": "homeJoinOurCommunity"
   },
   "options": {},
   "attributes": {
@@ -25,7 +23,7 @@
       "repeatable": false,
       "component": "home-new-connections.new-connections"
     },
-    "mentorshipAndJobs": {
+    "membershipsAndJobs": {
       "type": "component",
       "repeatable": false,
       "component": "home-mentorship-and-jobs.home-mentorship-and-jobs"
