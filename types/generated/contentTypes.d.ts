@@ -825,6 +825,86 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
   };
 }
 
+export interface ApiCareerCareer extends Schema.SingleType {
+  collectionName: 'careers';
+  info: {
+    singularName: 'career';
+    pluralName: 'careers';
+    displayName: 'career';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    subTitle: Attribute.String;
+    description: Attribute.RichText;
+    careerBenifits: Attribute.Component<
+      'career-benifits.career-benifits',
+      true
+    >;
+    jobOpeningTitle: Attribute.String;
+    opertunities: Attribute.Component<
+      'career-opertunities.career-opertunities',
+      true
+    >;
+    carrerImage: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::career.career',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::career.career',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiConceptConcept extends Schema.SingleType {
+  collectionName: 'concepts';
+  info: {
+    singularName: 'concept';
+    pluralName: 'concepts';
+    displayName: 'Concept';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    subTitle: Attribute.String;
+    mainTitle: Attribute.String;
+    Discription: Attribute.Component<'concepts.concepts', true>;
+    link: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::concept.concept',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::concept.concept',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiKeijiKeiji extends Schema.SingleType {
   collectionName: 'keijis';
   info: {
@@ -1040,12 +1120,19 @@ export interface ApiStyleGuideLineStyleGuideLine extends Schema.SingleType {
     singularName: 'style-guide-line';
     pluralName: 'style-guide-lines';
     displayName: 'styleGuideLine';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     guide: Attribute.Component<'style-guide.style-guide', true>;
+    startGuideTitle: Attribute.RichText;
+    startGuideImage: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    buyMemberShipButton: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1148,6 +1235,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::about-us.about-us': ApiAboutUsAboutUs;
+      'api::career.career': ApiCareerCareer;
+      'api::concept.concept': ApiConceptConcept;
       'api::keiji.keiji': ApiKeijiKeiji;
       'api::legend.legend': ApiLegendLegend;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
