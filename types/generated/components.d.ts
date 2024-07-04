@@ -234,7 +234,7 @@ export interface HomeHeroHeroSection extends Schema.Component {
 export interface HomeJoinLegendsJoinLegends extends Schema.Component {
   collectionName: 'components_home_join_legends_join_legends';
   info: {
-    displayName: 'Join Legends';
+    displayName: 'joinLegends';
     description: '';
   };
   attributes: {
@@ -300,7 +300,8 @@ export interface HomeJoinTheCommunityCollaborateWithTheLegends
   extends Schema.Component {
   collectionName: 'components_home_join_the_community_collaborate_with_the_legends';
   info: {
-    displayName: 'Collaborate with the legends';
+    displayName: 'CollaborateWithTheLegends';
+    description: '';
   };
   attributes: {
     legend: Attribute.Component<'legends.legends', true>;
@@ -336,7 +337,8 @@ export interface HomeJoinTheCommunityIpOwnershipAndNameCredit
   extends Schema.Component {
   collectionName: 'components_home_join_the_community_ip_ownership_and_name_credits';
   info: {
-    displayName: 'IP Ownership and name credit';
+    displayName: 'IPOwnershipAndNameCredit';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
@@ -357,7 +359,8 @@ export interface HomeJoinTheCommunityMentorshipAndPaidJobOpportunities
   extends Schema.Component {
   collectionName: 'components_home_join_the_community_mentorship_and_paid_job_opportunities';
   info: {
-    displayName: 'Mentorship and paid job opportunities';
+    displayName: 'MentorshipAndPaidJobOpportunities';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
@@ -369,7 +372,8 @@ export interface HomeJoinTheCommunityMentorshipAndPaidJobOpportunities
 export interface HomeJoinTheCommunityNewConnections extends Schema.Component {
   collectionName: 'components_home_join_the_community_new_connections';
   info: {
-    displayName: 'New Connections';
+    displayName: 'newConnections';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
@@ -404,7 +408,7 @@ export interface HomeTwoOrMoreMembershipsTwoOrMoreMembershipBenefits
   extends Schema.Component {
   collectionName: 'components_home_two_or_more_memberships_two_or_more_membership_benefits';
   info: {
-    displayName: 'Two or more membership benefits';
+    displayName: 'twoOrMoreMembershipBenefits';
     description: '';
   };
   attributes: {
@@ -460,7 +464,8 @@ export interface MembershipBenefitsBenefit extends Schema.Component {
 export interface MembershipBenefitsMembershipBenefits extends Schema.Component {
   collectionName: 'components_membership_benefits_membership_benefits';
   info: {
-    displayName: 'Membership benefits';
+    displayName: 'membershipBenefits';
+    description: '';
   };
   attributes: {
     benefit: Attribute.Component<'membership-benefits.benefit', true>;
@@ -471,7 +476,7 @@ export interface MembershipBenefitsOneMembershipBenefits
   extends Schema.Component {
   collectionName: 'components_membership_benefits_one_membership_benefits';
   info: {
-    displayName: 'One Membership Benefits';
+    displayName: 'oneMembershipBenefits';
     description: '';
   };
   attributes: {

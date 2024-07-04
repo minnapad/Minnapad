@@ -1,7 +1,8 @@
 {
   "collectionName": "components_membership_benefits_membership_benefits",
   "info": {
-    "displayName": "Membership benefits"
+    "displayName": "membershipBenefits",
+    "description": ""
   },
   "options": {},
   "attributes": {
