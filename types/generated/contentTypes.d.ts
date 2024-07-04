@@ -847,7 +847,7 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
       true
     >;
     legends: Attribute.Component<'legends.legends', true>;
-    howToJoinProjects: Attribute.Component<'home-how-to-join-projects.home-how-to-join'>;
+    joinProjectSteps: Attribute.Component<'home-how-to-join-projects.home-how-to-join'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -968,7 +968,19 @@ export interface ApiLegendLegend extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Legend: Attribute.Component<'legends.legends', true>;
+    name: Attribute.String & Attribute.Required;
+    role: Attribute.String & Attribute.Required;
+    profilePicture: Attribute.String;
+    knownFor: Attribute.String;
+    isUpcoming: Attribute.Boolean;
+    upcomingDate: Attribute.Date;
+    projects: Attribute.Relation<
+      'api::legend.legend',
+      'manyToMany',
+      'api::project.project'
+    >;
+    bio: Attribute.RichText;
+    portfolioBanner: Attribute.Media<'images'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1010,6 +1022,45 @@ export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProjectProject extends Schema.CollectionType {
+  collectionName: 'projects';
+  info: {
+    singularName: 'project';
+    pluralName: 'projects';
+    displayName: 'projects';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    banner: Attribute.Media<'images'>;
+    logo: Attribute.Media<'images'>;
+    legends: Attribute.Relation<
+      'api::project.project',
+      'manyToMany',
+      'api::legend.legend'
+    >;
+    description: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::project.project',
       'oneToOne',
       'admin::user'
     > &
@@ -1136,6 +1187,7 @@ declare module '@strapi/types' {
       'api::keiji-inafune.keiji-inafune': ApiKeijiInafuneKeijiInafune;
       'api::legend.legend': ApiLegendLegend;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
+      'api::project.project': ApiProjectProject;
       'api::seichi-inafune.seichi-inafune': ApiSeichiInafuneSeichiInafune;
       'api::support.support': ApiSupportSupport;
       'api::terms-and-conditions.terms-and-conditions': ApiTermsAndConditionsTermsAndConditions;
