@@ -1,18 +1,18 @@
 {
-  "collectionName": "components_home_join_legends_step_3s",
+  "collectionName": "components_join_projects_step3s",
   "info": {
-    "displayName": "Step 3",
-    "description": ""
+    "displayName": "step3",
+    "icon": "arrowDown"
   },
   "options": {},
   "attributes": {
     "title": {
-      "type": "text"
-    },
-    "description": {
       "type": "richtext"
     },
-    "step3Image": {
+    "description": {
+      "type": "text"
+    },
+    "infoImage": {
       "allowedTypes": [
         "images"
       ],

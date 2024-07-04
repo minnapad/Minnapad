@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_join_projects_step2s",
+  "info": {
+    "displayName": "step2"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "howToConnect": {
+      "type": "string"
+    },
+    "title": {
+      "type": "richtext"
+    }
+  }
+}

@@ -32,11 +32,6 @@
       "repeatable": false,
       "component": "home-featured.home-featured"
     },
-    "joinTheCommunity": {
-      "type": "component",
-      "repeatable": false,
-      "component": "home-join-community-section.home-join-the-community"
-    },
     "memberships": {
       "type": "component",
       "repeatable": true,
@@ -50,7 +45,17 @@
     "joinProjectSteps": {
       "type": "component",
       "repeatable": false,
-      "component": "home-how-to-join-projects.home-how-to-join"
+      "component": "join-projects.join-projects"
+    },
+    "joinCommunity": {
+      "type": "component",
+      "repeatable": false,
+      "component": "our-community.join-community"
+    },
+    "teaser": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-teaser.teaser"
     }
   }
 }

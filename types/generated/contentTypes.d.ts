@@ -923,13 +923,14 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
     homeSocialLinks: Attribute.Component<'social-links.social-links'>;
     partners: Attribute.Component<'partners.partners'>;
     featured: Attribute.Component<'home-featured.home-featured'>;
-    joinTheCommunity: Attribute.Component<'home-join-community-section.home-join-the-community'>;
     memberships: Attribute.Component<
       'membership-details.membership-details',
       true
     >;
     legends: Attribute.Component<'legends.legends', true>;
-    joinProjectSteps: Attribute.Component<'home-how-to-join-projects.home-how-to-join'>;
+    joinProjectSteps: Attribute.Component<'join-projects.join-projects'>;
+    joinCommunity: Attribute.Component<'our-community.join-community'>;
+    teaser: Attribute.Component<'home-teaser.teaser'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1008,19 +1009,7 @@ export interface ApiLegendLegend extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    role: Attribute.String & Attribute.Required;
-    profilePicture: Attribute.String;
-    knownFor: Attribute.String;
-    isUpcoming: Attribute.Boolean;
-    upcomingDate: Attribute.Date;
-    projects: Attribute.Relation<
-      'api::legend.legend',
-      'manyToMany',
-      'api::project.project'
-    >;
-    bio: Attribute.RichText;
-    portfolioBanner: Attribute.Media<'images'>;
+    Legend: Attribute.Component<'legends.legends', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1076,22 +1065,35 @@ export interface ApiProjectProject extends Schema.CollectionType {
   info: {
     singularName: 'project';
     pluralName: 'projects';
-    displayName: 'projects';
-    description: '';
+    displayName: 'Project';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String;
-    banner: Attribute.Media<'images'>;
-    logo: Attribute.Media<'images'>;
-    legends: Attribute.Relation<
-      'api::project.project',
-      'manyToMany',
-      'api::legend.legend'
+    projectLogo: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
     >;
-    description: Attribute.RichText;
+    projectBanner: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    projectName: Attribute.String;
+    projectSubTitle: Attribute.String;
+    projectDiscription: Attribute.String;
+    ProjectCategory: Attribute.Component<
+      'project-category.project-category',
+      true
+    >;
+    PrjoectSocialLinks: Attribute.Component<
+      'project-social-links.project-social-links',
+      true
+    >;
+    ProjectBenifits: Attribute.Component<
+      'project-benifits.project-benifits',
+      true
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1110,8 +1112,8 @@ export interface ApiProjectProject extends Schema.CollectionType {
   };
 }
 
-export interface ApiSeichiInafuneSeichiInafune extends Schema.CollectionType {
-  collectionName: 'seichi_inafunes';
+export interface ApiSeichiSeichi extends Schema.SingleType {
+  collectionName: 'seichis';
   info: {
     singularName: 'seichi';
     pluralName: 'seichis';
@@ -1288,7 +1290,8 @@ declare module '@strapi/types' {
       'api::legend.legend': ApiLegendLegend;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::project.project': ApiProjectProject;
-      'api::seichi-inafune.seichi-inafune': ApiSeichiInafuneSeichiInafune;
+      'api::seichi.seichi': ApiSeichiSeichi;
+      'api::style-guide-line.style-guide-line': ApiStyleGuideLineStyleGuideLine;
       'api::support.support': ApiSupportSupport;
       'api::terms-and-conditions.terms-and-conditions': ApiTermsAndConditionsTermsAndConditions;
     }

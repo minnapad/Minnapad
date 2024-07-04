@@ -1,21 +1,17 @@
 {
-  "collectionName": "components_home_join_legends_step_1s",
+  "collectionName": "components_our_community_mentorship_jobs",
   "info": {
-    "displayName": "Step 1",
-    "description": ""
+    "displayName": "mentorshipJobs"
   },
   "options": {},
   "attributes": {
     "title": {
-      "type": "text"
+      "type": "string"
     },
     "description": {
       "type": "text"
     },
-    "ctaContent": {
-      "type": "string"
-    },
-    "step1Image": {
+    "infoImage": {
       "allowedTypes": [
         "images"
       ],

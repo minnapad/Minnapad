@@ -218,18 +218,6 @@ export interface HomeCollabWithLegendsHomeCollab extends Schema.Component {
   };
 }
 
-export interface HomeDiscountsAndRewardsHomeDiscountsAndRewards
-  extends Schema.Component {
-  collectionName: 'components_home_discounts_and_rewards_home_discounts_and_rewards';
-  info: {
-    displayName: 'homeDiscountsAndRewards';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
 export interface HomeFeaturedHomeFeatured extends Schema.Component {
   collectionName: 'components_home_featured_home_featureds';
   info: {
@@ -259,115 +247,6 @@ export interface HomeHeroHomeHero extends Schema.Component {
   };
 }
 
-export interface HomeHowToJoinProjectsHomeHowToJoin extends Schema.Component {
-  collectionName: 'components_home_how_to_join_projects_home_how_to_joins';
-  info: {
-    displayName: 'joinProjects';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    step1: Attribute.Component<'home-join-legends.step-1'>;
-    step2: Attribute.Component<'home-join-legends.step-2'>;
-    step3: Attribute.Component<'home-join-legends.step-3'>;
-  };
-}
-
-export interface HomeIpOwnershipAndNameCreditIpOwnershipAndNameCredit
-  extends Schema.Component {
-  collectionName: 'components_home_ip_ownership_and_name_credit_ip_ownership_and_name_credits';
-  info: {
-    displayName: 'IPOwnershipAndNameCredit';
-    icon: 'plus';
-  };
-  attributes: {
-    title: Attribute.String;
-    infoImage: Attribute.Media<'images'>;
-    description: Attribute.Text;
-  };
-}
-
-export interface HomeJoinCommunitySectionHomeJoinTheCommunity
-  extends Schema.Component {
-  collectionName: 'components_home_join_community_section_home_join_the_communities';
-  info: {
-    displayName: 'homeJoinTheCommunity';
-    icon: 'plus';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    ownerShipBenefits: Attribute.Component<'home-ip-ownership-and-name-credit.ip-ownership-and-name-credit'>;
-    discountsAndRewards: Attribute.Component<'home-discounts-and-rewards.home-discounts-and-rewards'>;
-    newConnections: Attribute.Component<'home-new-connections.new-connections'>;
-    mentorshipAndJobs: Attribute.Component<'home-mentorship-and-jobs.home-mentorship-and-jobs'>;
-  };
-}
-
-export interface HomeJoinLegendsStep1 extends Schema.Component {
-  collectionName: 'components_home_join_legends_step_1s';
-  info: {
-    displayName: 'Step 1';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.Text;
-    description: Attribute.Text;
-    ctaContent: Attribute.String;
-    step1Image: Attribute.Media<'images'>;
-  };
-}
-
-export interface HomeJoinLegendsStep2 extends Schema.Component {
-  collectionName: 'components_home_join_legends_step_2s';
-  info: {
-    displayName: 'Step 2';
-  };
-  attributes: {
-    title: Attribute.Text;
-    description: Attribute.Text;
-    connectWallet: Attribute.String;
-  };
-}
-
-export interface HomeJoinLegendsStep3 extends Schema.Component {
-  collectionName: 'components_home_join_legends_step_3s';
-  info: {
-    displayName: 'Step 3';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.Text;
-    description: Attribute.RichText;
-    step3Image: Attribute.Media<'images'>;
-  };
-}
-
-export interface HomeMentorshipAndJobsHomeMentorshipAndJobs
-  extends Schema.Component {
-  collectionName: 'components_home_mentorship_and_jobs_home_mentorship_and_jobs';
-  info: {
-    displayName: 'homeMentorshipAndJobs';
-    icon: 'earth';
-  };
-  attributes: {
-    title: Attribute.String;
-    infoImage: Attribute.Media<'images'>;
-    description: Attribute.Text;
-  };
-}
-
-export interface HomeNewConnectionsNewConnections extends Schema.Component {
-  collectionName: 'components_home_new_connections_new_connections';
-  info: {
-    displayName: 'newConnections';
-    icon: 'oneWay';
-  };
-  attributes: {
-    title: Attribute.String;
-  };
-}
-
 export interface HomeTeaserTeaser extends Schema.Component {
   collectionName: 'components_home_teaser_teasers';
   info: {
@@ -378,6 +257,55 @@ export interface HomeTeaserTeaser extends Schema.Component {
     title: Attribute.String;
     video: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     ctaContent: Attribute.String;
+  };
+}
+
+export interface JoinProjectsJoinProjects extends Schema.Component {
+  collectionName: 'components_join_projects_join_projects';
+  info: {
+    displayName: 'joinProjects';
+  };
+  attributes: {
+    title: Attribute.String;
+    step1: Attribute.Component<'join-projects.step1'>;
+    step2: Attribute.Component<'join-projects.step2'>;
+    step3: Attribute.Component<'join-projects.step3'>;
+  };
+}
+
+export interface JoinProjectsStep1 extends Schema.Component {
+  collectionName: 'components_join_projects_step1s';
+  info: {
+    displayName: 'step1';
+  };
+  attributes: {
+    ctaContent: Attribute.String;
+    title: Attribute.RichText;
+  };
+}
+
+export interface JoinProjectsStep2 extends Schema.Component {
+  collectionName: 'components_join_projects_step2s';
+  info: {
+    displayName: 'step2';
+  };
+  attributes: {
+    description: Attribute.Text;
+    howToConnect: Attribute.String;
+    title: Attribute.RichText;
+  };
+}
+
+export interface JoinProjectsStep3 extends Schema.Component {
+  collectionName: 'components_join_projects_step3s';
+  info: {
+    displayName: 'step3';
+    icon: 'arrowDown';
+  };
+  attributes: {
+    title: Attribute.RichText;
+    description: Attribute.Text;
+    infoImage: Attribute.Media<'images'>;
   };
 }
 
@@ -449,6 +377,65 @@ export interface MembershipDetailsMembershipDetails extends Schema.Component {
     logo: Attribute.String;
     title: Attribute.String;
     ctaContent: Attribute.String;
+  };
+}
+
+export interface OurCommunityConnections extends Schema.Component {
+  collectionName: 'components_our_community_connections';
+  info: {
+    displayName: 'connections';
+  };
+  attributes: {
+    title: Attribute.String;
+  };
+}
+
+export interface OurCommunityDiscounts extends Schema.Component {
+  collectionName: 'components_our_community_discounts';
+  info: {
+    displayName: 'discounts';
+  };
+  attributes: {
+    title: Attribute.String;
+  };
+}
+
+export interface OurCommunityIpOwnerships extends Schema.Component {
+  collectionName: 'components_our_community_ip_ownerships';
+  info: {
+    displayName: 'ipOwnerships';
+  };
+  attributes: {
+    title: Attribute.String;
+    infoImage: Attribute.Media<'images'>;
+    description: Attribute.Text;
+  };
+}
+
+export interface OurCommunityJoinCommunity extends Schema.Component {
+  collectionName: 'components_our_community_join_communities';
+  info: {
+    displayName: 'joinCommunity';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    ownerShipBenefits: Attribute.Component<'our-community.ip-ownerships'>;
+    discountsRewards: Attribute.Component<'our-community.discounts'>;
+    newConnections: Attribute.Component<'our-community.connections'>;
+    jobs: Attribute.Component<'our-community.mentorship-jobs'>;
+  };
+}
+
+export interface OurCommunityMentorshipJobs extends Schema.Component {
+  collectionName: 'components_our_community_mentorship_jobs';
+  info: {
+    displayName: 'mentorshipJobs';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    infoImage: Attribute.Media<'images'>;
   };
 }
 
@@ -570,23 +557,23 @@ declare module '@strapi/types' {
       'head-quarters.head-quarters': HeadQuartersHeadQuarters;
       'head-quarters.quarter-details': HeadQuartersQuarterDetails;
       'home-collab-with-legends.home-collab': HomeCollabWithLegendsHomeCollab;
-      'home-discounts-and-rewards.home-discounts-and-rewards': HomeDiscountsAndRewardsHomeDiscountsAndRewards;
       'home-featured.home-featured': HomeFeaturedHomeFeatured;
       'home-hero.home-hero': HomeHeroHomeHero;
-      'home-how-to-join-projects.home-how-to-join': HomeHowToJoinProjectsHomeHowToJoin;
-      'home-ip-ownership-and-name-credit.ip-ownership-and-name-credit': HomeIpOwnershipAndNameCreditIpOwnershipAndNameCredit;
-      'home-join-community-section.home-join-the-community': HomeJoinCommunitySectionHomeJoinTheCommunity;
-      'home-join-legends.step-1': HomeJoinLegendsStep1;
-      'home-join-legends.step-2': HomeJoinLegendsStep2;
-      'home-join-legends.step-3': HomeJoinLegendsStep3;
-      'home-mentorship-and-jobs.home-mentorship-and-jobs': HomeMentorshipAndJobsHomeMentorshipAndJobs;
-      'home-new-connections.new-connections': HomeNewConnectionsNewConnections;
       'home-teaser.teaser': HomeTeaserTeaser;
+      'join-projects.join-projects': JoinProjectsJoinProjects;
+      'join-projects.step1': JoinProjectsStep1;
+      'join-projects.step2': JoinProjectsStep2;
+      'join-projects.step3': JoinProjectsStep3;
       'legends.legends': LegendsLegends;
       'link.link': LinkLink;
       'locations.locations': LocationsLocations;
       'membership-benefits.benefit': MembershipBenefitsBenefit;
       'membership-details.membership-details': MembershipDetailsMembershipDetails;
+      'our-community.connections': OurCommunityConnections;
+      'our-community.discounts': OurCommunityDiscounts;
+      'our-community.ip-ownerships': OurCommunityIpOwnerships;
+      'our-community.join-community': OurCommunityJoinCommunity;
+      'our-community.mentorship-jobs': OurCommunityMentorshipJobs;
       'partners.partners': PartnersPartners;
       'profile.profile': ProfileProfile;
       'project-benifits.project-benifits': ProjectBenifitsProjectBenifits;
