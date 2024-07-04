@@ -82,7 +82,7 @@
     "collaborations": {
       "type": "component",
       "repeatable": false,
-      "component": "home-join-the-community.collaborate-with-the-legends"
+      "component": "home-join-the-community-collaborations.collaborate-with-the-legends"
     }
   }
 }

@@ -239,6 +239,18 @@ export interface HomeJoinLegendsStep3 extends Schema.Component {
   };
 }
 
+export interface HomeJoinTheCommunityCollaborationsCollaborateWithTheLegends
+  extends Schema.Component {
+  collectionName: 'components_home_join_the_community_collaborate_with_the_legends';
+  info: {
+    displayName: 'Collaborations';
+    description: '';
+  };
+  attributes: {
+    legend: Attribute.Component<'legends.legends', true>;
+  };
+}
+
 export interface HomeJoinTheCommunityBenefit extends Schema.Component {
   collectionName: 'components_home_join_the_community_benefits';
   info: {
@@ -249,18 +261,6 @@ export interface HomeJoinTheCommunityBenefit extends Schema.Component {
     title: Attribute.String;
     description: Attribute.Text;
     images: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-  };
-}
-
-export interface HomeJoinTheCommunityCollaborateWithTheLegends
-  extends Schema.Component {
-  collectionName: 'components_home_join_the_community_collaborate_with_the_legends';
-  info: {
-    displayName: 'CollaborateWithTheLegends';
-    description: '';
-  };
-  attributes: {
-    legend: Attribute.Component<'legends.legends', true>;
   };
 }
 
@@ -487,8 +487,8 @@ declare module '@strapi/types' {
       'home-join-legends.step-1': HomeJoinLegendsStep1;
       'home-join-legends.step-2': HomeJoinLegendsStep2;
       'home-join-legends.step-3': HomeJoinLegendsStep3;
+      'home-join-the-community-collaborations.collaborate-with-the-legends': HomeJoinTheCommunityCollaborationsCollaborateWithTheLegends;
       'home-join-the-community.benefit': HomeJoinTheCommunityBenefit;
-      'home-join-the-community.collaborate-with-the-legends': HomeJoinTheCommunityCollaborateWithTheLegends;
       'home-join-the-community.community-benefits': HomeJoinTheCommunityCommunityBenefits;
       'home-join-the-community.discounts-and-rewards': HomeJoinTheCommunityDiscountsAndRewards;
       'home-join-the-community.ip-ownership-and-name-credit': HomeJoinTheCommunityIpOwnershipAndNameCredit;
