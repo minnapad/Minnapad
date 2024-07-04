@@ -928,8 +928,6 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
       true
     >;
     legends: Attribute.Component<'legends.legends', true>;
-    joinProjectStepDetails: Attribute.Component<'join-project-step-details-home.home-join-project-steps'>;
-    benefits: Attribute.Component<'join-community-benefits.home-join-our-community'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

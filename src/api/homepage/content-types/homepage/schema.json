@@ -41,16 +41,6 @@
       "type": "component",
       "repeatable": true,
       "component": "legends.legends"
-    },
-    "joinProjectStepDetails": {
-      "type": "component",
-      "repeatable": false,
-      "component": "join-project-step-details-home.home-join-project-steps"
-    },
-    "benefits": {
-      "type": "component",
-      "repeatable": false,
-      "component": "join-community-benefits.home-join-our-community"
     }
   }
 }
