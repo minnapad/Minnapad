@@ -928,7 +928,7 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
     oneMembership: Attribute.Component<'membership-benefits.one-membership-benefits'>;
     twoOrMoreMembershipBenefits: Attribute.Component<'home-two-or-more-memberships.two-or-more-membership-benefits'>;
     background: Attribute.Media<'images'>;
-    collaborations: Attribute.Component<'home-join-the-community.collaborate-with-the-legends'>;
+    collaborations: Attribute.Component<'home-join-the-community-collaborations.collaborate-with-the-legends'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
