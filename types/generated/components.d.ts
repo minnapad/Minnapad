@@ -312,20 +312,6 @@ export interface HomeJoinLegendsStep3 extends Schema.Component {
   };
 }
 
-export interface HomeJoinProjectStepsHomeJoinProjectSteps
-  extends Schema.Component {
-  collectionName: 'components_home_join_project_steps_home_join_project_steps';
-  info: {
-    displayName: 'homeJoinProjectSteps';
-  };
-  attributes: {
-    title: Attribute.String;
-    step1: Attribute.Component<'home-join-legends.step-1'>;
-    step2: Attribute.Component<'home-join-legends.step-2'>;
-    step3: Attribute.Component<'home-join-legends.step-3'>;
-  };
-}
-
 export interface HomeMentorshipAndJobsHomeMentorshipAndJobs
   extends Schema.Component {
   collectionName: 'components_home_mentorship_and_jobs_home_mentorship_and_jobs';
@@ -377,6 +363,21 @@ export interface JoinCommunityHomeHomeJoinOurCommunity
     discountsAndRewards: Attribute.Component<'home-discounts-and-rewards.home-discounts-and-rewards'>;
     newConnections: Attribute.Component<'home-new-connections.new-connections'>;
     membershipsAndJobs: Attribute.Component<'home-mentorship-and-jobs.home-mentorship-and-jobs'>;
+  };
+}
+
+export interface JoinProjectStepDetailsHomeHomeJoinProjectSteps
+  extends Schema.Component {
+  collectionName: 'components_home_join_project_steps_home_join_project_steps';
+  info: {
+    displayName: 'joinProjectStepDetails';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    step1: Attribute.Component<'home-join-legends.step-1'>;
+    step2: Attribute.Component<'home-join-legends.step-2'>;
+    step3: Attribute.Component<'home-join-legends.step-3'>;
   };
 }
 
@@ -576,11 +577,11 @@ declare module '@strapi/types' {
       'home-join-legends.step-1': HomeJoinLegendsStep1;
       'home-join-legends.step-2': HomeJoinLegendsStep2;
       'home-join-legends.step-3': HomeJoinLegendsStep3;
-      'home-join-project-steps.home-join-project-steps': HomeJoinProjectStepsHomeJoinProjectSteps;
       'home-mentorship-and-jobs.home-mentorship-and-jobs': HomeMentorshipAndJobsHomeMentorshipAndJobs;
       'home-new-connections.new-connections': HomeNewConnectionsNewConnections;
       'home-teaser.teaser': HomeTeaserTeaser;
       'join-community-home.home-join-our-community': JoinCommunityHomeHomeJoinOurCommunity;
+      'join-project-step-details-home.home-join-project-steps': JoinProjectStepDetailsHomeHomeJoinProjectSteps;
       'legends.legends': LegendsLegends;
       'link.link': LinkLink;
       'locations.locations': LocationsLocations;
