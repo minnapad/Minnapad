@@ -283,18 +283,6 @@ export interface HomeJoinLegendsStep3 extends Schema.Component {
   };
 }
 
-export interface HomeJoinTheCommunityCollaborationsCollaborateWithTheLegends
-  extends Schema.Component {
-  collectionName: 'components_home_join_the_community_collaborate_with_the_legends';
-  info: {
-    displayName: 'Collaborations';
-    description: '';
-  };
-  attributes: {
-    legend: Attribute.Component<'legends.legends', true>;
-  };
-}
-
 export interface HomeJoinTheCommunityBenefit extends Schema.Component {
   collectionName: 'components_home_join_the_community_benefits';
   info: {
@@ -600,7 +588,6 @@ declare module '@strapi/types' {
       'home-join-legends.step-1': HomeJoinLegendsStep1;
       'home-join-legends.step-2': HomeJoinLegendsStep2;
       'home-join-legends.step-3': HomeJoinLegendsStep3;
-      'home-join-the-community-collaborations.collaborate-with-the-legends': HomeJoinTheCommunityCollaborationsCollaborateWithTheLegends;
       'home-join-the-community.benefit': HomeJoinTheCommunityBenefit;
       'home-join-the-community.community-benefits': HomeJoinTheCommunityCommunityBenefits;
       'home-join-the-community.discounts-and-rewards': HomeJoinTheCommunityDiscountsAndRewards;
