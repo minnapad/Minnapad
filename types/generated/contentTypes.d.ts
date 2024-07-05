@@ -980,6 +980,32 @@ export interface ApiConceptConcept extends Schema.SingleType {
   };
 }
 
+export interface ApiCrewCrew extends Schema.CollectionType {
+  collectionName: 'crews';
+  info: {
+    singularName: 'crew';
+    pluralName: 'crews';
+    displayName: 'crew';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    role: Attribute.String;
+    bio: Attribute.Text;
+    profilePicture: Attribute.Media<'images'>;
+    socials: Attribute.Component<'social-links.social-links'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::crew.crew', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::crew.crew', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomepageHomepage extends Schema.SingleType {
   collectionName: 'homepages';
   info: {
@@ -1384,6 +1410,7 @@ declare module '@strapi/types' {
       'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
       'api::career.career': ApiCareerCareer;
       'api::concept.concept': ApiConceptConcept;
+      'api::crew.crew': ApiCrewCrew;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::keiji.keiji': ApiKeijiKeiji;
       'api::legend.legend': ApiLegendLegend;

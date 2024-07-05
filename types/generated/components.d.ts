@@ -182,8 +182,7 @@ export interface DetailsDetails extends Schema.Component {
   attributes: {
     name: Attribute.String;
     logo: Attribute.Media<'images'>;
-    hasUrl: Attribute.Boolean;
-    url: Attribute.String;
+    websiteUrl: Attribute.String;
   };
 }
 
