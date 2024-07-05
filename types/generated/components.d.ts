@@ -83,6 +83,29 @@ export interface AboutUsMissionMissonCard extends Schema.Component {
   };
 }
 
+export interface BlogDescBlogDescription extends Schema.Component {
+  collectionName: 'components_blog_desc_blog_descriptions';
+  info: {
+    displayName: 'Blog Description';
+  };
+  attributes: {
+    description: Attribute.RichText;
+  };
+}
+
+export interface BlogDescBlogMedia extends Schema.Component {
+  collectionName: 'components_blog_desc_blog_medias';
+  info: {
+    displayName: 'Blog Media';
+    description: '';
+  };
+  attributes: {
+    contentMedia: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    type: Attribute.Enumeration<['image', 'video']>;
+    name: Attribute.String;
+  };
+}
+
 export interface CareerBenifitsCareerBenifits extends Schema.Component {
   collectionName: 'components_career_benifits_career_benifits';
   info: {
@@ -589,6 +612,8 @@ declare module '@strapi/types' {
       'about-us-hero.hero-section': AboutUsHeroHeroSection;
       'about-us-mission.missions': AboutUsMissionMissions;
       'about-us-mission.misson-card': AboutUsMissionMissonCard;
+      'blog-desc.blog-description': BlogDescBlogDescription;
+      'blog-desc.blog-media': BlogDescBlogMedia;
       'career-benifits.career-benifits': CareerBenifitsCareerBenifits;
       'career-openings.career-openings': CareerOpeningsCareerOpenings;
       'career-opertunities.career-opertunities': CareerOpertunitiesCareerOpertunities;

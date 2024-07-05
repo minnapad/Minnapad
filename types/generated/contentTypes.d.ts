@@ -838,12 +838,11 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    category: Attribute.Relation<
+    categories: Attribute.Relation<
       'api::blog.blog',
-      'oneToOne',
+      'oneToMany',
       'api::blog-category.blog-category'
     >;
-    content: Attribute.RichText & Attribute.Required;
     legend: Attribute.Relation<
       'api::blog.blog',
       'manyToOne',
@@ -852,6 +851,9 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     cardTitle: Attribute.String;
     cardDescription: Attribute.RichText;
     blogImage: Attribute.Media<'images'> & Attribute.Required;
+    content: Attribute.DynamicZone<
+      ['blog-desc.blog-description', 'blog-desc.blog-media']
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
