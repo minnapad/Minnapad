@@ -1010,12 +1010,19 @@ export interface ApiLegendLegend extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Legend: Attribute.Component<'legends.legends', true>;
     project: Attribute.Relation<
       'api::legend.legend',
       'manyToOne',
       'api::project.project'
     >;
+    name: Attribute.String;
+    role: Attribute.String;
+    profilePicture: Attribute.Media<'images'>;
+    knownFor: Attribute.String;
+    isUpcoming: Attribute.Boolean;
+    upcomingDate: Attribute.Date;
+    bio: Attribute.RichText;
+    portfolioBanner: Attribute.Media<'images'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

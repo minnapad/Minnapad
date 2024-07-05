@@ -12,16 +12,43 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Legend": {
-      "type": "component",
-      "repeatable": true,
-      "component": "legends.legends"
-    },
     "project": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::project.project",
       "inversedBy": "legends"
+    },
+    "name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "profilePicture": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "knownFor": {
+      "type": "string"
+    },
+    "isUpcoming": {
+      "type": "boolean"
+    },
+    "upcomingDate": {
+      "type": "date"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "portfolioBanner": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
