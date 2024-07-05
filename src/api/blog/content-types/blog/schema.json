@@ -47,6 +47,15 @@
         "blog-desc.blog-description",
         "blog-desc.blog-media"
       ]
+    },
+    "trendingTitle": {
+      "type": "string"
+    },
+    "trendingCTAContent": {
+      "type": "string"
+    },
+    "trendingDescription": {
+      "type": "richtext"
     }
   }
 }

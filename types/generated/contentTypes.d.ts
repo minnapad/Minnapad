@@ -854,6 +854,9 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     content: Attribute.DynamicZone<
       ['blog-desc.blog-description', 'blog-desc.blog-media']
     >;
+    trendingTitle: Attribute.String;
+    trendingCTAContent: Attribute.String;
+    trendingDescription: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
