@@ -4,7 +4,8 @@
   "info": {
     "singularName": "project",
     "pluralName": "projects",
-    "displayName": "Project"
+    "displayName": "Project",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,24 +13,26 @@
   "pluginOptions": {},
   "attributes": {
     "projectLogo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "projectBanner": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "projectName": {
       "type": "string"
@@ -54,6 +57,12 @@
       "type": "component",
       "repeatable": true,
       "component": "project-benifits.project-benifits"
+    },
+    "checking": {
+      "type": "string"
+    },
+    "checking1": {
+      "type": "string"
     }
   }
 }

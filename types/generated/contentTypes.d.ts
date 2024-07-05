@@ -1067,6 +1067,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
     singularName: 'project';
     pluralName: 'projects';
     displayName: 'Project';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1095,6 +1096,8 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'project-benifits.project-benifits',
       true
     >;
+    checking: Attribute.String;
+    checking1: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
