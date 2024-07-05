@@ -870,12 +870,13 @@ export interface ApiBlogCategoryBlogCategory extends Schema.CollectionType {
     singularName: 'blog-category';
     pluralName: 'blog-categories';
     displayName: 'Blog Category';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    category: Attribute.String;
+    category: Attribute.String & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
