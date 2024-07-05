@@ -837,18 +837,21 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
+    title: Attribute.String & Attribute.Required;
     category: Attribute.Relation<
       'api::blog.blog',
       'oneToOne',
       'api::blog-category.blog-category'
     >;
-    content: Attribute.RichText;
+    content: Attribute.RichText & Attribute.Required;
     legend: Attribute.Relation<
       'api::blog.blog',
       'manyToOne',
       'api::legend.legend'
     >;
+    cardTitle: Attribute.String;
+    cardDescription: Attribute.RichText;
+    blogImage: Attribute.Media<'images'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
