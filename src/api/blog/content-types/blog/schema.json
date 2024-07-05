@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "Blog",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::blog-category.blog-category"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "legend": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::legend.legend",
+      "inversedBy": "blogs"
+    }
+  }
+}

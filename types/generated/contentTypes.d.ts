@@ -825,6 +825,70 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
   };
 }
 
+export interface ApiBlogBlog extends Schema.CollectionType {
+  collectionName: 'blogs';
+  info: {
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'Blog';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    category: Attribute.Relation<
+      'api::blog.blog',
+      'oneToOne',
+      'api::blog-category.blog-category'
+    >;
+    content: Attribute.RichText;
+    legend: Attribute.Relation<
+      'api::blog.blog',
+      'manyToOne',
+      'api::legend.legend'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBlogCategoryBlogCategory extends Schema.CollectionType {
+  collectionName: 'blog_categories';
+  info: {
+    singularName: 'blog-category';
+    pluralName: 'blog-categories';
+    displayName: 'Blog Category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blog-category.blog-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blog-category.blog-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCareerCareer extends Schema.SingleType {
   collectionName: 'careers';
   info: {
@@ -1012,7 +1076,7 @@ export interface ApiLegendLegend extends Schema.CollectionType {
   attributes: {
     projects: Attribute.Relation<
       'api::legend.legend',
-      'oneToMany',
+      'manyToMany',
       'api::project.project'
     >;
     name: Attribute.String;
@@ -1023,6 +1087,11 @@ export interface ApiLegendLegend extends Schema.CollectionType {
     upcomingDate: Attribute.Date;
     bio: Attribute.RichText;
     portfolioBanner: Attribute.Media<'images'>;
+    blogs: Attribute.Relation<
+      'api::legend.legend',
+      'oneToMany',
+      'api::blog.blog'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1108,6 +1177,11 @@ export interface ApiProjectProject extends Schema.CollectionType {
       true
     >;
     projectDiscription: Attribute.RichText;
+    legends: Attribute.Relation<
+      'api::project.project',
+      'manyToMany',
+      'api::legend.legend'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1297,6 +1371,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::about-us.about-us': ApiAboutUsAboutUs;
+      'api::blog.blog': ApiBlogBlog;
+      'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
       'api::career.career': ApiCareerCareer;
       'api::concept.concept': ApiConceptConcept;
       'api::homepage.homepage': ApiHomepageHomepage;

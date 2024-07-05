@@ -57,6 +57,12 @@
     },
     "projectDiscription": {
       "type": "richtext"
+    },
+    "legends": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::legend.legend",
+      "mappedBy": "projects"
     }
   }
 }

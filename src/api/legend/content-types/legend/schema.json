@@ -14,8 +14,9 @@
   "attributes": {
     "projects": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::project.project"
+      "relation": "manyToMany",
+      "target": "api::project.project",
+      "inversedBy": "legends"
     },
     "name": {
       "type": "string"
@@ -50,6 +51,12 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "blogs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog.blog",
+      "mappedBy": "legend"
     }
   }
 }
