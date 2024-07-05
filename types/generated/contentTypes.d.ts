@@ -1010,9 +1010,9 @@ export interface ApiLegendLegend extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    project: Attribute.Relation<
+    projects: Attribute.Relation<
       'api::legend.legend',
-      'manyToOne',
+      'oneToMany',
       'api::project.project'
     >;
     name: Attribute.String;
@@ -1106,11 +1106,6 @@ export interface ApiProjectProject extends Schema.CollectionType {
     ProjectBenifits: Attribute.Component<
       'project-benifits.project-benifits',
       true
-    >;
-    legends: Attribute.Relation<
-      'api::project.project',
-      'oneToMany',
-      'api::legend.legend'
     >;
     projectDiscription: Attribute.RichText;
     createdAt: Attribute.DateTime;
