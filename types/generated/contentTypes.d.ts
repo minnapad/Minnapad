@@ -1061,61 +1061,6 @@ export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
   };
 }
 
-export interface ApiProjectProject extends Schema.CollectionType {
-  collectionName: 'projects';
-  info: {
-    singularName: 'project';
-    pluralName: 'projects';
-    displayName: 'Project';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    projectLogo: Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    projectBanner: Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    projectName: Attribute.String;
-    projectSubTitle: Attribute.String;
-    projectDiscription: Attribute.String;
-    ProjectCategory: Attribute.Component<
-      'project-category.project-category',
-      true
-    >;
-    PrjoectSocialLinks: Attribute.Component<
-      'project-social-links.project-social-links',
-      true
-    >;
-    ProjectBenifits: Attribute.Component<
-      'project-benifits.project-benifits',
-      true
-    >;
-    checking: Attribute.String;
-    checking1: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::project.project',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::project.project',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiSeichiSeichi extends Schema.SingleType {
   collectionName: 'seichis';
   info: {
@@ -1293,7 +1238,6 @@ declare module '@strapi/types' {
       'api::keiji.keiji': ApiKeijiKeiji;
       'api::legend.legend': ApiLegendLegend;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
-      'api::project.project': ApiProjectProject;
       'api::seichi.seichi': ApiSeichiSeichi;
       'api::style-guide-line.style-guide-line': ApiStyleGuideLineStyleGuideLine;
       'api::support.support': ApiSupportSupport;
