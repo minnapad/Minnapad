@@ -1011,6 +1011,11 @@ export interface ApiLegendLegend extends Schema.CollectionType {
   };
   attributes: {
     Legend: Attribute.Component<'legends.legends', true>;
+    project: Attribute.Relation<
+      'api::legend.legend',
+      'manyToOne',
+      'api::project.project'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1054,6 +1059,63 @@ export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProjectProject extends Schema.CollectionType {
+  collectionName: 'projects';
+  info: {
+    singularName: 'project';
+    pluralName: 'projects';
+    displayName: 'Project';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    projectLogo: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    projectBanner: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    projectName: Attribute.String;
+    projectSubTitle: Attribute.String;
+    projectDiscription: Attribute.String;
+    ProjectCategory: Attribute.Component<
+      'project-category.project-category',
+      true
+    >;
+    PrjoectSocialLinks: Attribute.Component<
+      'project-social-links.project-social-links',
+      true
+    >;
+    ProjectBenifits: Attribute.Component<
+      'project-benifits.project-benifits',
+      true
+    >;
+    legends: Attribute.Relation<
+      'api::project.project',
+      'oneToMany',
+      'api::legend.legend'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::project.project',
       'oneToOne',
       'admin::user'
     > &
@@ -1238,6 +1300,7 @@ declare module '@strapi/types' {
       'api::keiji.keiji': ApiKeijiKeiji;
       'api::legend.legend': ApiLegendLegend;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
+      'api::project.project': ApiProjectProject;
       'api::seichi.seichi': ApiSeichiSeichi;
       'api::style-guide-line.style-guide-line': ApiStyleGuideLineStyleGuideLine;
       'api::support.support': ApiSupportSupport;
