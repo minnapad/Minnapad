@@ -1072,6 +1072,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
     singularName: 'project';
     pluralName: 'projects';
     displayName: 'Project';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1087,7 +1088,6 @@ export interface ApiProjectProject extends Schema.CollectionType {
     >;
     projectName: Attribute.String;
     projectSubTitle: Attribute.String;
-    projectDiscription: Attribute.String;
     ProjectCategory: Attribute.Component<
       'project-category.project-category',
       true
@@ -1105,6 +1105,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'oneToMany',
       'api::legend.legend'
     >;
+    projectDiscription: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

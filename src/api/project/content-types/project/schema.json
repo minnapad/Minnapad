@@ -4,7 +4,8 @@
   "info": {
     "singularName": "project",
     "pluralName": "projects",
-    "displayName": "Project"
+    "displayName": "Project",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,32 +13,31 @@
   "pluginOptions": {},
   "attributes": {
     "projectLogo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "projectBanner": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "projectName": {
       "type": "string"
     },
     "projectSubTitle": {
-      "type": "string"
-    },
-    "projectDiscription": {
       "type": "string"
     },
     "ProjectCategory": {
@@ -60,6 +60,9 @@
       "relation": "oneToMany",
       "target": "api::legend.legend",
       "mappedBy": "project"
+    },
+    "projectDiscription": {
+      "type": "richtext"
     }
   }
 }
