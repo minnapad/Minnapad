@@ -65,14 +65,14 @@
     "benifits": {
       "type": "string"
     },
-    "imageContent": {
-      "type": "string"
-    },
     "buyNowText": {
       "type": "string"
     },
     "buyOnMarketPlaceText": {
       "type": "string"
+    },
+    "imageContent": {
+      "type": "richtext"
     }
   }
 }

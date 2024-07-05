@@ -927,10 +927,11 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
       'membership-details.membership-details',
       true
     >;
-    legends: Attribute.Component<'legends.legends', true>;
     joinProjectSteps: Attribute.Component<'join-projects.join-projects'>;
     joinCommunity: Attribute.Component<'our-community.join-community'>;
     teaser: Attribute.Component<'home-teaser.teaser'>;
+    legendsProjects: Attribute.Component<'legends-projects.legends-projects'>;
+    latestNews: Attribute.Component<'latest-news.latest-news'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -976,9 +977,9 @@ export interface ApiKeijiKeiji extends Schema.SingleType {
     praposalRule3: Attribute.RichText;
     imageText: Attribute.RichText;
     benifits: Attribute.String;
-    imageContent: Attribute.String;
     buyNowText: Attribute.String;
     buyOnMarketPlaceText: Attribute.String;
+    imageContent: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1010,6 +1011,11 @@ export interface ApiLegendLegend extends Schema.CollectionType {
   };
   attributes: {
     Legend: Attribute.Component<'legends.legends', true>;
+    project: Attribute.Relation<
+      'api::legend.legend',
+      'manyToOne',
+      'api::project.project'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1066,6 +1072,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
     singularName: 'project';
     pluralName: 'projects';
     displayName: 'Project';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1081,7 +1088,6 @@ export interface ApiProjectProject extends Schema.CollectionType {
     >;
     projectName: Attribute.String;
     projectSubTitle: Attribute.String;
-    projectDiscription: Attribute.String;
     ProjectCategory: Attribute.Component<
       'project-category.project-category',
       true
@@ -1094,6 +1100,12 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'project-benifits.project-benifits',
       true
     >;
+    legends: Attribute.Relation<
+      'api::project.project',
+      'oneToMany',
+      'api::legend.legend'
+    >;
+    projectDiscription: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -1,15 +1,14 @@
 {
-  "collectionName": "components_home_collab_with_legends_home_collabs",
+  "collectionName": "components_legends_projects_legends_projects",
   "info": {
-    "displayName": "homeCollab",
-    "description": ""
+    "displayName": "legendsProjects"
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
     },
-    "homeCollabLegends": {
+    "legends": {
       "type": "component",
       "repeatable": true,
       "component": "legends.legends"

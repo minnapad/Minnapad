@@ -32,6 +32,12 @@
       "type": "component",
       "repeatable": false,
       "component": "our-community.mentorship-jobs"
+    },
+    "collabs": {
+      "displayName": "collabs",
+      "type": "component",
+      "repeatable": false,
+      "component": "community-collabs.collabs"
     }
   }
 }

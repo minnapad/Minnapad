@@ -37,11 +37,6 @@
       "repeatable": true,
       "component": "membership-details.membership-details"
     },
-    "legends": {
-      "type": "component",
-      "repeatable": true,
-      "component": "legends.legends"
-    },
     "joinProjectSteps": {
       "type": "component",
       "repeatable": false,
@@ -56,6 +51,18 @@
       "type": "component",
       "repeatable": false,
       "component": "home-teaser.teaser"
+    },
+    "legendsProjects": {
+      "displayName": "legendsProjects",
+      "type": "component",
+      "repeatable": false,
+      "component": "legends-projects.legends-projects"
+    },
+    "latestNews": {
+      "displayName": "latestNews",
+      "type": "component",
+      "repeatable": false,
+      "component": "latest-news.latest-news"
     }
   }
 }
