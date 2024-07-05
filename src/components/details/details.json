@@ -11,11 +11,19 @@
       "type": "string"
     },
     "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "hasUrl": {
+      "type": "boolean"
+    },
+    "url": {
+      "type": "string",
+      "regex": "^(https?|ftp):\\/\\/(www\\.)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*(\\?[\\/\\w\\.-=&]*)?$"
     }
   }
 }

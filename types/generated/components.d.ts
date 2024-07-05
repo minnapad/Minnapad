@@ -182,6 +182,8 @@ export interface DetailsDetails extends Schema.Component {
   attributes: {
     name: Attribute.String;
     logo: Attribute.Media<'images'>;
+    hasUrl: Attribute.Boolean;
+    url: Attribute.String;
   };
 }
 
@@ -293,6 +295,8 @@ export interface HomeTeaserTeaser extends Schema.Component {
     title: Attribute.String;
     video: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     ctaContent: Attribute.String;
+    hasUrl: Attribute.Boolean;
+    url: Attribute.String;
   };
 }
 
