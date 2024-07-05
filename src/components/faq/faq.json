@@ -1,7 +1,8 @@
 {
   "collectionName": "components_faq_faqs",
   "info": {
-    "displayName": "FAQ"
+    "displayName": "FAQ",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,6 +11,15 @@
     },
     "Answer": {
       "type": "richtext"
+    },
+    "hasCTAs": {
+      "type": "boolean"
+    },
+    "CTAs": {
+      "displayName": "CTAs",
+      "type": "component",
+      "repeatable": true,
+      "component": "ct-as.ct-as"
     }
   }
 }

@@ -127,6 +127,17 @@ export interface ConceptsConcepts extends Schema.Component {
   };
 }
 
+export interface CtAsCtAs extends Schema.Component {
+  collectionName: 'components_ct_as_ct_as';
+  info: {
+    displayName: 'CTAs';
+  };
+  attributes: {
+    link: Attribute.String;
+    content: Attribute.String;
+  };
+}
+
 export interface DetailsDetails extends Schema.Component {
   collectionName: 'components_details_details';
   info: {
@@ -144,10 +155,13 @@ export interface FaqFaq extends Schema.Component {
   collectionName: 'components_faq_faqs';
   info: {
     displayName: 'FAQ';
+    description: '';
   };
   attributes: {
     Question: Attribute.Text;
     Answer: Attribute.RichText;
+    hasCTAs: Attribute.Boolean;
+    CTAs: Attribute.Component<'ct-as.ct-as', true>;
   };
 }
 
@@ -550,6 +564,7 @@ declare module '@strapi/types' {
       'career-openings.career-openings': CareerOpeningsCareerOpenings;
       'career-opertunities.career-opertunities': CareerOpertunitiesCareerOpertunities;
       'concepts.concepts': ConceptsConcepts;
+      'ct-as.ct-as': CtAsCtAs;
       'details.details': DetailsDetails;
       'faq.faq': FaqFaq;
       'get-in-touch.get-in-touch': GetInTouchGetInTouch;
