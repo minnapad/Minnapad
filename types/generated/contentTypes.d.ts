@@ -1247,6 +1247,53 @@ export interface ApiProjectProject extends Schema.CollectionType {
   };
 }
 
+export interface ApiSatoruSatoru extends Schema.SingleType {
+  collectionName: 'satorus';
+  info: {
+    singularName: 'satoru';
+    pluralName: 'satorus';
+    displayName: 'satoru';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    legendTitle: Attribute.String;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    legendTopSubTitle: Attribute.String;
+    legendBottomSubTitle: Attribute.String;
+    lengendDiscription: Attribute.RichText;
+    legendMemberShipGuidlinePoints1: Attribute.RichText;
+    legendMemberShipGuidlinePoints2: Attribute.RichText;
+    legendMemberShipGuidlinePoints3: Attribute.RichText;
+    coinName: Attribute.String;
+    coinInfo: Attribute.String;
+    praposalRule1: Attribute.RichText;
+    praposalRule2: Attribute.RichText;
+    praposalRule3: Attribute.RichText;
+    imageText: Attribute.RichText;
+    benifits: Attribute.String;
+    buyNowText: Attribute.String;
+    buyOnMarketPlaceText: Attribute.String;
+    imageContent: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::satoru.satoru',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::satoru.satoru',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSeichiSeichi extends Schema.SingleType {
   collectionName: 'seichis';
   info: {
@@ -1274,7 +1321,7 @@ export interface ApiSeichiSeichi extends Schema.SingleType {
     praposalRule3: Attribute.RichText;
     imageText: Attribute.RichText;
     benifits: Attribute.String;
-    imageContent: Attribute.String;
+    imageContent: Attribute.RichText;
     buyNowText: Attribute.String;
     buyOnMarketPlaceText: Attribute.String;
     createdAt: Attribute.DateTime;
@@ -1428,6 +1475,7 @@ declare module '@strapi/types' {
       'api::legend.legend': ApiLegendLegend;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::project.project': ApiProjectProject;
+      'api::satoru.satoru': ApiSatoruSatoru;
       'api::seichi.seichi': ApiSeichiSeichi;
       'api::style-guide-line.style-guide-line': ApiStyleGuideLineStyleGuideLine;
       'api::support.support': ApiSupportSupport;
