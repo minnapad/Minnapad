@@ -187,6 +187,22 @@ export interface DetailsDetails extends Schema.Component {
   };
 }
 
+export interface DropdownDropdown extends Schema.Component {
+  collectionName: 'components_dropdown_dropdowns';
+  info: {
+    displayName: 'dropdown';
+    description: '';
+  };
+  attributes: {
+    LendedsHeading: Attribute.String;
+    ALLLegends: Attribute.String;
+    Learnhowtojoin: Attribute.String;
+    KeijiInafune: Attribute.String;
+    SeiichiIshii: Attribute.String;
+    SatoruYamashita: Attribute.String;
+  };
+}
+
 export interface FaqFaq extends Schema.Component {
   collectionName: 'components_faq_faqs';
   info: {
@@ -447,6 +463,19 @@ export interface MembershipDetailsMembershipDetails extends Schema.Component {
   };
 }
 
+export interface NavitemsNavitems extends Schema.Component {
+  collectionName: 'components_navitems_navitems';
+  info: {
+    displayName: 'navitems';
+    description: '';
+  };
+  attributes: {
+    item: Attribute.String;
+    isdropdown: Attribute.Boolean;
+    dropdownContent: Attribute.Component<'dropdown.dropdown', true>;
+  };
+}
+
 export interface OurCommunityConnections extends Schema.Component {
   collectionName: 'components_our_community_connections';
   info: {
@@ -622,6 +651,7 @@ declare module '@strapi/types' {
       'concepts.concepts': ConceptsConcepts;
       'ct-as.ct-as': CtAsCtAs;
       'details.details': DetailsDetails;
+      'dropdown.dropdown': DropdownDropdown;
       'faq.faq': FaqFaq;
       'get-in-touch.get-in-touch': GetInTouchGetInTouch;
       'get-in-touch.support': GetInTouchSupport;
@@ -641,6 +671,7 @@ declare module '@strapi/types' {
       'locations.locations': LocationsLocations;
       'membership-benefits.benefit': MembershipBenefitsBenefit;
       'membership-details.membership-details': MembershipDetailsMembershipDetails;
+      'navitems.navitems': NavitemsNavitems;
       'our-community.connections': OurCommunityConnections;
       'our-community.discounts': OurCommunityDiscounts;
       'our-community.ip-ownerships': OurCommunityIpOwnerships;
