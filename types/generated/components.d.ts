@@ -271,16 +271,16 @@ export interface HomeHeroHomeHero extends Schema.Component {
   info: {
     displayName: 'homeHero';
     icon: 'information';
+    description: '';
   };
   attributes: {
     titleText: Attribute.String;
     titleSubText: Attribute.String;
     promoDescription: Attribute.String;
     heroBanner: Attribute.Media<'images'>;
-    heroSeichiImage: Attribute.Media<'images'>;
-    heroKeijiImage: Attribute.Media<'images'>;
     heroLegendsCtaContent: Attribute.String;
     heroLearnMoreCtaContent: Attribute.String;
+    legendsToDisplay: Attribute.Component<'legends.legends', true>;
   };
 }
 
@@ -376,20 +376,18 @@ export interface LegendsProjectsLegendsProjects extends Schema.Component {
 export interface LegendsLegends extends Schema.Component {
   collectionName: 'components_legends_legends';
   info: {
-    displayName: 'Legends';
+    displayName: 'Legend';
     description: '';
   };
   attributes: {
-    name: Attribute.String;
-    projects: Attribute.Text;
-    role: Attribute.String;
-    profilePicture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    knownFor: Attribute.String;
-    isUpcoming: Attribute.Boolean;
-    upcomingDate: Attribute.String;
-    bio: Attribute.RichText;
-    portfolioBanner: Attribute.Media<'images'>;
     ctaContent: Attribute.String;
+    name: Attribute.String;
+    legend: Attribute.Relation<
+      'legends.legends',
+      'oneToOne',
+      'api::legend.legend'
+    >;
+    customImage: Attribute.Media<'images'>;
   };
 }
 
