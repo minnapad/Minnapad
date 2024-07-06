@@ -22,6 +22,18 @@
       "relation": "manyToOne",
       "target": "api::project.project",
       "inversedBy": "legends"
+    },
+    "seichi_project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::seichi-project.seichi-project",
+      "inversedBy": "legends"
+    },
+    "satoru_project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::satoru-project.satoru-project",
+      "inversedBy": "legends"
     }
   }
 }

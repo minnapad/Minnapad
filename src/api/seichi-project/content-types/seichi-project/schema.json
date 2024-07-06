@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seichi_projects",
+  "info": {
+    "singularName": "seichi-project",
+    "pluralName": "seichi-projects",
+    "displayName": "seichiProject"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "projectLogo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "projectBanner": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "projectName": {
+      "type": "string"
+    },
+    "projectSubTitle": {
+      "type": "string"
+    },
+    "ProjectCategory": {
+      "type": "component",
+      "repeatable": true,
+      "component": "project-category.project-category"
+    },
+    "PrjoectSocialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "project-social-links.project-social-links"
+    },
+    "ProjectBenifits": {
+      "type": "component",
+      "repeatable": true,
+      "component": "project-benifits.project-benifits"
+    },
+    "projectDiscription": {
+      "type": "richtext"
+    },
+    "legends": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::legend.legend",
+      "mappedBy": "seichi_project"
+    }
+  }
+}

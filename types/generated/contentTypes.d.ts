@@ -1016,6 +1016,16 @@ export interface ApiLegendLegend extends Schema.CollectionType {
       'manyToOne',
       'api::project.project'
     >;
+    seichi_project: Attribute.Relation<
+      'api::legend.legend',
+      'manyToOne',
+      'api::seichi-project.seichi-project'
+    >;
+    satoru_project: Attribute.Relation<
+      'api::legend.legend',
+      'manyToOne',
+      'api::satoru-project.satoru-project'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1124,6 +1134,63 @@ export interface ApiProjectProject extends Schema.CollectionType {
   };
 }
 
+export interface ApiSatoruProjectSatoruProject extends Schema.CollectionType {
+  collectionName: 'satoru_projects';
+  info: {
+    singularName: 'satoru-project';
+    pluralName: 'satoru-projects';
+    displayName: 'satoruProject';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    projectLogo: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    projectBanner: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    projectName: Attribute.String;
+    projectSubTitle: Attribute.String;
+    ProjectCategory: Attribute.Component<
+      'project-category.project-category',
+      true
+    >;
+    PrjoectSocialLinks: Attribute.Component<
+      'project-social-links.project-social-links',
+      true
+    >;
+    ProjectBenifits: Attribute.Component<
+      'project-benifits.project-benifits',
+      true
+    >;
+    projectDiscription: Attribute.RichText;
+    legends: Attribute.Relation<
+      'api::satoru-project.satoru-project',
+      'oneToMany',
+      'api::legend.legend'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::satoru-project.satoru-project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::satoru-project.satoru-project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSeichiSeichi extends Schema.SingleType {
   collectionName: 'seichis';
   info: {
@@ -1165,6 +1232,63 @@ export interface ApiSeichiSeichi extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::seichi.seichi',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSeichiProjectSeichiProject extends Schema.CollectionType {
+  collectionName: 'seichi_projects';
+  info: {
+    singularName: 'seichi-project';
+    pluralName: 'seichi-projects';
+    displayName: 'seichiProject';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    projectLogo: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    projectBanner: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    projectName: Attribute.String;
+    projectSubTitle: Attribute.String;
+    ProjectCategory: Attribute.Component<
+      'project-category.project-category',
+      true
+    >;
+    PrjoectSocialLinks: Attribute.Component<
+      'project-social-links.project-social-links',
+      true
+    >;
+    ProjectBenifits: Attribute.Component<
+      'project-benifits.project-benifits',
+      true
+    >;
+    projectDiscription: Attribute.RichText;
+    legends: Attribute.Relation<
+      'api::seichi-project.seichi-project',
+      'oneToMany',
+      'api::legend.legend'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::seichi-project.seichi-project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::seichi-project.seichi-project',
       'oneToOne',
       'admin::user'
     > &
@@ -1302,7 +1426,9 @@ declare module '@strapi/types' {
       'api::legend.legend': ApiLegendLegend;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::project.project': ApiProjectProject;
+      'api::satoru-project.satoru-project': ApiSatoruProjectSatoruProject;
       'api::seichi.seichi': ApiSeichiSeichi;
+      'api::seichi-project.seichi-project': ApiSeichiProjectSeichiProject;
       'api::style-guide-line.style-guide-line': ApiStyleGuideLineStyleGuideLine;
       'api::support.support': ApiSupportSupport;
       'api::terms-and-conditions.terms-and-conditions': ApiTermsAndConditionsTermsAndConditions;
