@@ -1,52 +1,28 @@
 {
   "collectionName": "components_legends_legends",
   "info": {
-    "displayName": "Legends",
+    "displayName": "Legend",
     "description": ""
   },
   "options": {},
   "attributes": {
+    "ctaContent": {
+      "type": "string"
+    },
     "name": {
       "type": "string"
     },
-    "projects": {
-      "type": "text"
+    "legend": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::legend.legend"
     },
-    "role": {
-      "type": "string"
-    },
-    "profilePicture": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "knownFor": {
-      "type": "string"
-    },
-    "isUpcoming": {
-      "type": "boolean"
-    },
-    "upcomingDate": {
-      "type": "string"
-    },
-    "bio": {
-      "type": "richtext"
-    },
-    "portfolioBanner": {
+    "customImage": {
       "allowedTypes": [
         "images"
       ],
       "type": "media",
       "multiple": false
-    },
-    "ctaContent": {
-      "type": "string"
     }
   }
 }
