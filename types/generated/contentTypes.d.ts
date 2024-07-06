@@ -944,13 +944,12 @@ export interface ApiCareerCareer extends Schema.SingleType {
   };
 }
 
-export interface ApiConceptConcept extends Schema.SingleType {
+export interface ApiConceptConcept extends Schema.CollectionType {
   collectionName: 'concepts';
   info: {
     singularName: 'concept';
     pluralName: 'concepts';
     displayName: 'Concept';
-    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -962,6 +961,11 @@ export interface ApiConceptConcept extends Schema.SingleType {
     Discription1: Attribute.Component<'concepts.concepts', true>;
     link: Attribute.RichText;
     description2: Attribute.Component<'concepts.concepts', true>;
+    project: Attribute.Relation<
+      'api::concept.concept',
+      'oneToOne',
+      'api::project.project'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1217,6 +1221,11 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'api::project.project',
       'manyToMany',
       'api::legend.legend'
+    >;
+    concept: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'api::concept.concept'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
