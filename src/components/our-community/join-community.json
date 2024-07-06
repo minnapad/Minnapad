@@ -9,12 +9,6 @@
     "title": {
       "type": "string"
     },
-    "ownerShipBenefits": {
-      "displayName": "ipOwnerships",
-      "type": "component",
-      "repeatable": false,
-      "component": "our-community.ip-ownerships"
-    },
     "discountsRewards": {
       "displayName": "discounts",
       "type": "component",
@@ -33,11 +27,10 @@
       "repeatable": false,
       "component": "our-community.mentorship-jobs"
     },
-    "collabs": {
-      "displayName": "collabs",
+    "ipOwnership": {
       "type": "component",
       "repeatable": false,
-      "component": "community-collabs.collabs"
+      "component": "our-community.ip-ownerships"
     }
   }
 }

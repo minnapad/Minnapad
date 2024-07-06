@@ -12,28 +12,51 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Legend": {
-      "type": "component",
-      "repeatable": true,
-      "component": "legends.legends"
-    },
-    "project": {
+    "projects": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::project.project",
       "inversedBy": "legends"
     },
-    "seichi_project": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::seichi-project.seichi-project",
-      "inversedBy": "legends"
+    "name": {
+      "type": "string"
     },
-    "satoru_project": {
+    "role": {
+      "type": "string"
+    },
+    "profilePicture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "knownFor": {
+      "type": "string"
+    },
+    "isUpcoming": {
+      "type": "boolean"
+    },
+    "upcomingDate": {
+      "type": "date"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "portfolioBanner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "blogs": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::satoru-project.satoru-project",
-      "inversedBy": "legends"
+      "relation": "oneToMany",
+      "target": "api::blog.blog",
+      "mappedBy": "legend"
     }
   }
 }

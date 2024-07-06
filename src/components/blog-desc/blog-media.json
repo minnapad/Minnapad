@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_blog_desc_blog_medias",
+  "info": {
+    "displayName": "Blog Media",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "contentMedia": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "image",
+        "video"
+      ]
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

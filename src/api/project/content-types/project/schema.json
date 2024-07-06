@@ -55,14 +55,14 @@
       "repeatable": true,
       "component": "project-benifits.project-benifits"
     },
-    "legends": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::legend.legend",
-      "mappedBy": "project"
-    },
     "projectDiscription": {
       "type": "richtext"
+    },
+    "legends": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::legend.legend",
+      "mappedBy": "projects"
     }
   }
 }

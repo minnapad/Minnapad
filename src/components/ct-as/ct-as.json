@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_ct_as_ct_as",
+  "info": {
+    "displayName": "CTAs"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    }
+  }
+}

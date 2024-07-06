@@ -83,6 +83,29 @@ export interface AboutUsMissionMissonCard extends Schema.Component {
   };
 }
 
+export interface BlogDescBlogDescription extends Schema.Component {
+  collectionName: 'components_blog_desc_blog_descriptions';
+  info: {
+    displayName: 'Blog Description';
+  };
+  attributes: {
+    description: Attribute.RichText;
+  };
+}
+
+export interface BlogDescBlogMedia extends Schema.Component {
+  collectionName: 'components_blog_desc_blog_medias';
+  info: {
+    displayName: 'Blog Media';
+    description: '';
+  };
+  attributes: {
+    contentMedia: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    type: Attribute.Enumeration<['image', 'video']>;
+    name: Attribute.String;
+  };
+}
+
 export interface CareerBenifitsCareerBenifits extends Schema.Component {
   collectionName: 'components_career_benifits_career_benifits';
   info: {
@@ -138,6 +161,17 @@ export interface ConceptsConcepts extends Schema.Component {
   };
 }
 
+export interface CtAsCtAs extends Schema.Component {
+  collectionName: 'components_ct_as_ct_as';
+  info: {
+    displayName: 'CTAs';
+  };
+  attributes: {
+    link: Attribute.String;
+    content: Attribute.String;
+  };
+}
+
 export interface DetailsDetails extends Schema.Component {
   collectionName: 'components_details_details';
   info: {
@@ -148,6 +182,7 @@ export interface DetailsDetails extends Schema.Component {
   attributes: {
     name: Attribute.String;
     logo: Attribute.Media<'images'>;
+    websiteUrl: Attribute.String;
   };
 }
 
@@ -155,10 +190,13 @@ export interface FaqFaq extends Schema.Component {
   collectionName: 'components_faq_faqs';
   info: {
     displayName: 'FAQ';
+    description: '';
   };
   attributes: {
     Question: Attribute.Text;
     Answer: Attribute.RichText;
+    hasCTAs: Attribute.Boolean;
+    CTAs: Attribute.Component<'ct-as.ct-as', true>;
   };
 }
 
@@ -233,16 +271,16 @@ export interface HomeHeroHomeHero extends Schema.Component {
   info: {
     displayName: 'homeHero';
     icon: 'information';
+    description: '';
   };
   attributes: {
     titleText: Attribute.String;
     titleSubText: Attribute.String;
     promoDescription: Attribute.String;
     heroBanner: Attribute.Media<'images'>;
-    heroSeichiImage: Attribute.Media<'images'>;
-    heroKeijiImage: Attribute.Media<'images'>;
     heroLegendsCtaContent: Attribute.String;
     heroLearnMoreCtaContent: Attribute.String;
+    legendsToDisplay: Attribute.Component<'legends.legends', true>;
   };
 }
 
@@ -256,6 +294,8 @@ export interface HomeTeaserTeaser extends Schema.Component {
     title: Attribute.String;
     video: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     ctaContent: Attribute.String;
+    hasUrl: Attribute.Boolean;
+    url: Attribute.String;
   };
 }
 
@@ -336,20 +376,18 @@ export interface LegendsProjectsLegendsProjects extends Schema.Component {
 export interface LegendsLegends extends Schema.Component {
   collectionName: 'components_legends_legends';
   info: {
-    displayName: 'Legends';
+    displayName: 'Legend';
     description: '';
   };
   attributes: {
-    name: Attribute.String;
-    projects: Attribute.Text;
-    role: Attribute.String;
-    profilePicture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    knownFor: Attribute.String;
-    isUpcoming: Attribute.Boolean;
-    upcomingDate: Attribute.String;
-    bio: Attribute.RichText;
-    portfolioBanner: Attribute.Media<'images'>;
     ctaContent: Attribute.String;
+    name: Attribute.String;
+    legend: Attribute.Relation<
+      'legends.legends',
+      'oneToOne',
+      'api::legend.legend'
+    >;
+    customImage: Attribute.Media<'images'>;
   };
 }
 
@@ -448,11 +486,10 @@ export interface OurCommunityJoinCommunity extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    ownerShipBenefits: Attribute.Component<'our-community.ip-ownerships'>;
     discountsRewards: Attribute.Component<'our-community.discounts'>;
     newConnections: Attribute.Component<'our-community.connections'>;
     jobs: Attribute.Component<'our-community.mentorship-jobs'>;
-    collabs: Attribute.Component<'community-collabs.collabs'>;
+    ipOwnership: Attribute.Component<'our-community.ip-ownerships'>;
   };
 }
 
@@ -575,11 +612,14 @@ declare module '@strapi/types' {
       'about-us-hero.hero-section': AboutUsHeroHeroSection;
       'about-us-mission.missions': AboutUsMissionMissions;
       'about-us-mission.misson-card': AboutUsMissionMissonCard;
+      'blog-desc.blog-description': BlogDescBlogDescription;
+      'blog-desc.blog-media': BlogDescBlogMedia;
       'career-benifits.career-benifits': CareerBenifitsCareerBenifits;
       'career-openings.career-openings': CareerOpeningsCareerOpenings;
       'career-opertunities.career-opertunities': CareerOpertunitiesCareerOpertunities;
       'community-collabs.collabs': CommunityCollabsCollabs;
       'concepts.concepts': ConceptsConcepts;
+      'ct-as.ct-as': CtAsCtAs;
       'details.details': DetailsDetails;
       'faq.faq': FaqFaq;
       'get-in-touch.get-in-touch': GetInTouchGetInTouch;
