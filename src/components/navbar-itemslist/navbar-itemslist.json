@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_navbar_itemslist_navbar_itemslists",
+  "info": {
+    "displayName": "navbarItemslist",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    }
+  }
+}

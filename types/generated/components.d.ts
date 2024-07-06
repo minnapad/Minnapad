@@ -187,6 +187,22 @@ export interface DetailsDetails extends Schema.Component {
   };
 }
 
+export interface DropdownContentDropdownContent extends Schema.Component {
+  collectionName: 'components_dropdown_content_dropdown_contents';
+  info: {
+    displayName: 'dropdownContent';
+    description: '';
+  };
+  attributes: {
+    heading: Attribute.String;
+    navbaritemlists: Attribute.Relation<
+      'dropdown-content.dropdown-content',
+      'oneToMany',
+      'api::navbaritemlist.navbaritemlist'
+    >;
+  };
+}
+
 export interface DropdownDropdown extends Schema.Component {
   collectionName: 'components_dropdown_dropdowns';
   info: {
@@ -269,6 +285,18 @@ export interface HeadQuartersQuarterDetails extends Schema.Component {
   attributes: {
     name: Attribute.String;
     address: Attribute.Text;
+  };
+}
+
+export interface HeaderContentHeaderContent extends Schema.Component {
+  collectionName: 'components_header_content_header_contents';
+  info: {
+    displayName: 'headerContent';
+  };
+  attributes: {
+    item: Attribute.String;
+    isdropdown: Attribute.Boolean;
+    dropdownContent: Attribute.Component<'dropdown-content.dropdown-content'>;
   };
 }
 
@@ -463,6 +491,18 @@ export interface MembershipDetailsMembershipDetails extends Schema.Component {
   };
 }
 
+export interface NavbarItemslistNavbarItemslist extends Schema.Component {
+  collectionName: 'components_navbar_itemslist_navbar_itemslists';
+  info: {
+    displayName: 'navbarItemslist';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.String;
+  };
+}
+
 export interface NavitemsNavitems extends Schema.Component {
   collectionName: 'components_navitems_navitems';
   info: {
@@ -651,12 +691,14 @@ declare module '@strapi/types' {
       'concepts.concepts': ConceptsConcepts;
       'ct-as.ct-as': CtAsCtAs;
       'details.details': DetailsDetails;
+      'dropdown-content.dropdown-content': DropdownContentDropdownContent;
       'dropdown.dropdown': DropdownDropdown;
       'faq.faq': FaqFaq;
       'get-in-touch.get-in-touch': GetInTouchGetInTouch;
       'get-in-touch.support': GetInTouchSupport;
       'head-quarters.head-quarters': HeadQuartersHeadQuarters;
       'head-quarters.quarter-details': HeadQuartersQuarterDetails;
+      'header-content.header-content': HeaderContentHeaderContent;
       'home-featured.home-featured': HomeFeaturedHomeFeatured;
       'home-hero.home-hero': HomeHeroHomeHero;
       'home-teaser.teaser': HomeTeaserTeaser;
@@ -671,6 +713,7 @@ declare module '@strapi/types' {
       'locations.locations': LocationsLocations;
       'membership-benefits.benefit': MembershipBenefitsBenefit;
       'membership-details.membership-details': MembershipDetailsMembershipDetails;
+      'navbar-itemslist.navbar-itemslist': NavbarItemslistNavbarItemslist;
       'navitems.navitems': NavitemsNavitems;
       'our-community.connections': OurCommunityConnections;
       'our-community.discounts': OurCommunityDiscounts;

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_header_content_header_contents",
+  "info": {
+    "displayName": "headerContent"
+  },
+  "options": {},
+  "attributes": {
+    "item": {
+      "type": "string"
+    },
+    "isdropdown": {
+      "type": "boolean"
+    },
+    "dropdownContent": {
+      "displayName": "dropdownContent",
+      "type": "component",
+      "repeatable": false,
+      "component": "dropdown-content.dropdown-content"
+    }
+  }
+}

@@ -1151,6 +1151,71 @@ export interface ApiLegendLegend extends Schema.CollectionType {
   };
 }
 
+export interface ApiNavBarNavBar extends Schema.CollectionType {
+  collectionName: 'nav_bars';
+  info: {
+    singularName: 'nav-bar';
+    pluralName: 'nav-bars';
+    displayName: 'NavBar';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    headerContent: Attribute.Component<'header-content.header-content', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::nav-bar.nav-bar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::nav-bar.nav-bar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNavbaritemlistNavbaritemlist extends Schema.CollectionType {
+  collectionName: 'navbaritemlists';
+  info: {
+    singularName: 'navbaritemlist';
+    pluralName: 'navbaritemlists';
+    displayName: 'navbaritemlist';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    navbarItemslist: Attribute.Component<
+      'navbar-itemslist.navbar-itemslist',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::navbaritemlist.navbaritemlist',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::navbaritemlist.navbaritemlist',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
   collectionName: 'privacy_policies';
   info: {
@@ -1420,6 +1485,8 @@ declare module '@strapi/types' {
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::keiji.keiji': ApiKeijiKeiji;
       'api::legend.legend': ApiLegendLegend;
+      'api::nav-bar.nav-bar': ApiNavBarNavBar;
+      'api::navbaritemlist.navbaritemlist': ApiNavbaritemlistNavbaritemlist;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::project.project': ApiProjectProject;
       'api::seichi.seichi': ApiSeichiSeichi;

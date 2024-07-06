@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nav_bars",
+  "info": {
+    "singularName": "nav-bar",
+    "pluralName": "nav-bars",
+    "displayName": "NavBar",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headerContent": {
+      "displayName": "headerContent",
+      "type": "component",
+      "repeatable": true,
+      "component": "header-content.header-content"
+    }
+  }
+}
