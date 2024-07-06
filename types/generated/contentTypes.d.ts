@@ -1031,6 +1031,7 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
     teaser: Attribute.Component<'home-teaser.teaser'>;
     legendsProjects: Attribute.Component<'legends-projects.legends-projects'>;
     latestNews: Attribute.Component<'latest-news.latest-news'>;
+    communityCollabs: Attribute.Component<'community-collabs.collabs'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

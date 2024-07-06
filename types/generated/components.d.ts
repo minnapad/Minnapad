@@ -486,11 +486,10 @@ export interface OurCommunityJoinCommunity extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    ownerShipBenefits: Attribute.Component<'our-community.ip-ownerships'>;
     discountsRewards: Attribute.Component<'our-community.discounts'>;
     newConnections: Attribute.Component<'our-community.connections'>;
     jobs: Attribute.Component<'our-community.mentorship-jobs'>;
-    collabs: Attribute.Component<'community-collabs.collabs'>;
+    ipOwnership: Attribute.Component<'our-community.ip-ownerships'>;
   };
 }
 
