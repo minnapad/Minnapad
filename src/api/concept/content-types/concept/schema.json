@@ -4,7 +4,8 @@
   "info": {
     "singularName": "concept",
     "pluralName": "concepts",
-    "displayName": "Concept"
+    "displayName": "Concept",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -38,6 +39,11 @@
       "relation": "oneToOne",
       "target": "api::project.project",
       "mappedBy": "concept"
+    },
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
     }
   }
 }

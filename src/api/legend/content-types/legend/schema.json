@@ -19,7 +19,9 @@
       "inversedBy": "legends"
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "unique": true,
+      "required": true
     },
     "role": {
       "type": "string"

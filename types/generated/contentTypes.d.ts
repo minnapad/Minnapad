@@ -950,6 +950,7 @@ export interface ApiConceptConcept extends Schema.CollectionType {
     singularName: 'concept';
     pluralName: 'concepts';
     displayName: 'Concept';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -966,6 +967,7 @@ export interface ApiConceptConcept extends Schema.CollectionType {
       'oneToOne',
       'api::project.project'
     >;
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1119,7 +1121,7 @@ export interface ApiLegendLegend extends Schema.CollectionType {
       'manyToMany',
       'api::project.project'
     >;
-    name: Attribute.String;
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
     role: Attribute.String;
     profilePicture: Attribute.Media<'images'>;
     knownFor: Attribute.String;
