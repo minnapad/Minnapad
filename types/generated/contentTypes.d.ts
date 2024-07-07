@@ -985,6 +985,7 @@ export interface ApiConceptConcept extends Schema.CollectionType {
       Attribute.Private;
   };
 }
+
 export interface ApiCrewCrew extends Schema.CollectionType {
   collectionName: 'crews';
   info: {
@@ -1007,9 +1008,10 @@ export interface ApiCrewCrew extends Schema.CollectionType {
     createdBy: Attribute.Relation<'api::crew.crew', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::crew.crew', 'oneToOne', 'admin::user'> &
-    Attribute.Private;
+      Attribute.Private;
   };
 }
+
 export interface ApiHeaderHeader extends Schema.SingleType {
   collectionName: 'headers';
   info: {
