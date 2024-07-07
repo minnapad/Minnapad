@@ -303,11 +303,12 @@ export interface HomeTeaserTeaser extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.String;
     video: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     ctaContent: Attribute.String;
     hasUrl: Attribute.Boolean;
     url: Attribute.String;
+    thumbnail: Attribute.Media<'images'>;
+    title: Attribute.RichText;
   };
 }
 
