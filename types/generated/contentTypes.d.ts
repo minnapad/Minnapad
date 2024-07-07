@@ -1195,7 +1195,14 @@ export interface ApiNavBarNavBar extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    headerContent: Attribute.Component<'header-content.header-content', true>;
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    hasSubMenu: Attribute.Boolean & Attribute.Required;
+    subMenu: Attribute.Relation<
+      'api::nav-bar.nav-bar',
+      'oneToOne',
+      'api::nav-sub-menu.nav-sub-menu'
+    >;
+    url: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1214,33 +1221,34 @@ export interface ApiNavBarNavBar extends Schema.CollectionType {
   };
 }
 
-export interface ApiNavbaritemlistNavbaritemlist extends Schema.CollectionType {
-  collectionName: 'navbaritemlists';
+export interface ApiNavSubMenuNavSubMenu extends Schema.CollectionType {
+  collectionName: 'nav_sub_menus';
   info: {
-    singularName: 'navbaritemlist';
-    pluralName: 'navbaritemlists';
-    displayName: 'navbaritemlist';
-    description: '';
+    singularName: 'nav-sub-menu';
+    pluralName: 'nav-sub-menus';
+    displayName: 'navSubMenu';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    navbarItemslist: Attribute.Component<
-      'navbar-itemslist.navbar-itemslist',
-      true
+    subMenu: Attribute.Component<'nav-submenu.menu', true>;
+    navParent: Attribute.Relation<
+      'api::nav-sub-menu.nav-sub-menu',
+      'oneToOne',
+      'api::nav-bar.nav-bar'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::navbaritemlist.navbaritemlist',
+      'api::nav-sub-menu.nav-sub-menu',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::navbaritemlist.navbaritemlist',
+      'api::nav-sub-menu.nav-sub-menu',
       'oneToOne',
       'admin::user'
     > &
@@ -1571,7 +1579,7 @@ declare module '@strapi/types' {
       'api::keiji.keiji': ApiKeijiKeiji;
       'api::legend.legend': ApiLegendLegend;
       'api::nav-bar.nav-bar': ApiNavBarNavBar;
-      'api::navbaritemlist.navbaritemlist': ApiNavbaritemlistNavbaritemlist;
+      'api::nav-sub-menu.nav-sub-menu': ApiNavSubMenuNavSubMenu;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::project.project': ApiProjectProject;
       'api::satoru.satoru': ApiSatoruSatoru;

@@ -11,11 +11,6 @@
     },
     "isdropdown": {
       "type": "boolean"
-    },
-    "dropdownContent": {
-      "type": "component",
-      "repeatable": true,
-      "component": "dropdown.dropdown"
     }
   }
 }
