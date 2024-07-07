@@ -186,38 +186,6 @@ export interface DetailsDetails extends Schema.Component {
   };
 }
 
-export interface DropdownContentDropdownContent extends Schema.Component {
-  collectionName: 'components_dropdown_content_dropdown_contents';
-  info: {
-    displayName: 'dropdownContent';
-    description: '';
-  };
-  attributes: {
-    heading: Attribute.String;
-    navbaritemlists: Attribute.Relation<
-      'dropdown-content.dropdown-content',
-      'oneToMany',
-      'api::navbaritemlist.navbaritemlist'
-    >;
-  };
-}
-
-export interface DropdownDropdown extends Schema.Component {
-  collectionName: 'components_dropdown_dropdowns';
-  info: {
-    displayName: 'dropdown';
-    description: '';
-  };
-  attributes: {
-    LendedsHeading: Attribute.String;
-    ALLLegends: Attribute.String;
-    Learnhowtojoin: Attribute.String;
-    KeijiInafune: Attribute.String;
-    SeiichiIshii: Attribute.String;
-    SatoruYamashita: Attribute.String;
-  };
-}
-
 export interface FaqFaq extends Schema.Component {
   collectionName: 'components_faq_faqs';
   info: {
@@ -291,11 +259,11 @@ export interface HeaderContentHeaderContent extends Schema.Component {
   collectionName: 'components_header_content_header_contents';
   info: {
     displayName: 'headerContent';
+    description: '';
   };
   attributes: {
     item: Attribute.String;
     isdropdown: Attribute.Boolean;
-    dropdownContent: Attribute.Component<'dropdown-content.dropdown-content'>;
   };
 }
 
@@ -490,15 +458,15 @@ export interface MembershipDetailsMembershipDetails extends Schema.Component {
   };
 }
 
-export interface NavbarItemslistNavbarItemslist extends Schema.Component {
-  collectionName: 'components_navbar_itemslist_navbar_itemslists';
+export interface NavSubmenuMenu extends Schema.Component {
+  collectionName: 'components_nav_submenu_menus';
   info: {
-    displayName: 'navbarItemslist';
-    description: '';
+    displayName: 'menu';
+    icon: 'bulletList';
   };
   attributes: {
     title: Attribute.String;
-    content: Attribute.String;
+    menuLink: Attribute.Component<'link.link', true>;
   };
 }
 
@@ -511,7 +479,6 @@ export interface NavitemsNavitems extends Schema.Component {
   attributes: {
     item: Attribute.String;
     isdropdown: Attribute.Boolean;
-    dropdownContent: Attribute.Component<'dropdown.dropdown', true>;
   };
 }
 
@@ -690,8 +657,6 @@ declare module '@strapi/types' {
       'concepts.concepts': ConceptsConcepts;
       'ct-as.ct-as': CtAsCtAs;
       'details.details': DetailsDetails;
-      'dropdown-content.dropdown-content': DropdownContentDropdownContent;
-      'dropdown.dropdown': DropdownDropdown;
       'faq.faq': FaqFaq;
       'get-in-touch.get-in-touch': GetInTouchGetInTouch;
       'get-in-touch.support': GetInTouchSupport;
@@ -712,7 +677,7 @@ declare module '@strapi/types' {
       'locations.locations': LocationsLocations;
       'membership-benefits.benefit': MembershipBenefitsBenefit;
       'membership-details.membership-details': MembershipDetailsMembershipDetails;
-      'navbar-itemslist.navbar-itemslist': NavbarItemslistNavbarItemslist;
+      'nav-submenu.menu': NavSubmenuMenu;
       'navitems.navitems': NavitemsNavitems;
       'our-community.connections': OurCommunityConnections;
       'our-community.discounts': OurCommunityDiscounts;

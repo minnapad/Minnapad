@@ -12,11 +12,23 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "headerContent": {
-      "displayName": "headerContent",
-      "type": "component",
-      "repeatable": true,
-      "component": "header-content.header-content"
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "hasSubMenu": {
+      "type": "boolean",
+      "required": true
+    },
+    "subMenu": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::nav-sub-menu.nav-sub-menu",
+      "inversedBy": "navParent"
+    },
+    "url": {
+      "type": "string"
     }
   }
 }
