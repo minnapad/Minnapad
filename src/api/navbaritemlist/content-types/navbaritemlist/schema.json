@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "navbaritemlists",
+  "info": {
+    "singularName": "navbaritemlist",
+    "pluralName": "navbaritemlists",
+    "displayName": "navbaritemlist",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "navbarItemslist": {
+      "displayName": "navbarItemslist",
+      "type": "component",
+      "repeatable": true,
+      "component": "navbar-itemslist.navbar-itemslist"
+    }
+  }
+}

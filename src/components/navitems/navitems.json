@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_navitems_navitems",
+  "info": {
+    "displayName": "navitems",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "item": {
+      "type": "string"
+    },
+    "isdropdown": {
+      "type": "boolean"
+    },
+    "dropdownContent": {
+      "type": "component",
+      "repeatable": true,
+      "component": "dropdown.dropdown"
+    }
+  }
+}
