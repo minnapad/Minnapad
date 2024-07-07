@@ -12,12 +12,12 @@
     "isEligible": {
       "type": "boolean"
     },
-    "Importance": {
+    "betterThanOtherType": {
       "type": "enumeration",
       "enum": [
-        "low",
+        "no",
         "neutral",
-        "high"
+        "yes"
       ]
     },
     "logo": {

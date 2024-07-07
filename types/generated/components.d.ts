@@ -400,6 +400,7 @@ export interface LegendsLegends extends Schema.Component {
       'api::legend.legend'
     >;
     customImage: Attribute.Media<'images'>;
+    popularProjects: Attribute.String;
   };
 }
 
@@ -437,7 +438,7 @@ export interface MembershipBenefitsBenefit extends Schema.Component {
   attributes: {
     description: Attribute.Text;
     isEligible: Attribute.Boolean;
-    Importance: Attribute.Enumeration<['low', 'neutral', 'high']>;
+    betterThanOtherType: Attribute.Enumeration<['no', 'neutral', 'yes']>;
     logo: Attribute.String;
   };
 }
