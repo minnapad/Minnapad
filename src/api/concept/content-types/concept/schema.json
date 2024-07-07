@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "concepts",
   "info": {
     "singularName": "concept",
@@ -33,6 +33,17 @@
       "type": "component",
       "repeatable": true,
       "component": "concepts.concepts"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project",
+      "mappedBy": "concept"
+    },
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
     }
   }
 }

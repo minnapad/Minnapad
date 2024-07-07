@@ -63,6 +63,12 @@
       "relation": "manyToMany",
       "target": "api::legend.legend",
       "mappedBy": "projects"
+    },
+    "concept": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::concept.concept",
+      "inversedBy": "project"
     }
   }
 }
