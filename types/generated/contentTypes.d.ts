@@ -1445,6 +1445,7 @@ export interface ApiSeichiSeichi extends Schema.SingleType {
     brainFightersTitle: Attribute.String;
     gameTitle: Attribute.String;
     legendMessage: Attribute.String;
+    gamingVedio: Attribute.Media<'videos'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

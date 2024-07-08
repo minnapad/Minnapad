@@ -93,6 +93,13 @@
     },
     "legendMessage": {
       "type": "string"
+    },
+    "gamingVedio": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
