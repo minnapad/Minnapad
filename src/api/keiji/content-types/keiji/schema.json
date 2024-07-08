@@ -73,6 +73,13 @@
     },
     "imageContent": {
       "type": "richtext"
+    },
+    "video": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

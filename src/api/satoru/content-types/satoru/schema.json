@@ -4,7 +4,8 @@
   "info": {
     "singularName": "satoru",
     "pluralName": "satorus",
-    "displayName": "satoru"
+    "displayName": "satoru",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,14 +16,15 @@
       "type": "string"
     },
     "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "legendTopSubTitle": {
       "type": "string"
@@ -71,6 +73,13 @@
     },
     "imageContent": {
       "type": "richtext"
+    },
+    "video": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

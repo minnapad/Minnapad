@@ -1117,6 +1117,7 @@ export interface ApiKeijiKeiji extends Schema.SingleType {
     buyNowText: Attribute.String;
     buyOnMarketPlaceText: Attribute.String;
     imageContent: Attribute.RichText;
+    video: Attribute.Media<'videos'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1358,6 +1359,7 @@ export interface ApiSatoruSatoru extends Schema.SingleType {
     singularName: 'satoru';
     pluralName: 'satorus';
     displayName: 'satoru';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1381,6 +1383,7 @@ export interface ApiSatoruSatoru extends Schema.SingleType {
     buyNowText: Attribute.String;
     buyOnMarketPlaceText: Attribute.String;
     imageContent: Attribute.RichText;
+    video: Attribute.Media<'videos'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1429,6 +1432,7 @@ export interface ApiSeichiSeichi extends Schema.SingleType {
     imageContent: Attribute.RichText;
     buyNowText: Attribute.String;
     buyOnMarketPlaceText: Attribute.String;
+    video: Attribute.Media<'videos'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
