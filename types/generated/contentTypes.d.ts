@@ -1335,6 +1335,9 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'oneToOne',
       'api::concept.concept'
     >;
+    title: Attribute.String;
+    brainFightersTitle: Attribute.String;
+    gameTitle: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
