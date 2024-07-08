@@ -90,6 +90,9 @@
     },
     "projectTitle": {
       "type": "string"
+    },
+    "legendMessage": {
+      "type": "string"
     }
   }
 }

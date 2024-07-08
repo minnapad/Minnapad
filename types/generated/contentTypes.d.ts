@@ -1121,6 +1121,7 @@ export interface ApiKeijiKeiji extends Schema.SingleType {
     projectTitle: Attribute.String;
     brainFightersTitle: Attribute.String;
     gameTitle: Attribute.String;
+    legendMessage: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1390,6 +1391,7 @@ export interface ApiSatoruSatoru extends Schema.SingleType {
     gameTitle: Attribute.String;
     brainFightersTitle: Attribute.String;
     projectTitle: Attribute.String;
+    legendMessage: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1442,6 +1444,7 @@ export interface ApiSeichiSeichi extends Schema.SingleType {
     projectTitle: Attribute.String;
     brainFightersTitle: Attribute.String;
     gameTitle: Attribute.String;
+    legendMessage: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

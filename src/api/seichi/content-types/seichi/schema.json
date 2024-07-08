@@ -90,6 +90,9 @@
     },
     "gameTitle": {
       "type": "string"
+    },
+    "legendMessage": {
+      "type": "string"
     }
   }
 }
