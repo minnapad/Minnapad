@@ -69,15 +69,6 @@
       "relation": "oneToOne",
       "target": "api::concept.concept",
       "inversedBy": "project"
-    },
-    "title": {
-      "type": "string"
-    },
-    "brainFightersTitle": {
-      "type": "string"
-    },
-    "gameTitle": {
-      "type": "string"
     }
   }
 }

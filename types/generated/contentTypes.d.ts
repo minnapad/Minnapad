@@ -1118,6 +1118,9 @@ export interface ApiKeijiKeiji extends Schema.SingleType {
     buyOnMarketPlaceText: Attribute.String;
     imageContent: Attribute.RichText;
     video: Attribute.Media<'videos'>;
+    projectTitle: Attribute.String;
+    brainFightersTitle: Attribute.String;
+    gameTitle: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1335,9 +1338,6 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'oneToOne',
       'api::concept.concept'
     >;
-    title: Attribute.String;
-    brainFightersTitle: Attribute.String;
-    gameTitle: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1387,6 +1387,9 @@ export interface ApiSatoruSatoru extends Schema.SingleType {
     buyOnMarketPlaceText: Attribute.String;
     imageContent: Attribute.RichText;
     video: Attribute.Media<'videos'>;
+    gameTitle: Attribute.String;
+    brainFightersTitle: Attribute.String;
+    projectTitle: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1436,6 +1439,9 @@ export interface ApiSeichiSeichi extends Schema.SingleType {
     buyNowText: Attribute.String;
     buyOnMarketPlaceText: Attribute.String;
     video: Attribute.Media<'videos'>;
+    projectTitle: Attribute.String;
+    brainFightersTitle: Attribute.String;
+    gameTitle: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

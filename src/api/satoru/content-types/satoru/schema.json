@@ -75,11 +75,21 @@
       "type": "richtext"
     },
     "video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "videos"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "gameTitle": {
+      "type": "string"
+    },
+    "brainFightersTitle": {
+      "type": "string"
+    },
+    "projectTitle": {
+      "type": "string"
     }
   }
 }
