@@ -8,8 +8,7 @@
   "options": {},
   "attributes": {
     "url": {
-      "type": "string",
-      "regex": "^([a-zA-Z][a-zA-Z\\d+\\-.]*):\\/\\/(www\\.)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w\\.-@]*)*(\\?[\\/\\w\\.-=&]*)?$"
+      "type": "string"
     },
     "icon": {
       "type": "string"

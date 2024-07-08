@@ -1227,6 +1227,7 @@ export interface ApiNavSubMenuNavSubMenu extends Schema.CollectionType {
     singularName: 'nav-sub-menu';
     pluralName: 'nav-sub-menus';
     displayName: 'navSubMenu';
+    description: '';
   };
   options: {
     draftAndPublish: true;
