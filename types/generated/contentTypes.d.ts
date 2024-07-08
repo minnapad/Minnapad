@@ -1012,6 +1012,37 @@ export interface ApiCrewCrew extends Schema.CollectionType {
   };
 }
 
+export interface ApiHeaderHeader extends Schema.SingleType {
+  collectionName: 'headers';
+  info: {
+    singularName: 'header';
+    pluralName: 'headers';
+    displayName: 'Header';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    navbarcontent: Attribute.Component<'navitems.navitems', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::header.header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::header.header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomepageHomepage extends Schema.SingleType {
   collectionName: 'homepages';
   info: {
@@ -1145,6 +1176,79 @@ export interface ApiLegendLegend extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::legend.legend',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNavBarNavBar extends Schema.CollectionType {
+  collectionName: 'nav_bars';
+  info: {
+    singularName: 'nav-bar';
+    pluralName: 'nav-bars';
+    displayName: 'NavBar';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    hasSubMenu: Attribute.Boolean & Attribute.Required;
+    subMenu: Attribute.Relation<
+      'api::nav-bar.nav-bar',
+      'oneToOne',
+      'api::nav-sub-menu.nav-sub-menu'
+    >;
+    url: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::nav-bar.nav-bar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::nav-bar.nav-bar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNavSubMenuNavSubMenu extends Schema.CollectionType {
+  collectionName: 'nav_sub_menus';
+  info: {
+    singularName: 'nav-sub-menu';
+    pluralName: 'nav-sub-menus';
+    displayName: 'navSubMenu';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    subMenu: Attribute.Component<'nav-submenu.menu', true>;
+    navParent: Attribute.Relation<
+      'api::nav-sub-menu.nav-sub-menu',
+      'oneToOne',
+      'api::nav-bar.nav-bar'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::nav-sub-menu.nav-sub-menu',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::nav-sub-menu.nav-sub-menu',
       'oneToOne',
       'admin::user'
     > &
@@ -1470,9 +1574,12 @@ declare module '@strapi/types' {
       'api::career.career': ApiCareerCareer;
       'api::concept.concept': ApiConceptConcept;
       'api::crew.crew': ApiCrewCrew;
+      'api::header.header': ApiHeaderHeader;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::keiji.keiji': ApiKeijiKeiji;
       'api::legend.legend': ApiLegendLegend;
+      'api::nav-bar.nav-bar': ApiNavBarNavBar;
+      'api::nav-sub-menu.nav-sub-menu': ApiNavSubMenuNavSubMenu;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::project.project': ApiProjectProject;
       'api::satoru.satoru': ApiSatoruSatoru;

@@ -6,9 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
     "video": {
       "type": "media",
       "multiple": false,
@@ -29,6 +26,17 @@
     "url": {
       "type": "string",
       "regex": "^(https?|ftp):\\/\\/(www\\.)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*(\\?[\\/\\w\\.-=&]*)?$"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "richtext"
     }
   }
 }

@@ -255,6 +255,18 @@ export interface HeadQuartersQuarterDetails extends Schema.Component {
   };
 }
 
+export interface HeaderContentHeaderContent extends Schema.Component {
+  collectionName: 'components_header_content_header_contents';
+  info: {
+    displayName: 'headerContent';
+    description: '';
+  };
+  attributes: {
+    item: Attribute.String;
+    isdropdown: Attribute.Boolean;
+  };
+}
+
 export interface HomeFeaturedHomeFeatured extends Schema.Component {
   collectionName: 'components_home_featured_home_featureds';
   info: {
@@ -291,11 +303,12 @@ export interface HomeTeaserTeaser extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.String;
     video: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     ctaContent: Attribute.String;
     hasUrl: Attribute.Boolean;
     url: Attribute.String;
+    thumbnail: Attribute.Media<'images'>;
+    title: Attribute.RichText;
   };
 }
 
@@ -388,6 +401,7 @@ export interface LegendsLegends extends Schema.Component {
       'api::legend.legend'
     >;
     customImage: Attribute.Media<'images'>;
+    popularProjects: Attribute.String;
   };
 }
 
@@ -425,7 +439,7 @@ export interface MembershipBenefitsBenefit extends Schema.Component {
   attributes: {
     description: Attribute.Text;
     isEligible: Attribute.Boolean;
-    Importance: Attribute.Enumeration<['low', 'neutral', 'high']>;
+    betterThanOtherType: Attribute.Enumeration<['no', 'neutral', 'yes']>;
     logo: Attribute.String;
   };
 }
@@ -443,6 +457,30 @@ export interface MembershipDetailsMembershipDetails extends Schema.Component {
     title: Attribute.String;
     ctaContent: Attribute.String;
     description: Attribute.Text;
+  };
+}
+
+export interface NavSubmenuMenu extends Schema.Component {
+  collectionName: 'components_nav_submenu_menus';
+  info: {
+    displayName: 'menu';
+    icon: 'bulletList';
+  };
+  attributes: {
+    title: Attribute.String;
+    menuLink: Attribute.Component<'link.link', true>;
+  };
+}
+
+export interface NavitemsNavitems extends Schema.Component {
+  collectionName: 'components_navitems_navitems';
+  info: {
+    displayName: 'navitems';
+    description: '';
+  };
+  attributes: {
+    item: Attribute.String;
+    isdropdown: Attribute.Boolean;
   };
 }
 
@@ -626,6 +664,7 @@ declare module '@strapi/types' {
       'get-in-touch.support': GetInTouchSupport;
       'head-quarters.head-quarters': HeadQuartersHeadQuarters;
       'head-quarters.quarter-details': HeadQuartersQuarterDetails;
+      'header-content.header-content': HeaderContentHeaderContent;
       'home-featured.home-featured': HomeFeaturedHomeFeatured;
       'home-hero.home-hero': HomeHeroHomeHero;
       'home-teaser.teaser': HomeTeaserTeaser;
@@ -640,6 +679,8 @@ declare module '@strapi/types' {
       'locations.locations': LocationsLocations;
       'membership-benefits.benefit': MembershipBenefitsBenefit;
       'membership-details.membership-details': MembershipDetailsMembershipDetails;
+      'nav-submenu.menu': NavSubmenuMenu;
+      'navitems.navitems': NavitemsNavitems;
       'our-community.connections': OurCommunityConnections;
       'our-community.discounts': OurCommunityDiscounts;
       'our-community.ip-ownerships': OurCommunityIpOwnerships;
