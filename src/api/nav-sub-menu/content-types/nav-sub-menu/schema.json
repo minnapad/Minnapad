@@ -4,7 +4,8 @@
   "info": {
     "singularName": "nav-sub-menu",
     "pluralName": "nav-sub-menus",
-    "displayName": "navSubMenu"
+    "displayName": "navSubMenu",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
