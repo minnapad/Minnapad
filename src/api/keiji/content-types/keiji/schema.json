@@ -1,0 +1,98 @@
+{
+  "kind": "singleType",
+  "collectionName": "keijis",
+  "info": {
+    "singularName": "keiji",
+    "pluralName": "keijis",
+    "displayName": "Keiji",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "legendTitle": {
+      "type": "string"
+    },
+    "legendTopSubTitle": {
+      "type": "string"
+    },
+    "legendBottomSubTitle": {
+      "type": "string"
+    },
+    "lengendDiscription": {
+      "type": "richtext"
+    },
+    "legendMemberShipGuidlinePoints1": {
+      "type": "richtext"
+    },
+    "legendMemberShipGuidlinePoints2": {
+      "type": "richtext"
+    },
+    "legendMemberShipGuidlinePoints3": {
+      "type": "richtext"
+    },
+    "coinName": {
+      "type": "string"
+    },
+    "coinInfo": {
+      "type": "string"
+    },
+    "praposalRule1": {
+      "type": "richtext"
+    },
+    "praposalRule2": {
+      "type": "richtext"
+    },
+    "praposalRule3": {
+      "type": "richtext"
+    },
+    "imageText": {
+      "type": "richtext"
+    },
+    "benifits": {
+      "type": "string"
+    },
+    "buyNowText": {
+      "type": "string"
+    },
+    "buyOnMarketPlaceText": {
+      "type": "string"
+    },
+    "imageContent": {
+      "type": "richtext"
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "projectTitle": {
+      "type": "string"
+    },
+    "brainFightersTitle": {
+      "type": "string"
+    },
+    "gameTitle": {
+      "type": "string"
+    },
+    "legendMessage": {
+      "type": "string"
+    }
+  }
+}

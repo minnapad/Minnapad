@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_home_hero_home_heroes",
+  "info": {
+    "displayName": "homeHero",
+    "icon": "information",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titleText": {
+      "type": "string"
+    },
+    "titleSubText": {
+      "type": "string"
+    },
+    "promoDescription": {
+      "type": "string"
+    },
+    "heroBanner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "heroLegendsCtaContent": {
+      "type": "string"
+    },
+    "heroLearnMoreCtaContent": {
+      "type": "string"
+    },
+    "legendsToDisplay": {
+      "type": "component",
+      "repeatable": true,
+      "component": "legends.legends"
+    }
+  }
+}

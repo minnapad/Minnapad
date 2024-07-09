@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "concepts",
+  "info": {
+    "singularName": "concept",
+    "pluralName": "concepts",
+    "displayName": "Concept",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "mainTitle": {
+      "type": "string"
+    },
+    "Discription1": {
+      "type": "component",
+      "repeatable": true,
+      "component": "concepts.concepts"
+    },
+    "link": {
+      "type": "richtext"
+    },
+    "description2": {
+      "type": "component",
+      "repeatable": true,
+      "component": "concepts.concepts"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project",
+      "mappedBy": "concept"
+    },
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    }
+  }
+}

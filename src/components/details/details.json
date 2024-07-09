@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_details_details",
+  "info": {
+    "displayName": "details",
+    "icon": "information",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "websiteUrl": {
+      "type": "string",
+      "regex": "^([a-zA-Z][a-zA-Z\\d+\\-.]*):\\/\\/(www\\.)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w\\.-@]*)*(\\?[\\/\\w\\.-=&]*)?$"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_our_community_join_communities",
+  "info": {
+    "displayName": "joinCommunity",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "discountsRewards": {
+      "displayName": "discounts",
+      "type": "component",
+      "repeatable": false,
+      "component": "our-community.discounts"
+    },
+    "newConnections": {
+      "displayName": "connections",
+      "type": "component",
+      "repeatable": false,
+      "component": "our-community.connections"
+    },
+    "jobs": {
+      "displayName": "mentorshipJobs",
+      "type": "component",
+      "repeatable": false,
+      "component": "our-community.mentorship-jobs"
+    },
+    "ipOwnership": {
+      "type": "component",
+      "repeatable": false,
+      "component": "our-community.ip-ownerships"
+    }
+  }
+}

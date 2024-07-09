@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nav_bars",
+  "info": {
+    "singularName": "nav-bar",
+    "pluralName": "nav-bars",
+    "displayName": "NavBar",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "hasSubMenu": {
+      "type": "boolean",
+      "required": true
+    },
+    "subMenu": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::nav-sub-menu.nav-sub-menu",
+      "inversedBy": "navParent"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "style_guide_lines",
+  "info": {
+    "singularName": "style-guide-line",
+    "pluralName": "style-guide-lines",
+    "displayName": "styleGuideLine",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "guide": {
+      "type": "component",
+      "repeatable": true,
+      "component": "style-guide.style-guide"
+    },
+    "startGuideTitle": {
+      "type": "richtext"
+    },
+    "startGuideImage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "buyMemberShipButton": {
+      "type": "string"
+    }
+  }
+}

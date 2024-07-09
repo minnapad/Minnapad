@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "supports",
+  "info": {
+    "singularName": "support",
+    "pluralName": "supports",
+    "displayName": "Support",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "leftMenuHeader": {
+      "type": "string"
+    },
+    "leftMenuHeaderDescription": {
+      "type": "string"
+    },
+    "contactSuportBtnDescription": {
+      "type": "string"
+    },
+    "FAQ": {
+      "displayName": "FAQ",
+      "type": "component",
+      "repeatable": true,
+      "component": "faq.faq"
+    }
+  }
+}

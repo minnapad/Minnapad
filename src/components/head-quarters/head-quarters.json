@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_head_quarters_head_quarters",
+  "info": {
+    "displayName": "headQuarters",
+    "icon": "gate",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "branches": {
+      "type": "component",
+      "repeatable": true,
+      "component": "head-quarters.quarter-details"
+    },
+    "mapImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "locations": {
+      "type": "component",
+      "repeatable": true,
+      "component": "locations.locations"
+    }
+  }
+}

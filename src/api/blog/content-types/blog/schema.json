@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "Blog",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog-category.blog-category"
+    },
+    "legend": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::legend.legend",
+      "inversedBy": "blogs"
+    },
+    "cardTitle": {
+      "type": "string"
+    },
+    "cardDescription": {
+      "type": "richtext"
+    },
+    "blogImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "blog-desc.blog-description",
+        "blog-desc.blog-media"
+      ]
+    },
+    "trendingTitle": {
+      "type": "string"
+    },
+    "trendingCTAContent": {
+      "type": "string"
+    },
+    "trendingDescription": {
+      "type": "richtext"
+    }
+  }
+}

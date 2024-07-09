@@ -1,0 +1,57 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_uses",
+  "info": {
+    "singularName": "about-us",
+    "pluralName": "about-uses",
+    "displayName": "aboutUs",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us-hero.hero-section"
+    },
+    "awards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us-awards.awards"
+    },
+    "missions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us-mission.missions"
+    },
+    "crew": {
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us-crew.crew"
+    },
+    "getInTouch": {
+      "type": "component",
+      "repeatable": false,
+      "component": "get-in-touch.get-in-touch"
+    },
+    "headQuarters": {
+      "type": "component",
+      "repeatable": false,
+      "component": "head-quarters.head-quarters"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

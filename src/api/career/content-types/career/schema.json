@@ -1,0 +1,48 @@
+{
+  "kind": "singleType",
+  "collectionName": "careers",
+  "info": {
+    "singularName": "career",
+    "pluralName": "careers",
+    "displayName": "career",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "careerBenifits": {
+      "type": "component",
+      "repeatable": true,
+      "component": "career-benifits.career-benifits"
+    },
+    "jobOpeningTitle": {
+      "type": "string"
+    },
+    "opertunities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "career-opertunities.career-opertunities"
+    },
+    "carrerImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

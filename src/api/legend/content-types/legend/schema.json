@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "legends",
+  "info": {
+    "singularName": "legend",
+    "pluralName": "legends",
+    "displayName": "Legends",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "projects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::project.project",
+      "inversedBy": "legends"
+    },
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "role": {
+      "type": "string"
+    },
+    "profilePicture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "knownFor": {
+      "type": "string"
+    },
+    "isUpcoming": {
+      "type": "boolean"
+    },
+    "upcomingDate": {
+      "type": "date"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "portfolioBanner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "blogs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog.blog",
+      "mappedBy": "legend"
+    }
+  }
+}

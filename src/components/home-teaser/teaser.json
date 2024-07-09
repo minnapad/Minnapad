@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_home_teaser_teasers",
+  "info": {
+    "displayName": "Teaser",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ctaContent": {
+      "type": "string"
+    },
+    "hasUrl": {
+      "type": "boolean"
+    },
+    "url": {
+      "type": "string",
+      "regex": "^(https?|ftp):\\/\\/(www\\.)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*(\\?[\\/\\w\\.-=&]*)?$"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "richtext"
+    }
+  }
+}

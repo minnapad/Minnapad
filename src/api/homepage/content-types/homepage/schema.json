@@ -1,0 +1,73 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-hero.home-hero"
+    },
+    "homeSocialLinks": {
+      "type": "component",
+      "repeatable": false,
+      "component": "social-links.social-links"
+    },
+    "partners": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partners.partners"
+    },
+    "featured": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-featured.home-featured"
+    },
+    "memberships": {
+      "type": "component",
+      "repeatable": true,
+      "component": "membership-details.membership-details"
+    },
+    "joinProjectSteps": {
+      "type": "component",
+      "repeatable": false,
+      "component": "join-projects.join-projects"
+    },
+    "joinCommunity": {
+      "type": "component",
+      "repeatable": false,
+      "component": "our-community.join-community"
+    },
+    "teaser": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-teaser.teaser"
+    },
+    "legendsProjects": {
+      "displayName": "legendsProjects",
+      "type": "component",
+      "repeatable": false,
+      "component": "legends-projects.legends-projects"
+    },
+    "latestNews": {
+      "displayName": "latestNews",
+      "type": "component",
+      "repeatable": false,
+      "component": "latest-news.latest-news"
+    },
+    "communityCollabs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "community-collabs.collabs"
+    }
+  }
+}

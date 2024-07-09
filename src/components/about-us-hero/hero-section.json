@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_about_us_hero_hero_sections",
+  "info": {
+    "displayName": "hero",
+    "icon": "discuss",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "banner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "subTitle": {
+      "type": "richtext"
+    }
+  }
+}

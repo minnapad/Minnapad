@@ -1,0 +1,105 @@
+{
+  "kind": "singleType",
+  "collectionName": "satorus",
+  "info": {
+    "singularName": "satoru",
+    "pluralName": "satorus",
+    "displayName": "satoru",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "legendTitle": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "legendTopSubTitle": {
+      "type": "string"
+    },
+    "legendBottomSubTitle": {
+      "type": "string"
+    },
+    "lengendDiscription": {
+      "type": "richtext"
+    },
+    "legendMemberShipGuidlinePoints1": {
+      "type": "richtext"
+    },
+    "legendMemberShipGuidlinePoints2": {
+      "type": "richtext"
+    },
+    "legendMemberShipGuidlinePoints3": {
+      "type": "richtext"
+    },
+    "coinName": {
+      "type": "string"
+    },
+    "coinInfo": {
+      "type": "string"
+    },
+    "praposalRule1": {
+      "type": "richtext"
+    },
+    "praposalRule2": {
+      "type": "richtext"
+    },
+    "praposalRule3": {
+      "type": "richtext"
+    },
+    "imageText": {
+      "type": "richtext"
+    },
+    "benifits": {
+      "type": "string"
+    },
+    "buyNowText": {
+      "type": "string"
+    },
+    "buyOnMarketPlaceText": {
+      "type": "string"
+    },
+    "imageContent": {
+      "type": "richtext"
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "gameTitle": {
+      "type": "string"
+    },
+    "brainFightersTitle": {
+      "type": "string"
+    },
+    "projectTitle": {
+      "type": "string"
+    },
+    "legendMessage": {
+      "type": "string"
+    },
+    "gamingVedio": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

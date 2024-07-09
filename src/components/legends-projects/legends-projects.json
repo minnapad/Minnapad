@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_legends_projects_legends_projects",
+  "info": {
+    "displayName": "legendsProjects"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "legends": {
+      "type": "component",
+      "repeatable": true,
+      "component": "legends.legends"
+    }
+  }
+}

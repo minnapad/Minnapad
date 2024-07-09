@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_membership_benefits_benefits",
+  "info": {
+    "displayName": "benefit",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "isEligible": {
+      "type": "boolean"
+    },
+    "betterThanOtherType": {
+      "type": "enumeration",
+      "enum": [
+        "no",
+        "neutral",
+        "yes"
+      ]
+    },
+    "logo": {
+      "type": "string"
+    }
+  }
+}

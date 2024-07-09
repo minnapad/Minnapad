@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_about_us_crew_crews",
+  "info": {
+    "displayName": "crew",
+    "icon": "cloud",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "text"
+    },
+    "members": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us-crew.crew-card"
+    }
+  }
+}

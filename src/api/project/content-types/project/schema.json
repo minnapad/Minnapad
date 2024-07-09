@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "projectLogo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "projectBanner": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "projectName": {
+      "type": "string"
+    },
+    "projectSubTitle": {
+      "type": "string"
+    },
+    "ProjectCategory": {
+      "type": "component",
+      "repeatable": true,
+      "component": "project-category.project-category"
+    },
+    "PrjoectSocialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "project-social-links.project-social-links"
+    },
+    "ProjectBenifits": {
+      "type": "component",
+      "repeatable": true,
+      "component": "project-benifits.project-benifits"
+    },
+    "projectDiscription": {
+      "type": "richtext"
+    },
+    "legends": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::legend.legend",
+      "mappedBy": "projects"
+    },
+    "concept": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::concept.concept",
+      "inversedBy": "project"
+    }
+  }
+}
